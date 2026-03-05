@@ -1,0 +1,101 @@
+@use '../abstract/mixins';
+
+.nav {
+    grid-area: 1 / 1 / 4 / 2;
+    background-color: #060606;
+    // border:1px solid #202020;
+    border-radius: 10px;
+    margin:7px 0 7px 7px;
+  
+    &-wrapperr {
+        @include mixins.flex-start();
+        flex-direction: column;
+        gap:10.7px;
+        }
+
+    &-item {
+        position: relative;
+        height: 40.4px;
+        @include mixins.flex-start();
+        gap:10.7px;
+        margin-left:11px;
+        cursor: pointer;
+
+        &-icon {
+            height: inherit;
+            width:40.4px;
+            @include mixins.flex();
+            cursor: pointer;
+            }
+
+        &-title {
+            // width: 100%;
+            max-width: 207px;
+            @include mixins.satoshi_custom(1.4rem,400,#898989);
+            }
+        
+        &-sublist-arrow {
+            width: 41px; 
+            margin-left: auto;
+        }
+    }
+}
+.nav-item:hover {
+    background-color: #202020; 
+    border-radius: 5px;
+}
+
+/* menu hover title effects start */
+
+.nav-item-icon:hover {
+    color: #fff;
+}
+
+.nav-item-icon::after {
+    content: attr(data-title);
+    position: absolute;
+    left: 35px;
+    top: 50%;
+    transform: translateY(-50%) translateX(10px);
+    background: #1f1f1f;
+    color:#898989;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 1.4rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+
+@media (hover: hover) {
+    .nav-item-icon:hover::after,
+    .nav-item-icon:hover::before {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0);
+    }
+}
+
+/* hover hide on mobai and 1024px-s ups*/
+
+@media (max-width:390px), (min-width:1024px) {
+    .nav-item-icon::after,
+    .nav-item-icon::before {
+        display: none;
+    }
+}
+/* menu hover title effects end*/
+
+@media (max-width:768px) {
+    .header-left-btn span {
+        display:none;
+    }
+    .header-left-btn{
+        gap:0;
+    }
+    .header-home,
+    .header-discover,
+    .header-search {
+       width: 55px;
+    }
+}

@@ -1,0 +1,49 @@
+@use './base/reset';
+@use './base/base';
+@use './abstract/variables';
+@use './abstract/mixins';
+@use "./layout/header";
+@use './layout/nav';
+@use './layout/content';
+@use './layout/friends_actv';
+@use './layout/footer';
+
+
+@font-face {
+    font-family: Satoshi;
+    src: url(webfonts/Satoshi-Regular.woff2);
+  }
+@media (max-width:1024px) {
+    .container {
+        grid-template-columns: 80px 1fr;  //(nav bar width), (content width)
+        gap:8px;
+        }
+    .nav-item { 
+        gap: 0.7px;
+        margin-left: 1px;
+        } 
+    .nav-item-title {
+        display:none
+        }
+    .nav-item-sublist-arrow {
+        margin-left:5px;
+        }
+    }
+
+@media (max-width:768px) {
+    .header-left-btn span {
+        display:none;
+    }
+    .header-left-btn{
+        gap:0;
+    }
+    .header-home,
+    .header-discover,
+    .header-search {
+       width: 55px;
+    }
+}
+
+@media (max-width:390px) {
+
+}

@@ -1,0 +1,106 @@
+@use '../abstract/mixins';
+@use '../abstract/variables';
+
+.content {
+    grid-area: 2 / 2 / 3 / 3;
+    background-color: variables.$base-bg-color;
+    border:1px solid #202020;
+    border-radius: 10px;
+    margin:4px 7px 0 0;
+    padding: 0 25px;
+    max-width: 1400px;
+
+    &-header-btn {
+        height: 59px;
+        @include mixins.satoshi_custom(1.4rem,700,white);
+        @include mixins.flex-start();
+        gap:10px;
+
+        & button{
+            padding:8px 15px;
+            border-radius: 8px;
+            background-color: #202020;
+        }
+        & img{
+            margin-left:auto;
+        }
+        & .active{
+            padding:8px 15px;
+            border-radius: 8px;
+            color:#111111;
+            background-color: #E0E0E0;
+        }
+    }
+}
+
+.made-for-you {
+    &-title-btn{
+        @include mixins.flex-between();
+        }
+
+    &-wrapper {
+        width: 100%;
+        max-width: 1440px;
+        height: 311px;
+        }
+    &-cards {
+        @include mixins.flex-between();
+        gap:11px;
+        margin-bottom: 10px;
+        }
+    &-card {
+        width: 170px;
+        img {
+            margin:8px 0;
+        }
+    & h3 {   
+        @include mixins.satoshi_custom(2rem,700,#E0E0E0);
+        }
+    }
+}
+.card{
+    &-name {
+        @include mixins.flex-between();
+        }
+    &-title {
+        @include mixins.satoshi_custom(1.4rem,500,#E0E0E0);
+        }
+    &-rating{
+        @include mixins.satoshi_custom(1.4rem,400,#E0E0E0);
+        &-c1{
+            color:#CE6E9A;
+        }
+        &-c2{
+            color:#95E6D3;
+        }
+        &-c3{
+            color:#F4B8BD;
+        }
+        &-c4{
+            color:#C3E7B7;
+        }
+        &-c5{
+            color:#F37FA6;
+        }
+        &-c6{
+            color:#A0BEC8;
+        }
+        &-c7{
+            color:#FDD87D;
+        }
+        &-c8{
+            color:#D4B2A9;
+        }
+    }
+    &-info p{
+        @include mixins.satoshi_custom(1.2rem,400,#898989);
+        letter-spacing: 0.3px;
+        line-height: 1.5;
+    }
+}
+.your-top-mixes{
+    &-title-btn {
+        @include mixins.flex-between();
+    gap:10px;
+    }
+}
