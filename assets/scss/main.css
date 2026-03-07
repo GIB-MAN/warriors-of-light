@@ -3,6 +3,7 @@ html, body {
   padding: 0;
   box-sizing: border-box;
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -482,4 +483,6 @@ button {
   .header-search {
     width: 55px;
   }
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
