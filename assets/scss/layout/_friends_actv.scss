@@ -1,40 +1,77 @@
 @use '../abstract/mixins';
 
 .friends-activity{
+    display: none;
+
+    &-list {
+        margin-top:32px;
+        display:flex;
+        flex-direction: column;
+        gap:24px;
+    }
+    &-list-member {
+        max-width:261px;
+        @include mixins.flex-start;
+    }
+    &-member-content {
+        width:100%;
+        max-width: 217px;
+        height:46px;
+    }
+    &-member-name {
+        height:16px;
+    }
+    &-member-name p,
+    &-member-info p {
+        @include mixins.satoshi_custom(1.2rem,400,#E0E0E0);
+        letter-spacing: 0.3px;
+        line-height: 1.5;
+    }
+    &-member-name p {
+        margin-left:12px;
+    }
+    &-member-info {
+        width:100%;
+        height:30px;
+       @include mixins.flex-start; 
+    }
+    &-playsound,
+    &-dot {
+        @include mixins.flex;
+        width:30px;
+        height:30px;
+    }
+}
+
+.container.view_hide {
+    grid-template-columns: clamp(180px, 18.4vw, 259px) 1fr 358px;  //(nav bar width), (content width), (frendly 358px) 
+}
+.container.view_hide .friends-activity{
+    display:block;   
     grid-area: 2 / 3 / 3 / 4;
     background-color: #060606;
     border-radius: 10px;
-    margin:4px 7px 0 0;
+    margin:4px 8px 0 0;
     border:1px solid #202020;
     border-radius: 10px;
     padding: 10px;
 
     &-wrapper {
-        @include mixins.flex-between();
+        @include mixins.flex-between;
     }
     &-header {
-        @include mixins.flex-between();
+        @include mixins.flex-between;
     }
     &-title h3{
         @include mixins.satoshi_custom(1.4rem,500,#E0E0E0);
     }
     &-btn {
-        @include mixins.flex();
+        @include mixins.flex;
         gap:10px;
     }
     .friends-item-icon {
-        @include mixins.flex();
+        @include mixins.flex;
         width: 40.41px;
         height: 40.41px;  
     }
 }
-.friends-activity>p{color:aliceblue;}
-
-
-.container.collapse {
-    grid-template-columns: clamp(180px, 18.4vw, 259px) 1fr 0px; 
-    transition: grid-template-columns 1s ;
-}
-.container.collapse .friends-activity{
-        display: none;
-    }

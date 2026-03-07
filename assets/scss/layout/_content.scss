@@ -6,22 +6,22 @@
     background-color: variables.$base-bg-color;
     border:1px solid #202020;
     border-radius: 10px;
-    margin:4px 7px 0 0;
+    margin:4px 0 0 0;
     padding: 0 25px;
-    max-width: 1400px;
+    max-width: 1300px;
 
     &-header-btn {
         height: 59px;
         @include mixins.satoshi_custom(1.4rem,700,white);
-        @include mixins.flex-start();
+        @include mixins.flex-start;
         gap:10px;
 
-        & button{
+        & a{
             padding:8px 15px;
             border-radius: 8px;
             background-color: #202020;
         }
-        & img{
+        & button{
             margin-left:auto;
         }
         & .active{
@@ -35,7 +35,7 @@
 
 .made-for-you {
     &-title-btn{
-        @include mixins.flex-between();
+        @include mixins.flex-between;
         }
 
     &-wrapper {
@@ -44,7 +44,7 @@
         height: 311px;
         }
     &-cards {
-        @include mixins.flex-between();
+        @include mixins.flex-between;
         gap:11px;
         margin-bottom: 10px;
         }
@@ -60,7 +60,7 @@
 }
 .card{
     &-name {
-        @include mixins.flex-between();
+        @include mixins.flex-between;
         }
     &-title {
         @include mixins.satoshi_custom(1.4rem,500,#E0E0E0);
@@ -100,7 +100,7 @@
 }
 .your-top-mixes{
     &-title-btn {
-        @include mixins.flex-between();
+        @include mixins.flex-between;
     gap:10px;
     }
 }
