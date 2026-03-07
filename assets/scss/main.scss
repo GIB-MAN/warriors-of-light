@@ -21,19 +21,21 @@
         }
     .container.view_hide {
         grid-template-columns: 85px 1fr 358px;  //(nav bar width), (content width), (frendly 358px) 
+    
         }
-    .nav-item { 
-        gap: 0.7px;
-        // margin-left: 1px;
-        } 
+
     .nav-item-title {
         display:none
         }
+
     .nav-item-sublist-arrow {
-        // margin-left:5px;
-        width: 25px;    
+        margin-left:-10px;
+        width: 20px;    
         }
-        
+
+    .header-right-btn{
+        gap:5px;
+    }
     }
 
 @media (max-width:768px) {
@@ -41,6 +43,9 @@
         display:none;
     }
     .header-left-btn{
+        gap:0;
+    }
+    .header-right-btn{
         gap:0;
     }
     .header-home,

@@ -16,7 +16,7 @@
         gap:10.7px;
     }
     &-home {
-        width: clamp(80px, 18vw, 210px);
+        width: clamp(80px, 18vw, 190px);
         max-width: 210px;
         height:46px;
         background-color:#111111;
@@ -46,7 +46,7 @@
         }
     }
     &-search {
-        width: clamp(50px, 18vw, 210px);
+        width: clamp(50px, 18vw, 190px);
         max-width: 210px;
         @include mixins.flex-start;
         gap:10.7px;
@@ -60,7 +60,8 @@
     }
     &-right-btn {
         @include mixins.flex;
-        gap:13px;
+        gap: clamp(1px, 10vw, 13px);
+        cursor: pointer;
     }
     &-item-icon {
         @include mixins.flex;

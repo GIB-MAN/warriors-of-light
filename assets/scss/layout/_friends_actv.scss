@@ -1,4 +1,5 @@
 @use '../abstract/mixins';
+@use '../abstract/variables';
 
 .friends-activity{
     display: none;
@@ -10,8 +11,9 @@
         gap:24px;
     }
     &-list-member {
-        max-width:261px;
+        max-width:277px;
         @include mixins.flex-start;
+        padding-left:8px;
     }
     &-member-content {
         width:100%;
@@ -21,30 +23,41 @@
     &-member-name {
         height:16px;
     }
-    &-member-name p,
-    &-member-info p {
-        @include mixins.satoshi_custom(1.2rem,400,#E0E0E0);
-        letter-spacing: 0.3px;
-        line-height: 1.5;
-    }
     &-member-name p {
-        margin-left:12px;
+        @include mixins.satoshi_custom(1.2rem,400, variables.$second-font-color);
+        letter-spacing: 1.3px;
+        line-height: 1.5;
+        margin-left:8px;
     }
     &-member-info {
-        width:100%;
+        width:237px;
         height:30px;
        @include mixins.flex-start; 
     }
-    &-playsound,
-    &-dot {
+    &-playsound {
         @include mixins.flex;
         width:30px;
         height:30px;
     }
+    &-dot {
+        @include mixins.flex;
+        width:19px;
+        height:30px;
+    }
+    &-member-info .sound-track-name {
+        @include mixins.satoshi_custom(1.4rem, 400, variables.$second-font-color);
+        letter-spacing: 1px;
+        line-height: 1.5;
+    }
+    &-member-info .sound-track-autor {
+        @include mixins.satoshi_custom(1.4rem, 400, variables.$base-font-color);
+        letter-spacing: 0.3px;
+        line-height: 1.5;
+    }
 }
 
 .container.view_hide {
-    grid-template-columns: clamp(180px, 18.4vw, 259px) 1fr 358px;  //(nav bar width), (content width), (frendly 358px) 
+    grid-template-columns: clamp(180px, 18.4vw, 248px) 1fr 358px;  //(nav bar width), (content width), (frendly 358px) 
 }
 .container.view_hide .friends-activity{
     display:block;   
