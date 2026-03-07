@@ -28,7 +28,7 @@ a {
   background-color: #060606;
   display: grid;
   grid-template-columns: clamp(180px, 18.4vw, 248px) 1fr;
-  grid-template-rows: 54px 1fr 81px;
+  grid-template-rows: 54px 100vh 81px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   gap: 8px;
@@ -223,7 +223,7 @@ a {
   margin: 4px 0 0 0;
   padding: 0 25px;
   max-width: 1491px;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
 .content-header-btn {
@@ -253,6 +253,8 @@ a {
 }
 
 .made-for-you-title-btn {
+  height: 40.4px;
+  margin: 10px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -261,6 +263,14 @@ a {
   width: 100%;
   max-width: 1440px;
   height: 311px;
+}
+.made-for-you-wrapper h3 {
+  font-family: satoshi;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #E0E0E0;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
 }
 .made-for-you-cards {
   display: flex;
@@ -274,12 +284,6 @@ a {
 }
 .made-for-you-card img {
   margin: 8px 0;
-}
-.made-for-you-card h3 {
-  font-family: satoshi;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #E0E0E0;
 }
 
 .card-name {
@@ -336,6 +340,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 30px 0 15px 0;
   gap: 10px;
 }
 
