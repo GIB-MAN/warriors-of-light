@@ -8,6 +8,7 @@
 @use './layout/friends_actv';
 @use './layout/footer';
 @use './layout/about-artist';
+@use './layout/grid-albums';
 
 @font-face {
     font-family: Satoshi;
@@ -49,10 +50,10 @@
     display: none
 }
 
-<<<<<<< HEAD .nav-item-sublist-arrow {
+HEAD .nav-item-sublist-arrow {
     margin-left: 5px;
 
-    =======.header-right-btn {
+    .header-right-btn {
         gap: 0;
     }
 
@@ -60,7 +61,7 @@
     .header-discover,
     .header-search {
         width: 55px;
-        >>>>>>>5bcba044ef6682c8099d01761015ef998a4afb04
+
     }
 
     .friends-activity {
