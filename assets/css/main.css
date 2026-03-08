@@ -40,18 +40,21 @@ a {
   border-radius: 10px;
   margin: 7px 7px 4px 0;
 }
+
 .header-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 54px;
 }
+
 .header-left-btn {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 10.7px;
 }
+
 .header-home {
   width: clamp(80px, 18vw, 190px);
   max-width: 210px;
@@ -63,15 +66,18 @@ a {
   justify-content: flex-start;
   gap: 10.7px;
 }
+
 .header-home img {
   margin-left: 15px;
 }
+
 .header-home span {
   font-family: satoshi;
   font-size: 1.4rem;
   font-weight: 400;
   color: #E0E0E0;
 }
+
 .header-discover {
   width: clamp(80px, 18vw, 190px);
   max-width: 210px;
@@ -80,15 +86,18 @@ a {
   justify-content: flex-start;
   gap: 10.7px;
 }
+
 .header-discover img {
   margin-left: 15px;
 }
+
 .header-discover span {
   font-family: satoshi;
   font-size: 1.4rem;
   font-weight: 400;
   color: #E0E0E0;
 }
+
 .header-search {
   width: clamp(50px, 18vw, 190px);
   max-width: 210px;
@@ -97,15 +106,18 @@ a {
   justify-content: flex-start;
   gap: 10.7px;
 }
+
 .header-search img {
   margin-left: 15px;
 }
+
 .header-search span {
   font-family: satoshi;
   font-size: 1.4rem;
   font-weight: 400;
   color: #E0E0E0;
 }
+
 .header-right-btn {
   display: flex;
   align-items: center;
@@ -113,6 +125,7 @@ a {
   gap: clamp(1px, 10vw, 13px);
   cursor: pointer;
 }
+
 .header-item-icon {
   display: flex;
   align-items: center;
@@ -128,6 +141,7 @@ a {
   border-radius: 10px;
   margin: 7px 0 7px 7px;
 }
+
 .nav-item {
   position: relative;
   height: 40.4px;
@@ -138,6 +152,7 @@ a {
   margin-left: 11px;
   cursor: pointer;
 }
+
 .nav-item-icon {
   height: inherit;
   width: 40.4px;
@@ -146,6 +161,7 @@ a {
   justify-content: center;
   cursor: pointer;
 }
+
 .nav-item-title {
   max-width: 187px;
   font-family: satoshi;
@@ -153,6 +169,7 @@ a {
   font-weight: 400;
   color: #898989;
 }
+
 .nav-item-sublist-arrow {
   width: 40.4px;
   margin-left: auto;
@@ -226,6 +243,7 @@ a {
   height: 100%;
   overflow: hidden;
 }
+
 .content-header-btn {
   height: 59px;
   font-family: satoshi;
@@ -237,14 +255,17 @@ a {
   justify-content: flex-start;
   gap: 10px;
 }
+
 .content-header-btn a {
   padding: 8px 15px;
   border-radius: 8px;
   background-color: #202020;
 }
+
 .content-header-btn button {
   margin-left: auto;
 }
+
 .content-header-btn .active {
   padding: 8px 15px;
   border-radius: 8px;
@@ -259,11 +280,13 @@ a {
   align-items: center;
   justify-content: space-between;
 }
+
 .made-for-you-wrapper {
   width: 100%;
   max-width: 1440px;
   height: 311px;
 }
+
 .made-for-you-wrapper h3 {
   font-family: satoshi;
   font-size: 2rem;
@@ -272,6 +295,7 @@ a {
   letter-spacing: 1.5px;
   line-height: 1.5;
 }
+
 .made-for-you-cards {
   display: flex;
   align-items: center;
@@ -279,9 +303,11 @@ a {
   gap: 11px;
   margin-bottom: 10px;
 }
+
 .made-for-you-card {
   width: 170px;
 }
+
 .made-for-you-card img {
   margin: 8px 0;
 }
@@ -291,42 +317,53 @@ a {
   align-items: center;
   justify-content: space-between;
 }
+
 .card-title {
   font-family: satoshi;
   font-size: 1.4rem;
   font-weight: 500;
   color: #E0E0E0;
 }
+
 .card-rating {
   font-family: satoshi;
   font-size: 1.4rem;
   font-weight: 400;
   color: #E0E0E0;
 }
+
 .card-rating-c1 {
   color: #CE6E9A;
 }
+
 .card-rating-c2 {
   color: #95E6D3;
 }
+
 .card-rating-c3 {
   color: #F4B8BD;
 }
+
 .card-rating-c4 {
   color: #C3E7B7;
 }
+
 .card-rating-c5 {
   color: #F37FA6;
 }
+
 .card-rating-c6 {
   color: #A0BEC8;
 }
+
 .card-rating-c7 {
   color: #FDD87D;
 }
+
 .card-rating-c8 {
   color: #D4B2A9;
 }
+
 .card-info p {
   font-family: satoshi;
   font-size: 1.2rem;
@@ -347,12 +384,14 @@ a {
 .friends-activity {
   display: none;
 }
+
 .friends-activity-list {
   margin-top: 32px;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
+
 .friends-activity-list-member {
   max-width: 277px;
   display: flex;
@@ -360,14 +399,17 @@ a {
   justify-content: flex-start;
   padding-left: 8px;
 }
+
 .friends-activity-member-content {
   width: 100%;
   max-width: 217px;
   height: 46px;
 }
+
 .friends-activity-member-name {
   height: 16px;
 }
+
 .friends-activity-member-name p {
   font-family: satoshi;
   font-size: 1.2rem;
@@ -377,6 +419,7 @@ a {
   line-height: 1.5;
   margin-left: 8px;
 }
+
 .friends-activity-member-info {
   width: 237px;
   height: 30px;
@@ -384,6 +427,7 @@ a {
   align-items: center;
   justify-content: flex-start;
 }
+
 .friends-activity-playsound {
   display: flex;
   align-items: center;
@@ -391,6 +435,7 @@ a {
   width: 30px;
   height: 30px;
 }
+
 .friends-activity-dot {
   display: flex;
   align-items: center;
@@ -398,6 +443,7 @@ a {
   width: 19px;
   height: 30px;
 }
+
 .friends-activity-member-info .sound-track-name {
   font-family: satoshi;
   font-size: 1.4rem;
@@ -406,6 +452,7 @@ a {
   letter-spacing: 1px;
   line-height: 1.5;
 }
+
 .friends-activity-member-info .sound-track-autor {
   font-family: satoshi;
   font-size: 1.4rem;
@@ -429,28 +476,33 @@ a {
   border-radius: 10px;
   padding: 10px;
 }
+
 .container.view_hide .friends-activity-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .container.view_hide .friends-activity-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
 .container.view_hide .friends-activity-title h3 {
   font-family: satoshi;
   font-size: 1.4rem;
   font-weight: 500;
   color: #E0E0E0;
 }
+
 .container.view_hide .friends-activity-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
+
 .container.view_hide .friends-activity .friends-item-icon {
   display: flex;
   align-items: center;
@@ -541,17 +593,21 @@ a {
   overflow: hidden;
   border-radius: 10px;
 }
+
 .about-artist-hero-image {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
   display: block;
 }
+
 .about-artist-hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.45) 55%, rgba(0, 0, 0, 0.92) 100%);
 }
+
 .about-artist-hero-content {
   position: absolute;
   left: 0;
@@ -565,9 +621,11 @@ a {
   align-items: flex-end;
   gap: 20px;
 }
+
 .about-artist-hero-info {
   min-width: 0;
 }
+
 .about-artist-hero-actions {
   display: flex;
   align-items: center;
@@ -603,6 +661,7 @@ a {
   align-items: center;
   justify-content: center;
 }
+
 .about-artist-play-button img {
   width: 18px;
   height: 18px;
@@ -618,6 +677,7 @@ a {
   justify-content: center;
   flex-shrink: 0;
 }
+
 .about-artist-follow-button img {
   display: block;
   height: 34px;
@@ -636,6 +696,7 @@ a {
   justify-content: center;
   flex-shrink: 0;
 }
+
 .about-artist-icon-button img {
   width: 16px;
   height: 16px;
@@ -655,6 +716,7 @@ a {
   gap: 50px;
   flex-wrap: wrap;
 }
+
 .about-artist-menu-list a {
   position: relative;
   padding: 10px 0;
@@ -665,9 +727,11 @@ a {
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
 }
+
 .about-artist-menu-list a[data-active=true] {
   color: #fff;
 }
+
 .about-artist-menu-list a[data-active=true]::after {
   content: "";
   position: absolute;
@@ -689,6 +753,7 @@ a {
   justify-content: center;
   flex-shrink: 0;
 }
+
 .about-artist-menu-search img {
   width: 40px;
   height: 40px;
@@ -729,6 +794,7 @@ a {
   max-width: 650px;
   flex: 1 1 auto;
 }
+
 .about-artist-description p {
   margin: 0;
   font-family: Satoshi, Arial, sans-serif;
@@ -926,17 +992,21 @@ a {
   overflow: hidden;
   border-radius: 10px 10px 0 0;
 }
+
 .grid-albums-hero-image {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
   display: block;
 }
+
 .grid-albums-hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.45) 55%, rgba(0, 0, 0, 0.92) 100%);
 }
+
 .grid-albums-hero-content {
   position: absolute;
   left: 0;
@@ -950,6 +1020,7 @@ a {
   align-items: flex-end;
   gap: 20px;
 }
+
 .grid-albums-hero-actions {
   display: flex;
   align-items: center;
@@ -1041,6 +1112,7 @@ a {
   align-items: center;
   justify-content: center;
 }
+
 .grid-albums-menu-icon img {
   width: 37px;
   height: 37px;
@@ -1097,6 +1169,7 @@ a {
   max-width: 100%;
   display: block;
   aspect-ratio: 1/1;
+  -o-object-fit: cover;
   object-fit: cover;
   border-radius: 12px;
 }
@@ -1280,14 +1353,17 @@ a {
 HEAD .nav-item-sublist-arrow {
   margin-left: 5px;
 }
+
 HEAD .nav-item-sublist-arrow .header-right-btn {
   gap: 0;
 }
+
 HEAD .nav-item-sublist-arrow .header-home,
 HEAD .nav-item-sublist-arrow .header-discover,
 HEAD .nav-item-sublist-arrow .header-search {
   width: 55px;
 }
+
 HEAD .nav-item-sublist-arrow .friends-activity {
   display: none;
 }
@@ -1304,6 +1380,6 @@ HEAD .nav-item-sublist-arrow .friends-activity {
   .header-search {
     width: 55px;
   }
-}
+} 
 
 /*# sourceMappingURL=main.css.map */
