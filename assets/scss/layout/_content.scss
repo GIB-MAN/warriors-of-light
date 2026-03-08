@@ -9,8 +9,10 @@
     margin:4px 0 0 0;
     padding: 0 25px;
     max-width: 1491px;
-    height:100%;
-    overflow: hidden;
+    height: calc(100vmin - 54px - 104px);
+    overflow-y: hidden;
+    scrollbar-width: none;
+
 
     &-header-btn {
         height: 59px;
@@ -34,7 +36,12 @@
         }
     }
 }
-
+.card-wrapper {
+    height: calc(100vh - 220px); // ამით ვითვლი ქარდების სამიძრაო არეალს
+    overflow-y: auto;
+    box-sizing: border-box;
+    scrollbar-width: none;
+}
 .made-for-you {
     &-title-btn{
         height: 40.4px;
@@ -113,5 +120,10 @@
         @include mixins.flex-between;
         margin:30px 0 15px 0;
     gap:10px;
+    }
+    &-title h3{
+        @include mixins.satoshi_custom(2rem,700,variables.$second-font-color);
+        letter-spacing: 1.5px;
+        line-height: 1.5;
     }
 }
