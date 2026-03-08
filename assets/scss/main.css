@@ -1,14 +1,11 @@
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-size: 62.5%;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   margin: 0;
   padding: 0;
 }
@@ -40,21 +37,18 @@ button {
   border-radius: 10px;
   margin: 7px 7px 4px 0;
 }
-
 .header-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 54px;
 }
-
 .header-left-btn {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 10.7px;
 }
-
 .header-home {
   width: clamp(80px, 18vw, 210px);
   max-width: 210px;
@@ -66,18 +60,15 @@ button {
   justify-content: flex-start;
   gap: 10.7px;
 }
-
 .header-home img {
   margin-left: 15px;
 }
-
 .header-home span {
   font-family: satoshi;
   font-size: 1.4rem;
   font-weight: 400;
   color: #E0E0E0;
 }
-
 .header-discover {
   width: clamp(80px, 18vw, 190px);
   max-width: 210px;
@@ -86,18 +77,15 @@ button {
   justify-content: flex-start;
   gap: 10.7px;
 }
-
 .header-discover img {
   margin-left: 15px;
 }
-
 .header-discover span {
   font-family: satoshi;
   font-size: 1.4rem;
   font-weight: 400;
   color: #E0E0E0;
 }
-
 .header-search {
   width: clamp(50px, 18vw, 210px);
   max-width: 210px;
@@ -106,25 +94,21 @@ button {
   justify-content: flex-start;
   gap: 10.7px;
 }
-
 .header-search img {
   margin-left: 15px;
 }
-
 .header-search span {
   font-family: satoshi;
   font-size: 1.4rem;
   font-weight: 400;
   color: #E0E0E0;
 }
-
 .header-right-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 13px;
 }
-
 .header-item-icon {
   display: flex;
   align-items: center;
@@ -139,7 +123,6 @@ button {
   border-radius: 10px;
   margin: 7px 0 7px 7px;
 }
-
 .nav-wrapperr {
   display: flex;
   align-items: center;
@@ -147,7 +130,6 @@ button {
   flex-direction: column;
   gap: 10.7px;
 }
-
 .nav-item {
   position: relative;
   height: 40.4px;
@@ -158,7 +140,6 @@ button {
   margin-left: 11px;
   cursor: pointer;
 }
-
 .nav-item-icon {
   height: inherit;
   width: 40.4px;
@@ -167,7 +148,6 @@ button {
   justify-content: center;
   cursor: pointer;
 }
-
 .nav-item-title {
   max-width: 207px;
   font-family: satoshi;
@@ -175,7 +155,6 @@ button {
   font-weight: 400;
   color: #898989;
 }
-
 .nav-item-sublist-arrow {
   width: 41px;
   margin-left: auto;
@@ -208,41 +187,33 @@ button {
 }
 
 @media (hover: hover) {
-
   .nav-item-icon:hover::after,
   .nav-item-icon:hover::before {
     opacity: 1;
     transform: translateY(-50%) translateX(0);
   }
 }
-
 /* hover hide on mobai and 1024px-s ups*/
-@media (max-width: 390px),
-(min-width: 1024px) {
-
+@media (max-width: 390px), (min-width: 1024px) {
   .nav-item-icon::after,
   .nav-item-icon::before {
     display: none;
   }
 }
-
 /* menu hover title effects end*/
 @media (max-width: 768px) {
   .header-left-btn span {
     display: none;
   }
-
   .header-left-btn {
     gap: 0;
   }
-
   .header-home,
   .header-discover,
   .header-search {
     width: 55px;
   }
 }
-
 .content {
   grid-area: 2/2/3/3;
   background-color: #060606;
@@ -252,7 +223,6 @@ button {
   padding: 0 25px;
   max-width: 1400px;
 }
-
 .content-header-btn {
   height: 59px;
   font-family: satoshi;
@@ -264,17 +234,14 @@ button {
   justify-content: flex-start;
   gap: 10px;
 }
-
 .content-header-btn button {
   padding: 8px 15px;
   border-radius: 8px;
   background-color: #202020;
 }
-
 .content-header-btn img {
   margin-left: auto;
 }
-
 .content-header-btn .active {
   padding: 8px 15px;
   border-radius: 8px;
@@ -287,13 +254,11 @@ button {
   align-items: center;
   justify-content: space-between;
 }
-
 .made-for-you-wrapper {
   width: 100%;
   max-width: 1440px;
   height: 311px;
 }
-
 .made-for-you-cards {
   display: flex;
   align-items: center;
@@ -301,15 +266,12 @@ button {
   gap: 11px;
   margin-bottom: 10px;
 }
-
 .made-for-you-card {
   width: 170px;
 }
-
 .made-for-you-card img {
   margin: 8px 0;
 }
-
 .made-for-you-card h3 {
   font-family: satoshi;
   font-size: 2rem;
@@ -322,53 +284,42 @@ button {
   align-items: center;
   justify-content: space-between;
 }
-
 .card-title {
   font-family: satoshi;
   font-size: 1.4rem;
   font-weight: 500;
   color: #E0E0E0;
 }
-
 .card-rating {
   font-family: satoshi;
   font-size: 1.4rem;
   font-weight: 400;
   color: #E0E0E0;
 }
-
 .card-rating-c1 {
   color: #CE6E9A;
 }
-
 .card-rating-c2 {
   color: #95E6D3;
 }
-
 .card-rating-c3 {
   color: #F4B8BD;
 }
-
 .card-rating-c4 {
   color: #C3E7B7;
 }
-
 .card-rating-c5 {
   color: #F37FA6;
 }
-
 .card-rating-c6 {
   color: #A0BEC8;
 }
-
 .card-rating-c7 {
   color: #FDD87D;
 }
-
 .card-rating-c8 {
   color: #D4B2A9;
 }
-
 .card-info p {
   font-family: satoshi;
   font-size: 1.2rem;
@@ -394,33 +345,28 @@ button {
   border-radius: 10px;
   padding: 10px;
 }
-
 .friends-activity-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
 .friends-activity-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
 .friends-activity-title h3 {
   font-family: satoshi;
   font-size: 1.4rem;
   font-weight: 500;
   color: #E0E0E0;
 }
-
 .friends-activity-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
-
 .friends-activity .friends-item-icon {
   display: flex;
   align-items: center;
@@ -429,7 +375,7 @@ button {
   height: 40.41px;
 }
 
-.friends-activity>p {
+.friends-activity > p {
   color: aliceblue;
 }
 
@@ -459,8 +405,7 @@ button {
   width: 348px;
 }
 
-.play-time,
-.full-time {
+.play-time, .full-time {
   font-family: satoshi;
   font-size: 1.2rem;
   font-weight: 400;
@@ -505,7 +450,7 @@ button {
   margin-left: auto;
 }
 
-.artist-main {
+.about-artist-page {
   width: 100%;
   min-width: 0;
   background: #060606;
@@ -517,7 +462,7 @@ button {
 /* =========================
    HERO
 ========================= */
-.hero {
+.about-artist-hero {
   width: 100%;
   min-width: 0;
   aspect-ratio: 1491/426;
@@ -525,22 +470,19 @@ button {
   overflow: hidden;
   border-radius: 10px;
 }
-
-.hero-img {
+.about-artist-hero-image {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   display: block;
 }
-
-.hero-grad {
+.about-artist-hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.45) 55%, rgba(0, 0, 0, 0.92) 100%);
 }
-
-.hero-inner {
+.about-artist-hero-content {
   position: absolute;
   left: 0;
   right: 0;
@@ -553,12 +495,10 @@ button {
   align-items: flex-end;
   gap: 20px;
 }
-
-.hero-left {
+.about-artist-hero-info {
   min-width: 0;
 }
-
-.hero-right {
+.about-artist-hero-actions {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -566,7 +506,7 @@ button {
   flex-shrink: 0;
 }
 
-.artist-name {
+.about-artist-title {
   margin: 0 0 8px;
   font-family: Satoshi, Arial, sans-serif;
   font-size: 4.4rem;
@@ -575,7 +515,7 @@ button {
   color: #fff;
 }
 
-.artist-listeners {
+.about-artist-monthly-listeners {
   margin: 0;
   font-family: Satoshi, Arial, sans-serif;
   font-size: 1.2rem;
@@ -583,9 +523,9 @@ button {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.play-btn {
-  width: 44px;
-  height: 44px;
+.about-artist-play-button {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: #1ed760;
   cursor: pointer;
@@ -593,15 +533,14 @@ button {
   align-items: center;
   justify-content: center;
 }
-
-.play-btn img {
+.about-artist-play-button img {
   width: 18px;
   height: 18px;
   display: block;
 }
 
-.follow-btn {
-  height: 34px;
+.about-artist-follow-button {
+  height: 39px;
   border-radius: 999px;
   cursor: pointer;
   display: inline-flex;
@@ -609,14 +548,13 @@ button {
   justify-content: center;
   flex-shrink: 0;
 }
-
-.follow-btn img {
+.about-artist-follow-button img {
   display: block;
   height: 34px;
   width: auto;
 }
 
-.icon-btn {
+.about-artist-icon-button {
   width: 34px;
   height: 34px;
   border-radius: 50%;
@@ -628,28 +566,26 @@ button {
   justify-content: center;
   flex-shrink: 0;
 }
-
-.icon-btn img {
+.about-artist-icon-button img {
   width: 16px;
   height: 16px;
   display: block;
 }
 
 /* =========================
-   TABS
+   MENU
 ========================= */
-.tabs {
+.about-artist-menu {
   padding: 14px 24px 0;
 }
 
-.tabs-left {
+.about-artist-menu-list {
   display: flex;
   align-items: center;
-  gap: 35px;
+  gap: 50px;
   flex-wrap: wrap;
 }
-
-.tab {
+.about-artist-menu-list a {
   position: relative;
   padding: 10px 0;
   font-family: Satoshi, Arial, sans-serif;
@@ -659,12 +595,10 @@ button {
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
 }
-
-.tab.active {
+.about-artist-menu-list a[data-active=true] {
   color: #fff;
 }
-
-.tab.active::after {
+.about-artist-menu-list a[data-active=true]::after {
   content: "";
   position: absolute;
   left: 0;
@@ -675,7 +609,7 @@ button {
   border-radius: 2px;
 }
 
-.tab-search {
+.about-artist-menu-search {
   padding: 0;
   margin-left: 4px;
   background: transparent;
@@ -685,76 +619,47 @@ button {
   justify-content: center;
   flex-shrink: 0;
 }
-
-.tab-search img {
+.about-artist-menu-search img {
   width: 40px;
   height: 40px;
   display: block;
   opacity: 0.9;
 }
 
-.line {
+.about-artist-divider {
   height: 1px;
   margin: 0 24px;
   background: rgba(255, 255, 255, 0.08);
 }
 
 /* =========================
-   ABOUT
+   ABOUT DETAILS
 ========================= */
-.about {
+.about-artist-details {
   padding: 18px 24px 0;
-  display: grid;
-  grid-template-columns: 132px minmax(0, 1fr) 149px;
-  -moz-column-gap: 32px;
-  column-gap: 32px;
-  align-items: start;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
 }
 
-.rank {
+.about-artist-rank-badge {
   width: 132px;
   height: 132px;
-  position: relative;
-  flex-shrink: 0;
+  flex: 0 0 132px;
 }
 
-.rank-img {
+.about-artist-rank-image {
   width: 132px;
   height: 132px;
   display: block;
 }
 
-.rank-text {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #0b0b0b;
-  font-family: Satoshi, Arial, sans-serif;
-  font-weight: 900;
+.about-artist-description {
+  width: 100%;
+  max-width: 650px;
+  flex: 1 1 auto;
 }
-
-.rank-num {
-  font-size: 2.2rem;
-  line-height: 1;
-}
-
-.rank-sub {
-  margin-top: 6px;
-  font-size: 1.2rem;
-  font-weight: 800;
-}
-
-.desc {
-  min-width: 0;
-  max-width: 640px;
-  justify-self: start;
-}
-
-.desc p {
+.about-artist-description p {
   margin: 0;
   font-family: Satoshi, Arial, sans-serif;
   font-size: 1.2rem;
@@ -764,29 +669,25 @@ button {
   color: #e0e0e0;
 }
 
-.stats {
+.about-artist-stats {
   width: 149px;
+  margin-left: auto;
+  margin-right: 70px;
+  margin-top: -10px;
   display: flex;
   flex-direction: column;
   gap: 18px;
   text-align: left;
-  flex-shrink: 0;
+  flex: 0 0 149px;
 }
 
-.stat {
+.about-artist-stat-item {
   width: 149px;
   min-height: 71px;
 }
 
-.stat-num {
-  font-family: Satoshi, Arial, sans-serif;
-  font-size: 2rem;
-  font-weight: 900;
-  line-height: 1.2;
-  color: #fff;
-}
-
-.stat-lab {
+.about-artist-stat-item span {
+  display: block;
   margin-top: 6px;
   font-family: Satoshi, Arial, sans-serif;
   font-size: 1.1rem;
@@ -795,7 +696,25 @@ button {
   color: rgba(255, 255, 255, 0.55);
 }
 
-.city-name {
+.about-artist-stat-number {
+  font-family: Satoshi, Arial, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.about-artist-stat-label {
+  display: block;
+  margin-top: 6px;
+  font-family: Satoshi, Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.about-artist-city-name {
   font-family: Satoshi, Arial, sans-serif;
   font-size: 1.2rem;
   font-weight: 800;
@@ -803,7 +722,17 @@ button {
   color: #fff;
 }
 
-.city-sub {
+.about-artist-city-item span {
+  display: block;
+  margin-top: 6px;
+  font-family: Satoshi, Arial, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.about-artist-city-listeners {
+  display: block;
   margin-top: 6px;
   font-family: Satoshi, Arial, sans-serif;
   font-size: 1.1rem;
@@ -816,130 +745,125 @@ button {
    RESPONSIVE
 ========================= */
 @media (max-width: 1200px) {
-  .about {
+  .about-artist-details {
     grid-template-columns: 132px minmax(0, 1fr);
     grid-template-areas: "rank desc" "stats stats";
     row-gap: 18px;
   }
-
-  .rank {
+  .about-artist-rank-badge {
     grid-area: rank;
   }
-
-  .desc {
+  .about-artist-description {
     grid-area: desc;
   }
-
-  .stats {
+  .about-artist-stats {
     grid-area: stats;
     width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 24px;
   }
-
-  .stat,
-  .city {
+  .about-artist-stat-item,
+  .about-artist-city-item {
     width: auto;
     min-width: 149px;
   }
 }
-
 @media (max-width: 900px) {
-  .hero-inner {
+  .about-artist-hero-content {
     padding: 0 18px;
     gap: 16px;
     flex-wrap: wrap;
   }
-
-  .artist-name {
+  .about-artist-title {
     font-size: 3.2rem;
   }
-
-  .tabs-left {
+  .about-artist-menu-list {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .about-artist-details {
+    flex-direction: column;
+    align-items: stretch;
     gap: 20px;
   }
-
-  .about {
-    grid-template-columns: 1fr;
-    grid-template-areas: "rank" "desc" "stats";
-  }
-
-  .rank {
+  .about-artist-rank-badge {
     margin: 0 auto;
   }
-
-  .stats {
+  .about-artist-description {
+    max-width: 100%;
     width: 100%;
   }
+  .about-artist-stats {
+    width: 100%;
+    margin-left: 0;
+    flex: unset;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .about-artist-stat-item,
+  .about-artist-city-item {
+    width: auto;
+    min-width: 149px;
+  }
 }
-
 @media (max-width: 520px) {
-  .artist-name {
+  .about-artist-title {
     font-size: 2.6rem;
   }
-
-  .hero-inner {
+  .about-artist-hero-content {
     bottom: 14px;
     padding: 0 16px;
   }
-
-  .hero-right {
+  .about-artist-hero-actions {
     gap: 8px;
+    flex-wrap: wrap;
   }
-
-  .tabs {
+  .about-artist-menu {
     padding: 14px 16px 0;
   }
-
-  .line {
+  .about-artist-divider {
     margin: 0 16px;
   }
-
-  .about {
+  .about-artist-details {
     padding: 18px 16px 0;
+    gap: 18px;
+  }
+  .about-artist-stats {
+    gap: 18px;
   }
 }
-
 @font-face {
   font-family: Satoshi;
   src: url(webfonts/Satoshi-Regular.woff2);
 }
-
 @media (max-width: 1024px) {
   .container {
     grid-template-columns: 80px 1fr;
     gap: 8px;
   }
-
   .nav-item {
     gap: 0.7px;
     margin-left: 1px;
   }
-
   .nav-item-title {
     display: none;
   }
-
   .nav-item-sublist-arrow {
     margin-left: 5px;
   }
 }
-
 @media (max-width: 768px) {
   .header-left-btn span {
     display: none;
   }
-
   .header-left-btn {
     gap: 0;
   }
-
   .header-home,
   .header-discover,
   .header-search {
     width: 55px;
   }
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
