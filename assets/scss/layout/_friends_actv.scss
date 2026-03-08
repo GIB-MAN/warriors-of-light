@@ -1,40 +1,90 @@
 @use '../abstract/mixins';
+@use '../abstract/variables';
 
 .friends-activity{
+    display: none;
+
+    &-list {
+        margin-top:32px;
+        display:flex;
+        flex-direction: column;
+        gap:24px;
+    }
+    &-list-member {
+        max-width:277px;
+        @include mixins.flex-start;
+        padding-left:8px;
+    }
+    &-member-content {
+        width:100%;
+        max-width: 217px;
+        height:46px;
+    }
+    &-member-name {
+        height:16px;
+    }
+    &-member-name p {
+        @include mixins.satoshi_custom(1.2rem,400, variables.$second-font-color);
+        letter-spacing: 1.3px;
+        line-height: 1.5;
+        margin-left:8px;
+    }
+    &-member-info {
+        width:237px;
+        height:30px;
+       @include mixins.flex-start; 
+    }
+    &-playsound {
+        @include mixins.flex;
+        width:30px;
+        height:30px;
+    }
+    &-dot {
+        @include mixins.flex;
+        width:19px;
+        height:30px;
+    }
+    &-member-info .sound-track-name {
+        @include mixins.satoshi_custom(1.4rem, 400, variables.$second-font-color);
+        letter-spacing: 1px;
+        line-height: 1.5;
+    }
+    &-member-info .sound-track-autor {
+        @include mixins.satoshi_custom(1.4rem, 400, variables.$base-font-color);
+        letter-spacing: 0.3px;
+        line-height: 1.5;
+    }
+}
+
+.container.view_hide {
+    grid-template-columns: clamp(180px, 18.4vw, 248px) 1fr 358px;  //(nav bar width), (content width), (frendly 358px) 
+}
+.container.view_hide .friends-activity{
+    display:block;   
     grid-area: 2 / 3 / 3 / 4;
     background-color: #060606;
     border-radius: 10px;
-    margin:4px 7px 0 0;
+    margin:4px 8px 0 0;
     border:1px solid #202020;
     border-radius: 10px;
     padding: 10px;
 
     &-wrapper {
-        @include mixins.flex-between();
+        @include mixins.flex-between;
     }
     &-header {
-        @include mixins.flex-between();
+        @include mixins.flex-between;
     }
     &-title h3{
         @include mixins.satoshi_custom(1.4rem,500,#E0E0E0);
     }
     &-btn {
-        @include mixins.flex();
+        @include mixins.flex;
         gap:10px;
     }
     .friends-item-icon {
-        @include mixins.flex();
+        @include mixins.flex;
         width: 40.41px;
         height: 40.41px;  
     }
 }
-.friends-activity>p{color:aliceblue;}
-
-
-.container.collapse {
-    grid-template-columns: clamp(180px, 18.4vw, 259px) 1fr 0px; 
-    transition: grid-template-columns 1s ;
-}
-.container.collapse .friends-activity{
-        display: none;
-    }

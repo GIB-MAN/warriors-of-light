@@ -8,33 +8,33 @@
     
 
     &-wrapper {
-        @include mixins.flex-between();
+        @include mixins.flex-between;
         height:54px;
     }
     &-left-btn {
-        @include mixins.flex-start();
+        @include mixins.flex-start;
         gap:10.7px;
     }
     &-home {
-        width: clamp(80px, 18vw, 210px);
+        width: clamp(80px, 18vw, 190px);
         max-width: 210px;
         height:46px;
         background-color:#111111;
         border-radius: 10px;
-        @include mixins.flex-start();
+        @include mixins.flex-start;
         gap:10.7px;
    
         img{
             margin-left:15px;
         }
         span{
-        @include mixins.satoshi_1-4_400();
+        @include mixins.satoshi_1-4_400;
         }
     }
     &-discover {
         width: clamp(80px, 18vw, 190px);
         max-width: 210px;
-        @include mixins.flex-start();
+        @include mixins.flex-start;
         gap:10.7px;
     
     img{
@@ -42,29 +42,41 @@
         }
     
     span{
-        @include mixins.satoshi_1-4_400();
+        @include mixins.satoshi_1-4_400;
         }
     }
     &-search {
-        width: clamp(50px, 18vw, 210px);
+        width: clamp(50px, 18vw, 190px);
         max-width: 210px;
-        @include mixins.flex-start();
+        @include mixins.flex-start;
         gap:10.7px;
     
     img{
         margin-left:15px;
         }
     span{
-        @include mixins.satoshi_1-4_400();
+        @include mixins.satoshi_1-4_400;
         }
     }
     &-right-btn {
-        @include mixins.flex();
-        gap:13px;
+        @include mixins.flex;
+        gap: clamp(1px, 10vw, 13px);
+        cursor: pointer;
     }
     &-item-icon {
-        @include mixins.flex();
+        @include mixins.flex;
         width: 40.41px;
         height: 40.41px;    
     }
 }
+
+// Tu gvinda rom hederi fixed iyos 
+// @media (min-width:398px) {
+//     .header{
+        
+//         width: calc(100vw - clamp(180px, 18.4vw, 254px) - 20px);
+//         position:fixed;
+//         left: clamp(180px, 18.4vw, 254px);
+//         margin:0 10px;
+//         }
+//     }

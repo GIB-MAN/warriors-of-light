@@ -3,20 +3,14 @@
 .nav {
     grid-area: 1 / 1 / 4 / 2;
     background-color: #060606;
-    // border:1px solid #202020;
+    border:1px solid #202020;
     border-radius: 10px;
     margin:7px 0 7px 7px;
-  
-    &-wrapperr {
-        @include mixins.flex-start();
-        flex-direction: column;
-        gap:10.7px;
-        }
 
     &-item {
         position: relative;
         height: 40.4px;
-        @include mixins.flex-start();
+        @include mixins.flex-start;
         gap:10.7px;
         margin-left:11px;
         cursor: pointer;
@@ -24,19 +18,20 @@
         &-icon {
             height: inherit;
             width:40.4px;
-            @include mixins.flex();
+            @include mixins.flex;
             cursor: pointer;
             }
 
         &-title {
             // width: 100%;
-            max-width: 207px;
+            max-width: 187px;
             @include mixins.satoshi_custom(1.4rem,400,#898989);
             }
         
         &-sublist-arrow {
-            width: 41px; 
+            width: 40.4px; 
             margin-left: auto;
+            @include mixins.flex;
         }
     }
 }
