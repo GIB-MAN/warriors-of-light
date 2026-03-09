@@ -6,22 +6,26 @@
     background-color: variables.$base-bg-color;
     border:1px solid #202020;
     border-radius: 10px;
-    margin:4px 7px 0 0;
+    margin:4px 0 0 0;
     padding: 0 25px;
-    max-width: 1400px;
+    max-width: 1491px;
+    height: calc(100vmin - 54px - 104px);
+    overflow-y: hidden;
+    scrollbar-width: none;
+
 
     &-header-btn {
         height: 59px;
         @include mixins.satoshi_custom(1.4rem,700,white);
-        @include mixins.flex-start();
+        @include mixins.flex-start;
         gap:10px;
 
-        & button{
+        & a{
             padding:8px 15px;
             border-radius: 8px;
             background-color: #202020;
         }
-        & img{
+        & button{
             margin-left:auto;
         }
         & .active{
@@ -32,19 +36,33 @@
         }
     }
 }
-
+.card-wrapper {
+    height: calc(100vh - 220px); // ამით ვითვლი ქარდების სამიძრაო არეალს
+    overflow-y: auto;
+    box-sizing: border-box;
+    scrollbar-width: none;
+}
 .made-for-you {
     &-title-btn{
-        @include mixins.flex-between();
+        height: 40.4px;
+        margin:10px 0;
+        @include mixins.flex-between;
         }
 
     &-wrapper {
         width: 100%;
         max-width: 1440px;
         height: 311px;
+
+        & h3 {   
+            @include mixins.satoshi_custom(2rem,700,variables.$second-font-color);
+            letter-spacing: 1.5px;
+            line-height: 1.5;
+            }
         }
+
     &-cards {
-        @include mixins.flex-between();
+        @include mixins.flex-between;
         gap:11px;
         margin-bottom: 10px;
         }
@@ -53,14 +71,12 @@
         img {
             margin:8px 0;
         }
-    & h3 {   
-        @include mixins.satoshi_custom(2rem,700,#E0E0E0);
-        }
+    
     }
 }
 .card{
     &-name {
-        @include mixins.flex-between();
+        @include mixins.flex-between;
         }
     &-title {
         @include mixins.satoshi_custom(1.4rem,500,#E0E0E0);
@@ -99,8 +115,15 @@
     }
 }
 .your-top-mixes{
+
     &-title-btn {
-        @include mixins.flex-between();
+        @include mixins.flex-between;
+        margin:30px 0 15px 0;
     gap:10px;
+    }
+    &-title h3{
+        @include mixins.satoshi_custom(2rem,700,variables.$second-font-color);
+        letter-spacing: 1.5px;
+        line-height: 1.5;
     }
 }

@@ -1,15 +1,14 @@
 .container {
     width: 100%;
     max-width: 1771px;
-    height:100vh;
     margin: auto;
     background-color: #060606;
     display: grid;
-    grid-template-columns: clamp(180px, 18.4vw, 259px) 1fr 358px;  //(nav bar width), (content width)
-    grid-template-rows: 54px 1fr 81px;
+    grid-template-columns: clamp(180px, 18.4vw, 248px) 1fr ;  //(nav bar width), (content width), (frendly 358px)
+    grid-template-rows: 54px auto 81px;             //(header height), (content height), (footer height)
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     gap: 8px;
-    transition: grid-template-columns 1s ;
+    // transition: grid-template-columns 1s ;
 }
   

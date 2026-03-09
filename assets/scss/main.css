@@ -6,7 +6,7 @@ html, body {
   overflow-x: hidden;
 }
 
-h1, h2, h3 {
+h1, h2, h3, p {
   margin: 0;
   padding: 0;
 }
@@ -17,19 +17,22 @@ button {
   color: #E0E0E0;
 }
 
+a {
+  text-decoration: none;
+  color: #898989;
+}
+
 .container {
   width: 100%;
   max-width: 1771px;
-  height: 100vh;
   margin: auto;
   background-color: #060606;
   display: grid;
-  grid-template-columns: clamp(180px, 18.4vw, 259px) 1fr 358px;
-  grid-template-rows: 54px 1fr 81px;
+  grid-template-columns: clamp(180px, 18.4vw, 248px) 1fr;
+  grid-template-rows: 54px auto 81px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   gap: 8px;
-  transition: grid-template-columns 1s;
 }
 
 .header {
@@ -51,7 +54,7 @@ button {
   gap: 10.7px;
 }
 .header-home {
-  width: clamp(80px, 18vw, 210px);
+  width: clamp(80px, 18vw, 190px);
   max-width: 210px;
   height: 46px;
   background-color: #111111;
@@ -88,7 +91,7 @@ button {
   color: #E0E0E0;
 }
 .header-search {
-  width: clamp(50px, 18vw, 210px);
+  width: clamp(50px, 18vw, 190px);
   max-width: 210px;
   display: flex;
   align-items: center;
@@ -108,7 +111,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 13px;
+  gap: clamp(1px, 10vw, 13px);
+  cursor: pointer;
 }
 .header-item-icon {
   display: flex;
@@ -121,15 +125,9 @@ button {
 .nav {
   grid-area: 1/1/4/2;
   background-color: #060606;
+  border: 1px solid #202020;
   border-radius: 10px;
   margin: 7px 0 7px 7px;
-}
-.nav-wrapperr {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  gap: 10.7px;
 }
 .nav-item {
   position: relative;
@@ -150,15 +148,18 @@ button {
   cursor: pointer;
 }
 .nav-item-title {
-  max-width: 207px;
+  max-width: 187px;
   font-family: satoshi;
   font-size: 1.4rem;
   font-weight: 400;
   color: #898989;
 }
 .nav-item-sublist-arrow {
-  width: 41px;
+  width: 40.4px;
   margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-item:hover {
@@ -220,9 +221,12 @@ button {
   background-color: #060606;
   border: 1px solid #202020;
   border-radius: 10px;
-  margin: 4px 7px 0 0;
+  margin: 4px 0 0 0;
   padding: 0 25px;
-  max-width: 1400px;
+  max-width: 1491px;
+  height: calc(100vmin - 54px - 104px);
+  overflow-y: hidden;
+  scrollbar-width: none;
 }
 .content-header-btn {
   height: 59px;
@@ -235,12 +239,12 @@ button {
   justify-content: flex-start;
   gap: 10px;
 }
-.content-header-btn button {
+.content-header-btn a {
   padding: 8px 15px;
   border-radius: 8px;
   background-color: #202020;
 }
-.content-header-btn img {
+.content-header-btn button {
   margin-left: auto;
 }
 .content-header-btn .active {
@@ -250,7 +254,16 @@ button {
   background-color: #E0E0E0;
 }
 
+.card-wrapper {
+  height: calc(100vh - 220px);
+  overflow-y: auto;
+  box-sizing: border-box;
+  scrollbar-width: none;
+}
+
 .made-for-you-title-btn {
+  height: 40.4px;
+  margin: 10px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -259,6 +272,14 @@ button {
   width: 100%;
   max-width: 1440px;
   height: 311px;
+}
+.made-for-you-wrapper h3 {
+  font-family: satoshi;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #E0E0E0;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
 }
 .made-for-you-cards {
   display: flex;
@@ -272,12 +293,6 @@ button {
 }
 .made-for-you-card img {
   margin: 8px 0;
-}
-.made-for-you-card h3 {
-  font-family: satoshi;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #E0E0E0;
 }
 
 .card-name {
@@ -334,41 +349,126 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 30px 0 15px 0;
   gap: 10px;
+}
+.your-top-mixes-title h3 {
+  font-family: satoshi;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #E0E0E0;
+  letter-spacing: 1.5px;
+  line-height: 1.5;
 }
 
 .friends-activity {
+  display: none;
+}
+.friends-activity-list {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.friends-activity-list-member {
+  max-width: 277px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 8px;
+}
+.friends-activity-member-content {
+  width: 100%;
+  max-width: 217px;
+  height: 46px;
+}
+.friends-activity-member-name {
+  height: 16px;
+}
+.friends-activity-member-name p {
+  font-family: satoshi;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #E0E0E0;
+  letter-spacing: 1.3px;
+  line-height: 1.5;
+  margin-left: 8px;
+}
+.friends-activity-member-info {
+  width: 237px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.friends-activity-playsound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+.friends-activity-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 19px;
+  height: 30px;
+}
+.friends-activity-member-info .sound-track-name {
+  font-family: satoshi;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #E0E0E0;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+.friends-activity-member-info .sound-track-autor {
+  font-family: satoshi;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #898989;
+  letter-spacing: 0.3px;
+  line-height: 1.5;
+}
+
+.container.view_hide {
+  grid-template-columns: clamp(180px, 18.4vw, 248px) 1fr 358px;
+}
+
+.container.view_hide .friends-activity {
+  display: block;
   grid-area: 2/3/3/4;
   background-color: #060606;
   border-radius: 10px;
-  margin: 4px 7px 0 0;
+  margin: 4px 8px 0 0;
   border: 1px solid #202020;
   border-radius: 10px;
   padding: 10px;
 }
-.friends-activity-wrapper {
+.container.view_hide .friends-activity-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.friends-activity-header {
+.container.view_hide .friends-activity-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.friends-activity-title h3 {
+.container.view_hide .friends-activity-title h3 {
   font-family: satoshi;
   font-size: 1.4rem;
   font-weight: 500;
   color: #E0E0E0;
 }
-.friends-activity-btn {
+.container.view_hide .friends-activity-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
-.friends-activity .friends-item-icon {
+.container.view_hide .friends-activity .friends-item-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -376,32 +476,21 @@ button {
   height: 40.41px;
 }
 
-.friends-activity > p {
-  color: aliceblue;
-}
-
-.container.collapse {
-  grid-template-columns: clamp(180px, 18.4vw, 259px) 1fr 0px;
-  transition: grid-template-columns 1s;
-}
-
-.container.collapse .friends-activity {
-  display: none;
-}
-
 .footer {
   grid-area: 3/2/4/4;
   background-color: #333842;
   border-radius: 10px;
   border: 1px solid #202020;
-  margin: 0 7px 7px 0;
+  margin: 0 7px 7px 7px;
   padding: 0 21px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 8px;
+  position: fixed;
+  bottom: 0;
+  left: clamp(180px, 18.4vw, 248px);
 }
-
 .footer-right-icons {
   width: 348px;
 }
@@ -430,13 +519,7 @@ button {
   color: #E0E0E0;
 }
 
-.singer-info span:nth-child(2) {
-  font-family: satoshi;
-  font-size: 1.4rem;
-  font-weight: 400;
-  color: #898989;
-}
-
+.singer-info span:nth-child(2),
 .singer-info span:nth-child(3) {
   font-family: satoshi;
   font-size: 1.4rem;
@@ -451,24 +534,32 @@ button {
   margin-left: auto;
 }
 
+@media (max-width: 1024px) {
+  .footer {
+    left: 85px;
+  }
+}
 @font-face {
   font-family: Satoshi;
   src: url(webfonts/Satoshi-Regular.woff2);
 }
 @media (max-width: 1024px) {
   .container {
-    grid-template-columns: 80px 1fr;
+    grid-template-columns: 85px 1fr;
     gap: 8px;
   }
-  .nav-item {
-    gap: 0.7px;
-    margin-left: 1px;
+  .container.view_hide {
+    grid-template-columns: 85px 1fr 358px;
   }
   .nav-item-title {
     display: none;
   }
   .nav-item-sublist-arrow {
-    margin-left: 5px;
+    margin-left: -10px;
+    width: 20px;
+  }
+  .header-right-btn {
+    gap: 5px;
   }
 }
 @media (max-width: 768px) {
@@ -478,10 +569,16 @@ button {
   .header-left-btn {
     gap: 0;
   }
+  .header-right-btn {
+    gap: 0;
+  }
   .header-home,
   .header-discover,
   .header-search {
     width: 55px;
+  }
+  .friends-activity {
+    display: none;
   }
 }
 
