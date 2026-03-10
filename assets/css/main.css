@@ -40,21 +40,18 @@ a {
   border-radius: 10px;
   margin: 7px 7px 4px 0;
 }
-
 .header-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 54px;
 }
-
 .header-left-btn {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 10.7px;
 }
-
 .header-home {
   width: clamp(80px, 18vw, 190px);
   max-width: 210px;
@@ -66,18 +63,15 @@ a {
   justify-content: flex-start;
   gap: 10.7px;
 }
-
 .header-home img {
   margin-left: 15px;
 }
-
 .header-home span {
   font-family: satoshi;
   font-size: 1.4rem;
   font-weight: 400;
   color: #E0E0E0;
 }
-
 .header-discover {
   width: clamp(80px, 18vw, 190px);
   max-width: 210px;
@@ -86,18 +80,15 @@ a {
   justify-content: flex-start;
   gap: 10.7px;
 }
-
 .header-discover img {
   margin-left: 15px;
 }
-
 .header-discover span {
   font-family: satoshi;
   font-size: 1.4rem;
   font-weight: 400;
   color: #E0E0E0;
 }
-
 .header-search {
   width: clamp(50px, 18vw, 190px);
   max-width: 210px;
@@ -106,18 +97,15 @@ a {
   justify-content: flex-start;
   gap: 10.7px;
 }
-
 .header-search img {
   margin-left: 15px;
 }
-
 .header-search span {
   font-family: satoshi;
   font-size: 1.4rem;
   font-weight: 400;
   color: #E0E0E0;
 }
-
 .header-right-btn {
   display: flex;
   align-items: center;
@@ -125,7 +113,6 @@ a {
   gap: clamp(1px, 10vw, 13px);
   cursor: pointer;
 }
-
 .header-item-icon {
   display: flex;
   align-items: center;
@@ -141,7 +128,6 @@ a {
   border-radius: 10px;
   margin: 7px 0 7px 7px;
 }
-
 .nav-item {
   position: relative;
   height: 40.4px;
@@ -152,7 +138,6 @@ a {
   margin-left: 11px;
   cursor: pointer;
 }
-
 .nav-item-icon {
   height: inherit;
   width: 40.4px;
@@ -161,7 +146,6 @@ a {
   justify-content: center;
   cursor: pointer;
 }
-
 .nav-item-title {
   max-width: 187px;
   font-family: satoshi;
@@ -169,7 +153,6 @@ a {
   font-weight: 400;
   color: #898989;
 }
-
 .nav-item-sublist-arrow {
   width: 40.4px;
   margin-left: auto;
@@ -243,7 +226,6 @@ a {
   height: 100%;
   overflow: hidden;
 }
-
 .content-header-btn {
   height: 59px;
   font-family: satoshi;
@@ -255,17 +237,14 @@ a {
   justify-content: flex-start;
   gap: 10px;
 }
-
 .content-header-btn a {
   padding: 8px 15px;
   border-radius: 8px;
   background-color: #202020;
 }
-
 .content-header-btn button {
   margin-left: auto;
 }
-
 .content-header-btn .active {
   padding: 8px 15px;
   border-radius: 8px;
@@ -280,13 +259,11 @@ a {
   align-items: center;
   justify-content: space-between;
 }
-
 .made-for-you-wrapper {
   width: 100%;
   max-width: 1440px;
   height: 311px;
 }
-
 .made-for-you-wrapper h3 {
   font-family: satoshi;
   font-size: 2rem;
@@ -295,7 +272,6 @@ a {
   letter-spacing: 1.5px;
   line-height: 1.5;
 }
-
 .made-for-you-cards {
   display: flex;
   align-items: center;
@@ -303,11 +279,9 @@ a {
   gap: 11px;
   margin-bottom: 10px;
 }
-
 .made-for-you-card {
   width: 170px;
 }
-
 .made-for-you-card img {
   margin: 8px 0;
 }
@@ -317,53 +291,42 @@ a {
   align-items: center;
   justify-content: space-between;
 }
-
 .card-title {
   font-family: satoshi;
   font-size: 1.4rem;
   font-weight: 500;
   color: #E0E0E0;
 }
-
 .card-rating {
   font-family: satoshi;
   font-size: 1.4rem;
   font-weight: 400;
   color: #E0E0E0;
 }
-
 .card-rating-c1 {
   color: #CE6E9A;
 }
-
 .card-rating-c2 {
   color: #95E6D3;
 }
-
 .card-rating-c3 {
   color: #F4B8BD;
 }
-
 .card-rating-c4 {
   color: #C3E7B7;
 }
-
 .card-rating-c5 {
   color: #F37FA6;
 }
-
 .card-rating-c6 {
   color: #A0BEC8;
 }
-
 .card-rating-c7 {
   color: #FDD87D;
 }
-
 .card-rating-c8 {
   color: #D4B2A9;
 }
-
 .card-info p {
   font-family: satoshi;
   font-size: 1.2rem;
@@ -384,14 +347,12 @@ a {
 .friends-activity {
   display: none;
 }
-
 .friends-activity-list {
   margin-top: 32px;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-
 .friends-activity-list-member {
   max-width: 277px;
   display: flex;
@@ -399,17 +360,14 @@ a {
   justify-content: flex-start;
   padding-left: 8px;
 }
-
 .friends-activity-member-content {
   width: 100%;
   max-width: 217px;
   height: 46px;
 }
-
 .friends-activity-member-name {
   height: 16px;
 }
-
 .friends-activity-member-name p {
   font-family: satoshi;
   font-size: 1.2rem;
@@ -419,7 +377,6 @@ a {
   line-height: 1.5;
   margin-left: 8px;
 }
-
 .friends-activity-member-info {
   width: 237px;
   height: 30px;
@@ -427,7 +384,6 @@ a {
   align-items: center;
   justify-content: flex-start;
 }
-
 .friends-activity-playsound {
   display: flex;
   align-items: center;
@@ -435,7 +391,6 @@ a {
   width: 30px;
   height: 30px;
 }
-
 .friends-activity-dot {
   display: flex;
   align-items: center;
@@ -443,7 +398,6 @@ a {
   width: 19px;
   height: 30px;
 }
-
 .friends-activity-member-info .sound-track-name {
   font-family: satoshi;
   font-size: 1.4rem;
@@ -452,7 +406,6 @@ a {
   letter-spacing: 1px;
   line-height: 1.5;
 }
-
 .friends-activity-member-info .sound-track-autor {
   font-family: satoshi;
   font-size: 1.4rem;
@@ -476,33 +429,28 @@ a {
   border-radius: 10px;
   padding: 10px;
 }
-
 .container.view_hide .friends-activity-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
 .container.view_hide .friends-activity-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
 .container.view_hide .friends-activity-title h3 {
   font-family: satoshi;
   font-size: 1.4rem;
   font-weight: 500;
   color: #E0E0E0;
 }
-
 .container.view_hide .friends-activity-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
-
 .container.view_hide .friends-activity .friends-item-icon {
   display: flex;
   align-items: center;
@@ -593,21 +541,17 @@ a {
   overflow: hidden;
   border-radius: 10px;
 }
-
 .about-artist-hero-image {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
   display: block;
 }
-
 .about-artist-hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.45) 55%, rgba(0, 0, 0, 0.92) 100%);
 }
-
 .about-artist-hero-content {
   position: absolute;
   left: 0;
@@ -621,11 +565,9 @@ a {
   align-items: flex-end;
   gap: 20px;
 }
-
 .about-artist-hero-info {
   min-width: 0;
 }
-
 .about-artist-hero-actions {
   display: flex;
   align-items: center;
@@ -661,7 +603,6 @@ a {
   align-items: center;
   justify-content: center;
 }
-
 .about-artist-play-button img {
   width: 18px;
   height: 18px;
@@ -677,7 +618,6 @@ a {
   justify-content: center;
   flex-shrink: 0;
 }
-
 .about-artist-follow-button img {
   display: block;
   height: 34px;
@@ -696,7 +636,6 @@ a {
   justify-content: center;
   flex-shrink: 0;
 }
-
 .about-artist-icon-button img {
   width: 16px;
   height: 16px;
@@ -716,7 +655,6 @@ a {
   gap: 50px;
   flex-wrap: wrap;
 }
-
 .about-artist-menu-list a {
   position: relative;
   padding: 10px 0;
@@ -727,11 +665,9 @@ a {
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
 }
-
 .about-artist-menu-list a[data-active=true] {
   color: #fff;
 }
-
 .about-artist-menu-list a[data-active=true]::after {
   content: "";
   position: absolute;
@@ -753,7 +689,6 @@ a {
   justify-content: center;
   flex-shrink: 0;
 }
-
 .about-artist-menu-search img {
   width: 40px;
   height: 40px;
@@ -794,7 +729,6 @@ a {
   max-width: 650px;
   flex: 1 1 auto;
 }
-
 .about-artist-description p {
   margin: 0;
   font-family: Satoshi, Arial, sans-serif;
@@ -992,21 +926,17 @@ a {
   overflow: hidden;
   border-radius: 10px 10px 0 0;
 }
-
 .grid-albums-hero-image {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
   display: block;
 }
-
 .grid-albums-hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.45) 55%, rgba(0, 0, 0, 0.92) 100%);
 }
-
 .grid-albums-hero-content {
   position: absolute;
   left: 0;
@@ -1020,7 +950,6 @@ a {
   align-items: flex-end;
   gap: 20px;
 }
-
 .grid-albums-hero-actions {
   display: flex;
   align-items: center;
@@ -1112,7 +1041,6 @@ a {
   align-items: center;
   justify-content: center;
 }
-
 .grid-albums-menu-icon img {
   width: 37px;
   height: 37px;
@@ -1169,7 +1097,6 @@ a {
   max-width: 100%;
   display: block;
   aspect-ratio: 1/1;
-  -o-object-fit: cover;
   object-fit: cover;
   border-radius: 12px;
 }
@@ -1318,6 +1245,456 @@ a {
     margin-left: auto;
   }
 }
+.list-albums-page {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  background: #060606;
+  color: #fff;
+  border-radius: 10px;
+  padding-bottom: 24px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* =========================
+   HERO
+========================= */
+.list-albums-hero {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  aspect-ratio: 1291/370;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+.list-albums-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.list-albums-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.45) 55%, rgba(0, 0, 0, 0.92) 100%);
+}
+.list-albums-hero-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 18px;
+  padding: 0 26px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+}
+.list-albums-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.list-albums-item-title {
+  margin: 0 0 8px;
+}
+.list-albums-item-title a {
+  font-family: Satoshi, Arial, sans-serif;
+  font-size: 2.7rem;
+  font-weight: 700;
+  color: #e0e0e0;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.list-albums-monthly-listeners {
+  margin: 0;
+  font-family: Satoshi, Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.list-albums-play-button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #1ed760;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.list-albums-play-button img {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.list-albums-follow-button {
+  height: 34px;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.list-albums-follow-button img {
+  display: block;
+  height: 34px;
+  width: auto;
+}
+
+.list-albums-icon-button {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.list-albums-icon-button img {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+/* =========================
+   MENU
+========================= */
+.list-albums-menu {
+  padding: 0 24px;
+}
+
+.list-albums-menu-list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  min-width: 0;
+  width: 100%;
+}
+
+.list-albums-menu-primary {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-width: 0;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+}
+
+.list-albums-menu-primary a {
+  font-family: Satoshi, Arial, sans-serif;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  padding: 18px 0 16px;
+  position: relative;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.list-albums-menu-primary a[data-active=true] {
+  color: #fff;
+}
+
+.list-albums-menu-primary a[data-active=true]::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #1ed760;
+  border-radius: 2px;
+}
+
+.list-albums-menu-actions {
+  width: 83px;
+  height: 37px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.list-albums-menu-icon {
+  width: 37px;
+  height: 37px;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.list-albums-menu-icon img {
+  width: 37px;
+  height: 37px;
+  display: block;
+}
+
+.list-albums-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  margin: 0;
+}
+
+/* =========================
+   TABLE / LIST
+========================= */
+.list-albums-content {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding: 22px 12px 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.list-albums-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.list-albums-row {
+  width: 100%;
+}
+
+.list-albums-cover-cell {
+  width: 130px;
+  padding: 0 16px 18px 0;
+  vertical-align: top;
+}
+.list-albums-cover-cell a {
+  display: block;
+  width: 130px;
+  height: 130px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.list-albums-cover-cell img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+.list-albums-info-cell {
+  padding: 0 12px 18px 0;
+  vertical-align: top;
+  width: auto;
+}
+
+.list-albums-arrow-cell {
+  width: 40px;
+  padding: 0 28px 0 18px;
+  vertical-align: top;
+  text-align: right;
+}
+.list-albums-arrow-cell a {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+.list-albums-arrow-cell img {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+.list-albums-item-title {
+  margin: 0 0 8px;
+  width: 100%;
+  max-width: 258px;
+}
+.list-albums-item-title a {
+  display: inline-block;
+  text-decoration: none;
+  font-family: Satoshi, Arial, sans-serif;
+  font-size: 2.7rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #e0e0e0;
+}
+
+.list-albums-item-meta {
+  width: 100%;
+  max-width: 210px;
+  margin: 0 0 10px;
+  font-family: Satoshi, Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #898989;
+}
+.list-albums-item-meta span {
+  margin: 0 6px;
+}
+
+.list-albums-item-actions {
+  width: 100%;
+  max-width: 366px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.list-albums-item-actions button {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 40px;
+}
+.list-albums-item-actions img {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+.list-albums-divider-row td {
+  padding: 0 0 18px;
+}
+
+.list-albums-divider-row hr {
+  border: none;
+  height: 1px;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .list-albums-hero-content {
+    padding: 0 18px;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .list-albums-title {
+    font-size: 3.2rem;
+  }
+  .list-albums-menu {
+    padding: 0 18px;
+  }
+  .list-albums-menu-primary {
+    gap: 16px;
+  }
+  .list-albums-content {
+    padding: 20px 12px 0;
+  }
+  .list-albums-cover-cell {
+    width: 100px;
+  }
+  .list-albums-cover-cell a,
+  .list-albums-cover-cell img {
+    width: 100px;
+    height: 100px;
+  }
+  .list-albums-item-title a {
+    font-size: 2rem;
+  }
+  .list-albums-item-actions {
+    max-width: 100%;
+    gap: 6px;
+  }
+  .list-albums-item-actions button,
+  .list-albums-item-actions img {
+    width: 32px;
+    height: 32px;
+  }
+  .list-albums-arrow-cell {
+    width: 32px;
+  }
+  .list-albums-arrow-cell a,
+  .list-albums-arrow-cell img {
+    width: 32px;
+    height: 32px;
+  }
+}
+@media (max-width: 600px) {
+  .list-albums-menu-list {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .list-albums-menu-actions {
+    margin-left: auto;
+  }
+  .list-albums-table,
+  .list-albums-table tbody,
+  .list-albums-row,
+  .list-albums-cover-cell,
+  .list-albums-info-cell,
+  .list-albums-arrow-cell {
+    display: block;
+    width: 100%;
+  }
+  .list-albums-row {
+    position: relative;
+    padding-bottom: 18px;
+  }
+  .list-albums-cover-cell {
+    padding: 0 0 12px;
+  }
+  .list-albums-cover-cell a,
+  .list-albums-cover-cell img {
+    width: 110px;
+    height: 110px;
+  }
+  .list-albums-info-cell {
+    padding: 0;
+  }
+  .list-albums-arrow-cell {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0;
+    text-align: right;
+  }
+  .list-albums-item-title {
+    max-width: 100%;
+  }
+  .list-albums-item-meta {
+    max-width: 100%;
+  }
+  .list-albums-item-actions {
+    max-width: 100%;
+  }
+  .list-albums-divider-row {
+    display: block;
+  }
+  .list-albums-divider-row td {
+    display: block;
+    width: 100%;
+    padding: 0 0 18px;
+  }
+}
 @font-face {
   font-family: Satoshi;
   src: url(webfonts/Satoshi-Regular.woff2);
@@ -1353,17 +1730,14 @@ a {
 HEAD .nav-item-sublist-arrow {
   margin-left: 5px;
 }
-
 HEAD .nav-item-sublist-arrow .header-right-btn {
   gap: 0;
 }
-
 HEAD .nav-item-sublist-arrow .header-home,
 HEAD .nav-item-sublist-arrow .header-discover,
 HEAD .nav-item-sublist-arrow .header-search {
   width: 55px;
 }
-
 HEAD .nav-item-sublist-arrow .friends-activity {
   display: none;
 }
@@ -1380,6 +1754,6 @@ HEAD .nav-item-sublist-arrow .friends-activity {
   .header-search {
     width: 55px;
   }
-} 
+}
 
 /*# sourceMappingURL=main.css.map */
