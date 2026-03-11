@@ -3,16 +3,22 @@
 
 .footer {
     grid-area: 3 / 2 / 4 / 4;
+    width: 100%;
+    max-width: variables.$footer-width;
+    height: variables.$footer-height;
     background-color: #333842;
     border-radius: 10px;
-    border:1px solid #202020;
-    margin:0 7px 7px 7px;
-    padding:0 21px;
+    border: 1px solid variables.$base-border-color;
+    margin: 0 7px 7px 7px;
+    padding: 0 21px;
+    opacity: 1;
     @include mixins.flex-start;
-    gap:8px;
+    gap: 8px;
     position: fixed;
     bottom: 0;
-    left: clamp(180px, 18.4vw, 248px);
+    left: max(clamp(180px, 18.4vw, 248px), calc((100vw - 1771px) / 2 + clamp(180px, 18.4vw, 248px)));
+    right: max(0px, calc((100vw - 1771px) / 2));
+    z-index: 100;
 
     &-right-icons {
         width: 348px;
@@ -22,7 +28,7 @@
     @include mixins.satoshi_custom(1.2rem,400,variables.$base-font-color);
 }
 .play-track {
-    color:white;
+    color: variables.$h-fonts-color;
 }
 .singer-info {
     display: flex;
@@ -41,8 +47,8 @@
     margin-left: auto;
 }
 
-@media (max-width:1024px) {
+@media (max-width: 1024px) {
     .footer {
-        left: 85px;
+        grid-area: 3 / 2 / 4 / 4;
     }
 }

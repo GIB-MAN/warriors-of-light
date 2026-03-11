@@ -3,14 +3,18 @@
 
 .content {
     grid-area: 2 / 2 / 3 / 3;
+    width: 100%;
+    min-width: 0;
+    max-width: variables.$content-width;
     background-color: variables.$base-bg-color;
-    border:1px solid #202020;
+    border: 1px solid variables.$base-border-color;
     border-radius: 10px;
-    margin:4px 0 0 0;
+    margin: 4px 0 0 0;
     padding: 0 25px;
-    max-width: 1491px;
-    height: calc(100vmin - 54px - 104px);
-    overflow-y: hidden;
+    height: variables.$content-height;
+    opacity: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
     scrollbar-width: none;
 
 
@@ -23,7 +27,7 @@
         & a{
             padding:8px 15px;
             border-radius: 8px;
-            background-color: #202020;
+            background-color: variables.$base-bg-hover;
         }
         & button{
             margin-left:auto;
@@ -31,8 +35,8 @@
         & .active{
             padding:8px 15px;
             border-radius: 8px;
-            color:#111111;
-            background-color: #E0E0E0;
+            color: #111111;
+            background-color: variables.$second-font-color;
         }
     }
 }
@@ -48,6 +52,33 @@
         margin:10px 0;
         @include mixins.flex-between;
         }
+    &-buttons {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        gap: 4px;
+
+        button {
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+
+            img {
+                width: 20px;
+                height: 20px;
+                pointer-events: none;
+            }
+        }
+    }
 
     &-wrapper {
         width: 100%;
@@ -65,13 +96,35 @@
         @include mixins.flex-between;
         gap:11px;
         margin-bottom: 10px;
-        }
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scrollbar-width: thin;
+        scrollbar-color: variables.$base-border-color transparent;
+        flex-wrap: nowrap;
+    }
+    &-cards::-webkit-scrollbar {
+        height: 6px;
+    }
+    &-cards::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    &-cards::-webkit-scrollbar-thumb {
+        background: variables.$base-border-color;
+        border-radius: 3px;
+    }
     &-card {
-        width: 170px;
+        width: variables.$card-width;
+        height: variables.$card-height;
+        flex-shrink: 0;
+        opacity: 1;
+
         img {
-            margin:8px 0;
+            width: variables.$card-image-width;
+            height: variables.$card-image-height;
+            object-fit: cover;
+            margin: variables.$card-image-gap 0;
+            opacity: 1;
         }
-    
     }
 }
 .card{
@@ -79,10 +132,10 @@
         @include mixins.flex-between;
         }
     &-title {
-        @include mixins.satoshi_custom(1.4rem,500,#E0E0E0);
-        }
-    &-rating{
-        @include mixins.satoshi_custom(1.4rem,400,#E0E0E0);
+        @include mixins.satoshi_custom(1.4rem, 500, variables.$second-font-color);
+    }
+    &-rating {
+        @include mixins.satoshi_custom(1.4rem, 400, variables.$second-font-color);
         &-c1{
             color:#CE6E9A;
         }
@@ -108,8 +161,8 @@
             color:#D4B2A9;
         }
     }
-    &-info p{
-        @include mixins.satoshi_custom(1.2rem,400,#898989);
+    &-info p {
+        @include mixins.satoshi_custom(1.2rem, 400, variables.$base-font-color);
         letter-spacing: 0.3px;
         line-height: 1.5;
     }
@@ -125,5 +178,32 @@
         @include mixins.satoshi_custom(2rem,700,variables.$second-font-color);
         letter-spacing: 1.5px;
         line-height: 1.5;
+    }
+    &-buttons {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        gap: 4px;
+
+        button {
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+
+            img {
+                width: 20px;
+                height: 20px;
+                pointer-events: none;
+            }
+        }
     }
 }

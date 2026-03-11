@@ -1,12 +1,24 @@
-html, body {
+@charset "UTF-8";
+/* ძირითადი ცვლადები */
+* {
+  box-sizing: border-box;
+}
+
+html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-size: 62.5%;
   overflow-x: hidden;
 }
 
-h1, h2, h3 {
+body {
+  margin: 0;
+  padding: 0 0 95px 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, p {
   margin: 0;
   padding: 0;
 }
@@ -17,19 +29,24 @@ button {
   color: #E0E0E0;
 }
 
+a {
+  text-decoration: none;
+  color: #898989;
+}
+
 .container {
   width: 100%;
   max-width: 1771px;
-  height: 100vh;
-  margin: auto;
+  min-height: 100vh;
+  margin: 0 auto;
   background-color: #060606;
+  opacity: 1;
   display: grid;
-  grid-template-columns: clamp(180px, 18.4vw, 259px) 1fr 358px;
-  grid-template-rows: 54px 1fr 81px;
+  grid-template-columns: clamp(180px, 18.4vw, 248px) 1fr;
+  grid-template-rows: 54px auto 81px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   gap: 8px;
-  transition: grid-template-columns 1s;
 }
 
 .search-header .header-home {
@@ -63,10 +80,6 @@ button {
 }
 .search-header .header-search-input::placeholder {
   color: #898989;
-}
-.search-header .header-search.active {
-  background-color: #111111;
-  border-radius: 10px;
 }
 
 .search-content {

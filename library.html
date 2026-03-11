@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<!-- Library - ბიბლიოთეკის გვერდი -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="assets/scss/main.css">
+    <link rel="stylesheet" href="assets/scss/library.css">
+</head>
+<body>
+    <div class="container" id="container">
+        <!-- Header - Home, Discover, Search -->
+        <header class="header">
+            <div class="header-wrapper">
+                <div class="header-left-btn">
+                    <a href="index.html" class="header-home header-active">
+                        <img src="assets/images/desktop/header/home-3.png" alt="">
+                        <span>Home</span>
+                    </a>
+                    <a href="#" class="header-discover">
+                        <img src="assets/images/desktop/header/discover-1.png" alt="">
+                        <span>Discover</span>
+                    </a>
+                    <a href="searchpage.html" class="header-search">
+                        <span class="header-search-icon">
+                            <img src="assets/images/desktop/header/search-1.png" alt="" class="search-icon-default">
+                            <img src="assets/images/desktop/search-page/search-active.png" alt="" class="search-icon-active">
+                        </span>
+                        <span>Search</span>
+                    </a>
+                </div>
+                <div class="header-right-btn">
+                    <a href="#" class="header-item-icon">
+                        <img src="assets/images/desktop/header/buzzer-1.png" alt="">
+                    </a>
+                    <a href="#" class="header-item-icon">
+                        <img src="assets/images/desktop/header/lock-open.png" alt="">
+                    </a>
+                    <a class="header-item-icon" onclick="friendsActivity()">
+                        <img src="assets/images/desktop/header/friends-1.png" alt="">
+                    </a>
+                    <a href="#" class="header-item-icon">
+                        <img src="assets/images/desktop/header/user-area.png" alt="">
+                    </a>
+                    <a href="#" class="header-item-icon">
+                        <img src="assets/images/desktop/header/settings-1.png" alt="">
+                    </a>
+                    <button class="header-add-btn" aria-label="Add">+</button>
+                </div>
+            </div>
+        </header>
+        <!-- Nav - ბიბლიოთეკის მენიუ -->
+        <nav class="nav">
+            <div class="nav-wrapper">
+                <a href="library.html" class="nav-item my-library">
+                    <div class="nav-item-icon" data-title="My Library">
+                        <img src="assets/images/desktop/nav/icon-my-library-1.png" alt="">
+                    </div>
+                    <div class="nav-item-title">
+                        <span>My Library</span>
+                    </div>
+                </a>
+                <a href="#" class="nav-item pins">
+                    <div class="nav-item-icon" data-title="Pins">
+                        <img src="assets/images/desktop/nav/icon-pins-1.png" alt="">
+                    </div>
+                    <div class="nav-item-title"><span>Pins</span></div>
+                    <div class="nav-item-sublist-arrow">
+                        <img src="assets/images/desktop/nav/icon-sublist-arrow.png" alt="">
+                    </div>
+                </a>
+                <div class="nav-playlists" onclick="togglePlaylists(event, this)">
+                    <div class="nav-item playlist nav-playlists-toggle">
+                        <div class="nav-item-icon" data-title="Playlists">
+                            <img src="assets/images/desktop/nav/icon-playlist-1.png" alt="">
+                        </div>
+                        <div class="nav-item-title"><span>Playlists</span></div>
+                        <div class="nav-item-sublist-arrow">
+                            <img src="assets/images/desktop/nav/icon-sublist-arrow.png" alt="">
+                        </div>
+                    </div>
+                    <div class="nav-playlists-sublist" onclick="event.stopPropagation()">
+                        <a href="playlistpage.html" class="nav-item nav-sublist-item">
+                            <div class="nav-item-icon"><img src="assets/images/desktop/nav/icon-playlist-1.png" alt=""></div>
+                            <div class="nav-item-title"><span>Daft Punk Mix</span></div>
+                        </a>
+                        <a href="#" class="nav-item nav-sublist-item">
+                            <div class="nav-item-icon"><img src="assets/images/desktop/nav/icon-playlist-1.png" alt=""></div>
+                            <div class="nav-item-title"><span>Chill stuff</span></div>
+                        </a>
+                        <a href="#" class="nav-item nav-sublist-item">
+                            <div class="nav-item-icon"><img src="assets/images/desktop/nav/icon-playlist-1.png" alt=""></div>
+                            <div class="nav-item-title"><span>Rock n Roll</span></div>
+                        </a>
+                        <a href="#" class="nav-item nav-sublist-item">
+                            <div class="nav-item-icon"><img src="assets/images/desktop/nav/icon-playlist-1.png" alt=""></div>
+                            <div class="nav-item-title"><span>The Jux Box</span></div>
+                        </a>
+                        <a href="#" class="nav-item nav-sublist-item">
+                            <div class="nav-item-icon"><img src="assets/images/desktop/nav/icon-playlist-1.png" alt=""></div>
+                            <div class="nav-item-title"><span>Selected Linkin Park</span></div>
+                        </a>
+                        <a href="#" class="nav-item nav-sublist-item">
+                            <div class="nav-item-icon"><img src="assets/images/desktop/nav/icon-playlist-1.png" alt=""></div>
+                            <div class="nav-item-title"><span>Vibe</span></div>
+                        </a>
+                    </div>
+                </div>
+                <a href="#" class="nav-item saves">
+                    <div class="nav-item-icon" data-title="Saves">
+                        <img src="assets/images/desktop/nav/icon-saves-1.png" alt="">
+                    </div>
+                    <div class="nav-item-title"><span>Saves</span></div>
+                    <div class="nav-item-sublist-arrow">
+                        <img src="assets/images/desktop/nav/icon-sublist-arrow.png" alt="">
+                    </div>
+                </a>
+                <a href="#" class="nav-item albums">
+                    <div class="nav-item-icon" data-title="Albums">
+                        <img src="assets/images/desktop/nav/icon-albums-1.png" alt="">
+                    </div>
+                    <div class="nav-item-title"><span>Albums</span></div>
+                    <div class="nav-item-sublist-arrow">
+                        <img src="assets/images/desktop/nav/icon-sublist-arrow.png" alt="">
+                    </div>
+                </a>
+                <a href="#" class="nav-item folders">
+                    <div class="nav-item-icon" data-title="Folders">
+                        <img src="assets/images/desktop/nav/icon-folders-1.png" alt="">
+                    </div>
+                    <div class="nav-item-title"><span>Folders</span></div>
+                    <div class="nav-item-sublist-arrow">
+                        <img src="assets/images/desktop/nav/icon-sublist-arrow.png" alt="">
+                    </div>
+                </a>
+                <a href="#" class="nav-item podcasts">
+                    <div class="nav-item-icon" data-title="Podcasts">
+                        <img src="assets/images/desktop/nav/icon-podcasts-1.png" alt="">
+                    </div>
+                    <div class="nav-item-title"><span>Podcasts</span></div>
+                    <div class="nav-item-sublist-arrow">
+                        <img src="assets/images/desktop/nav/icon-sublist-arrow.png" alt="">
+                    </div>
+                </a>
+                <a href="#" class="nav-item audiobooks">
+                    <div class="nav-item-icon" data-title="Audiobooks">
+                        <img src="assets/images/desktop/nav/icon-audiobooks-1.png" alt="">
+                    </div>
+                    <div class="nav-item-title"><span>Audiobooks</span></div>
+                    <div class="nav-item-sublist-arrow">
+                        <img src="assets/images/desktop/nav/icon-sublist-arrow.png" alt="">
+                    </div>
+                </a>
+                <a href="#" class="nav-item artists">
+                    <div class="nav-item-icon" data-title="Artists">
+                        <img src="assets/images/desktop/nav/icon-artists-1.png" alt="">
+                    </div>
+                    <div class="nav-item-title"><span>Artists</span></div>
+                    <div class="nav-item-sublist-arrow">
+                        <img src="assets/images/desktop/nav/icon-sublist-arrow.png" alt="">
+                    </div>
+                </a>
+            </div>
+        </nav>
+        <!-- Library კონტენტი - toolbar + ბარათების ბადე -->
+        <section class="content content-library">
+            <div class="content-wrapper">
+                <!-- Toolbar: ხედი, Recent, Group, ძებნა -->
+                <div class="library-toolbar">
+                    <div class="library-view-toggle">
+                        <button class="library-view-btn" aria-label="List view">
+                            <img src="assets/images/desktop/library/icons/icons big.png" alt="">
+                        </button>
+                        <button class="library-view-btn library-view-btn-active" aria-label="Grid view">
+                            <img src="assets/images/desktop/library/icons/icons big (1).png" alt="">
+                        </button>
+                    </div>
+                    <button class="library-sort-btn">
+                        <img src="assets/images/desktop/library/icons/icons big (2).png" alt="">
+                        <span>↑↓ Recent</span>
+                    </button>
+                    <button class="library-group-btn">
+                        <img src="assets/images/desktop/library/icons/icons big (3).png" alt="">
+                        <span>Group</span>
+                    </button>
+                    <button class="library-search-btn" aria-label="Search in library">
+                        <img src="assets/images/desktop/library/icons/icons big (4).png" alt="">
+                    </button>
+                </div>
+
+                <!-- ბარათების ბადე -->
+                <div class="library-grid">
+                    <a href="#" class="library-card library-card-playlist">
+                        <div class="library-card-cover">
+                            <img src="assets/images/desktop/library/cards/liked-songs.png" alt="Liked songs">
+                            <div class="library-card-pin">
+                                <img src="assets/images/desktop/library/icons/pin-icone.png" alt="" class="library-card-pin-icon" aria-hidden="true">
+                            </div>
+                        </div>
+                        <div class="library-card-info">
+                            <div class="library-card-text">
+                                <h3 class="library-card-title">Liked songs</h3>
+                            </div>
+                            <span class="library-card-count">152</span>
+                        </div>
+                    </a>
+                    <a href="#" class="library-card library-card-artist">
+                        <div class="library-card-cover">
+                            <img src="assets/images/desktop/library/cards/david-bowie.png" alt="David Bowie">
+                            <div class="library-card-pin">
+                                <img src="assets/images/desktop/library/icons/pin-icone.png" alt="" class="library-card-pin-icon" aria-hidden="true">
+                            </div>
+                        </div>
+                        <div class="library-card-info">
+                            <div class="library-card-text">
+                                <h3 class="library-card-title">David Bowie</h3>
+                            </div>
+                            <span class="library-card-count">8</span>
+                        </div>
+                    </a>
+                    <a href="#" class="library-card library-card-artist">
+                        <div class="library-card-cover">
+                            <img src="assets/images/desktop/library/cards/daft-pank.png" alt="Daft Punk">
+                            <div class="library-card-pin">
+                                <img src="assets/images/desktop/library/icons/pin-icone.png" alt="" class="library-card-pin-icon" aria-hidden="true">
+                            </div>
+                        </div>
+                        <div class="library-card-info">
+                            <div class="library-card-text">
+                                <h3 class="library-card-title">Daft Punk</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="library-card library-card-playlist">
+                        <div class="library-card-cover">
+                            <img src="assets/images/desktop/library/cards/chill-stuff.png" alt="Chill Stuff">
+                            <div class="library-card-pin">
+                                <img src="assets/images/desktop/library/icons/pin-icone.png" alt="" class="library-card-pin-icon" aria-hidden="true">
+                            </div>
+                        </div>
+                        <div class="library-card-info">
+                            <div class="library-card-text">
+                                <h3 class="library-card-title">Chill Stuff</h3>
+                            </div>
+                            <span class="library-card-count">50</span>
+                        </div>
+                    </a>
+                    <a href="#" class="library-card library-card-playlist">
+                        <div class="library-card-cover">
+                            <img src="assets/images/desktop/library/cards/the-jux-box.png" alt="The Jux Box">
+                            <div class="library-card-pin">
+                                <img src="assets/images/desktop/library/icons/pin-icone.png" alt="" class="library-card-pin-icon" aria-hidden="true">
+                            </div>
+                        </div>
+                        <div class="library-card-info">
+                            <div class="library-card-text">
+                                <h3 class="library-card-title">The Jux Box</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="library-card library-card-playlist">
+                        <div class="library-card-cover">
+                            <img src="assets/images/desktop/library/cards/vibe.png" alt="Vibe">
+                            <div class="library-card-pin">
+                                <img src="assets/images/desktop/library/icons/pin-icone.png" alt="" class="library-card-pin-icon" aria-hidden="true">
+                            </div>
+                        </div>
+                        <div class="library-card-info">
+                            <div class="library-card-text">
+                                <h3 class="library-card-title">Vibe</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="library-card library-card-playlist">
+                        <div class="library-card-cover">
+                            <img src="assets/images/desktop/library/cards/selekted-linkin.png" alt="Selected Linkin Park">
+                            <div class="library-card-pin">
+                                <img src="assets/images/desktop/library/icons/pin-icone.png" alt="" class="library-card-pin-icon" aria-hidden="true">
+                            </div>
+                        </div>
+                        <div class="library-card-info">
+                            <div class="library-card-text">
+                                <h3 class="library-card-title">Selected Linkin Park</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="library-card library-card-playlist">
+                        <div class="library-card-cover">
+                            <img src="assets/images/desktop/library/cards/fav-bands.png" alt="Fav bands">
+                            <div class="library-card-pin">
+                                <img src="assets/images/desktop/library/icons/pin-icone.png" alt="" class="library-card-pin-icon" aria-hidden="true">
+                            </div>
+                        </div>
+                        <div class="library-card-info">
+                            <div class="library-card-text">
+                                <h3 class="library-card-title">Fav bands</h3>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="library-card library-card-album">
+                        <div class="library-card-cover">
+                            <img src="assets/images/desktop/library/cards/meteora.png" alt="Meteora">
+                            <div class="library-card-pin">
+                                <img src="assets/images/desktop/library/icons/pin-icone.png" alt="" class="library-card-pin-icon" aria-hidden="true">
+                            </div>
+                        </div>
+                        <div class="library-card-info">
+                            <div class="library-card-text">
+                                <h3 class="library-card-title">Meteora</h3>
+                                <p class="library-card-subtitle">Linkin Park</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="library-card library-card-album">
+                        <div class="library-card-cover">
+                            <img src="assets/images/desktop/library/cards/random-access.png" alt="Random Access Memories">
+                            <div class="library-card-pin">
+                                <img src="assets/images/desktop/library/icons/pin-icone.png" alt="" class="library-card-pin-icon" aria-hidden="true">
+                            </div>
+                        </div>
+                        <div class="library-card-info">
+                            <div class="library-card-text">
+                                <h3 class="library-card-title">Random Access Memories</h3>
+                                <p class="library-card-subtitle">Daft Punk</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="library-card library-card-album">
+                        <div class="library-card-cover">
+                            <img src="assets/images/desktop/library/cards/abbey-road.png" alt="Abbey Road">
+                            <div class="library-card-pin">
+                                <img src="assets/images/desktop/library/icons/pin-icone.png" alt="" class="library-card-pin-icon" aria-hidden="true">
+                            </div>
+                        </div>
+                        <div class="library-card-info">
+                            <div class="library-card-text">
+                                <h3 class="library-card-title">Abbey Road</h3>
+                                <p class="library-card-subtitle">The Beatles</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="library-card library-card-album">
+                        <div class="library-card-cover">
+                            <img src="assets/images/desktop/library/cards/back-holes-and.png" alt="Black Holes and Revelations">
+                            <div class="library-card-pin">
+                                <img src="assets/images/desktop/library/icons/pin-icone.png" alt="" class="library-card-pin-icon" aria-hidden="true">
+                            </div>
+                        </div>
+                        <div class="library-card-info">
+                            <div class="library-card-text">
+                                <h3 class="library-card-title">Black Holes and Revelations</h3>
+                                <p class="library-card-subtitle">Muse</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="library-card library-card-mix">
+                        <div class="library-card-cover">
+                            <img src="assets/images/desktop/library/cards/daily-mix-1.png" alt="Daily Mix 1">
+                            <div class="library-card-pin">
+                                <img src="assets/images/desktop/library/icons/pin-icone.png" alt="" class="library-card-pin-icon" aria-hidden="true">
+                            </div>
+                        </div>
+                        <div class="library-card-info">
+                            <div class="library-card-text">
+                                <h3 class="library-card-title">Daily Mix 1</h3>
+                            </div>
+                            <span class="library-card-count">50</span>
+                        </div>
+                    </a>
+                    <a href="#" class="library-card library-card-mix">
+                        <div class="library-card-cover">
+                            <img src="assets/images/desktop/library/cards/daily-mix-2.png" alt="Daily Mix 2">
+                            <div class="library-card-pin">
+                                <img src="assets/images/desktop/library/icons/pin-icone.png" alt="" class="library-card-pin-icon" aria-hidden="true">
+                            </div>
+                        </div>
+                        <div class="library-card-info">
+                            <div class="library-card-text">
+                                <h3 class="library-card-title">Daily Mix 2</h3>
+                            </div>
+                            <span class="library-card-count">50</span>
+                        </div>
+                    </a>
+                    <a href="#" class="library-card library-card-mix">
+                        <div class="library-card-cover">
+                            <img src="assets/images/desktop/library/cards/daily-mix-3.png" alt="Daily Mix 3">
+                            <div class="library-card-pin">
+                                <img src="assets/images/desktop/library/icons/pin-icone.png" alt="" class="library-card-pin-icon" aria-hidden="true">
+                            </div>
+                        </div>
+                        <div class="library-card-info">
+                            <div class="library-card-text">
+                                <h3 class="library-card-title">Daily Mix 3</h3>
+                            </div>
+                            <span class="library-card-count">50</span>
+                        </div>
+                    </a>
+                    <a href="#" class="library-card library-card-mix">
+                        <div class="library-card-cover">
+                            <img src="assets/images/desktop/library/cards/rock-mix.png" alt="Rock Mix">
+                            <div class="library-card-pin">
+                                <img src="assets/images/desktop/library/icons/pin-icone.png" alt="" class="library-card-pin-icon" aria-hidden="true">
+                            </div>
+                        </div>
+                        <div class="library-card-info">
+                            <div class="library-card-text">
+                                <h3 class="library-card-title">Rock Mix</h3>
+                                <p class="library-card-subtitle">Red Hot Chili Peppers, R.E.M.</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="library-card library-card-mix">
+                        <div class="library-card-cover">
+                            <img src="assets/images/desktop/library/cards/chill-mix.png" alt="Chill Mix">
+                            <div class="library-card-pin">
+                                <img src="assets/images/desktop/library/icons/pin-icone.png" alt="" class="library-card-pin-icon" aria-hidden="true">
+                            </div>
+                        </div>
+                        <div class="library-card-info">
+                            <div class="library-card-text">
+                                <h3 class="library-card-title">Chill Mix</h3>
+                                <p class="library-card-subtitle">MF DOOM, Daft Punk</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="library-card library-card-mix">
+                        <div class="library-card-cover">
+                            <img src="assets/images/desktop/library/cards/pop-mix.png" alt="Pop Mix">
+                            <div class="library-card-pin">
+                                <img src="assets/images/desktop/library/icons/pin-icone.png" alt="" class="library-card-pin-icon" aria-hidden="true">
+                            </div>
+                        </div>
+                        <div class="library-card-info">
+                            <div class="library-card-text">
+                                <h3 class="library-card-title">Pop Mix</h3>
+                                <p class="library-card-subtitle">Red Hot Chili Peppers, R.E.M.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Friends Activity - მეგობრების აქტივობა -->
+        <section class="friends-activity">
+            <div class="friends-activity-wapper">
+                <div class="friends-activity-header">
+                    <div class="friends-activity-title">
+                        <h3>Friends Activity</h3>
+                    </div>
+                    <div class="friends-activity-btn">
+                        <div class="friends-item-icon">
+                            <img src="assets/images/desktop/friends-activity/add-friends-1.png" alt="">
+                        </div>
+                        <div class="friends-item-icon" onclick="closeContainer()">
+                            <img src="assets/images/desktop/friends-activity/close-1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="friends-activity-list">
+                    <div class="friends-activity-list-member">
+                        <img src="assets/images/desktop/friends-activity/friend4.png" alt="">
+                        <div class="friends-activity-member-content">
+                            <div class="friends-activity-member-name"><p>FriendlyMusicListener</p></div>
+                            <div class="friends-activity-member-info">
+                                <div class="friends-activity-playsound">
+                                    <img src="assets/images/desktop/friends-activity/media-volume-anime.png" alt="">
+                                </div>
+                                <p class="sound-track-name">Goosebumps</p>
+                                <div class="friends-activity-dot"><img src="assets/images/desktop/friends-activity/dot.png" alt=""></div>
+                                <p class="sound-track-autor">Travis Scott</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="friends-activity-list-member">
+                        <img src="assets/images/desktop/friends-activity/friend1.png" alt="">
+                        <div class="friends-activity-member-content">
+                            <div class="friends-activity-member-name"><p>AverageMusicEnjoyer</p></div>
+                            <div class="friends-activity-member-info">
+                                <div class="friends-activity-playsound">
+                                    <img src="assets/images/desktop/friends-activity/media-volume-anime.png" alt="">
+                                </div>
+                                <p class="sound-track-name">Get Lucky</p>
+                                <div class="friends-activity-dot"><img src="assets/images/desktop/friends-activity/dot.png" alt=""></div>
+                                <p class="sound-track-autor">Daft Punk</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="friends-activity-list-member">
+                        <img src="assets/images/desktop/friends-activity/friend2.png" alt="">
+                        <div class="friends-activity-member-content">
+                            <div class="friends-activity-member-name"><p>MusicEnthusiast</p></div>
+                            <div class="friends-activity-member-info">
+                                <div class="friends-activity-playsound"><p class="sound-track-autor">1h</p></div>
+                                <p class="sound-track-name">would he</p>
+                                <div class="friends-activity-dot"><img src="assets/images/desktop/friends-activity/dot.png" alt=""></div>
+                                <p class="sound-track-autor">joji</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="friends-activity-list-member">
+                        <img src="assets/images/desktop/friends-activity/friend3.png" alt="">
+                        <div class="friends-activity-member-content">
+                            <div class="friends-activity-member-name"><p>IListenToMusic56</p></div>
+                            <div class="friends-activity-member-info">
+                                <div class="friends-activity-playsound"><p class="sound-track-autor">1h</p></div>
+                                <p class="sound-track-name">6h Rockstar</p>
+                                <div class="friends-activity-dot"><img src="assets/images/desktop/friends-activity/dot.png" alt=""></div>
+                                <p class="sound-track-autor">Post Malone</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer - პლეერი -->
+        <footer class="footer">
+            <div class="control-icons">
+                <button><img src="assets/images/desktop/footer/play-control/pause-1.png" alt=""></button>
+                <button><img src="assets/images/desktop/footer/play-control/back-1.png" alt=""></button>
+                <button><img src="assets/images/desktop/footer/play-control/forward-1.png" alt=""></button>
+                <button><img src="assets/images/desktop/footer/play-control/shuffle-1.png" alt=""></button>
+                <button><img src="assets/images/desktop/footer/play-control/loop-1.png" alt=""></button>
+            </div>
+            <div class="play-time"><span>2:23</span></div>
+            <div class="play-track"><img src="assets/images/desktop/footer/play-control/track.png" alt=""></div>
+            <div class="full-time"><span>4:45</span></div>
+            <div class="video-mute"><img src="assets/images/desktop/footer/play-control/mute-1.png" alt=""></div>
+            <div class="singer-icon"><img src="assets/images/desktop/footer/play-control/singer.png" alt=""></div>
+            <div class="singer-info">
+                <span>Get Lucky</span>
+                <span>Daft Punk</span>
+                <span>Random Access Memories</span>
+            </div>
+            <div class="footer-right-icons">
+                <div class="singer-icon"><img src="assets/images/desktop/footer/play-control/heart-1.png" alt=""></div>
+                <div class="singer-icon"><img src="assets/images/desktop/footer/play-control/pc-playlist-1.png" alt=""></div>
+                <div class="singer-icon"><img src="assets/images/desktop/footer/play-control/pc-lyrics-1.png" alt=""></div>
+                <div class="singer-icon"><img src="assets/images/desktop/footer/play-control/big-sound-1.png" alt=""></div>
+                <div class="singer-icon"><img src="assets/images/desktop/footer/play-control/pc-playing-more-1.png" alt=""></div>
+                <div class="singer-icon"><img src="assets/images/desktop/footer/play-control/separator-1.png" alt=""></div>
+                <div class="singer-icon"><img src="assets/images/desktop/footer/play-control/pc-dj-1.png" alt=""></div>
+                <div class="singer-icon"><img src="assets/images/desktop/footer/play-control/pc-queue-1.png" alt=""></div>
+            </div>
+        </footer>
+        <!-- /Footer -->
+    </div>
+
+    <script>
+        function togglePlaylists(event, el) {
+            if (event.target.closest('.nav-playlists-sublist')) return;
+            el.classList.toggle('expanded');
+        }
+        function friendsActivity() {
+            if (window.innerWidth > 768) {
+                document.getElementById('container').classList.toggle('view_hide');
+            }
+        }
+        function closeContainer() {
+            document.getElementById('container').classList.remove('view_hide');
+        }
+        window.addEventListener('resize', function() {
+            if (window.innerWidth <= 860) {
+                document.getElementById('container').classList.remove('view_hide');
+            }
+        });
+    </script>
+</body>
+</html>

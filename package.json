@@ -2,8 +2,8 @@
   "name": "warriors-of-light",
   "version": "1.0.0",
   "scripts": {
-    "build": "sass assets/scss/main.scss assets/scss/main.css && sass assets/scss/searchpage.scss assets/scss/searchpage.css",
-    "watch": "sass --watch assets/scss/main.scss:assets/scss/main.css assets/scss/searchpage.scss:assets/scss/searchpage.css"
+    "build": "sass assets/scss/main.scss assets/scss/main.css && sass assets/scss/searchpage.scss assets/scss/searchpage.css && sass assets/scss/playlistpage.scss assets/scss/playlistpage.css && sass assets/scss/library.scss assets/scss/library.css",
+    "watch": "sass --watch assets/scss/main.scss:assets/scss/main.css assets/scss/searchpage.scss:assets/scss/searchpage.css assets/scss/playlistpage.scss:assets/scss/playlistpage.css assets/scss/library.scss:assets/scss/library.css"
   },
   "devDependencies": {
     "sass": "^1.77.0"

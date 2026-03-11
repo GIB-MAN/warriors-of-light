@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Search - ძებნის გვერდი -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,7 +24,10 @@
                         <span>Discover</span>
                     </div>
                     <div class="header-search active">
-                        <img src="assets/images/desktop/header/search-1.png">
+                        <span class="header-search-icon">
+                            <img src="assets/images/desktop/header/search-1.png" alt="" class="search-icon-default">
+                            <img src="assets/images/desktop/search-page/search-active.png" alt="" class="search-icon-active">
+                        </span>
                         <span>Search</span>
                     </div>
                 </dic>
@@ -53,14 +57,14 @@
 
             <nav class="nav">
                 <div class="naw-wrapper">
-                    <div class="nav-item my-library">
+                    <a href="library.html" class="nav-item my-library">
                         <div class="nav-item-icon" data-title="My Library">
                             <img src="assets/images/desktop/nav/icon-my-library-1.png">
                         </div>
                         <div class="nav-item-title">
                             <span>My Library</span>
                         </div>
-                    </div>
+                    </a>
                     <div class="nav-item pins">
                         <div class="nav-item-icon" data-title="Pins">
                             <img src="assets/images/desktop/nav/icon-pins-1.png">
@@ -72,23 +76,55 @@
                             <img src="assets/images/desktop/nav/icon-sublist-arrow.png">
                         </div>
                     </div>
-                    <div class="nav-item playlist">
-                        <div class="nav-item-icon" data-title="Playlists">
-                            <img src="assets/images/desktop/nav/icon-playlist-1.png">
-                        </div>
-                        <div class="nav-item-title">
-                            <span>Playlists</span>
-                        </div>
-                        <div class="nav-item-sublist-arrow">
-                            <img src="assets/images/desktop/nav/icon-sublist-arrow.png">
+                    <div class="nav-playlists" onclick="togglePlaylists(event, this)">
+                        <div class="nav-item playlist nav-playlists-toggle">
+                            <div class="nav-item-icon" data-title="Playlists">
+                                <img src="assets/images/desktop/nav/icon-playlist-1.png" alt="">
+                            </div>
+                            <div class="nav-item-title">
+                                <span>Playlists</span>
+                            </div>
+<div class="nav-item-sublist-arrow">
+                            <img src="assets/images/desktop/nav/icon-sublist-arrow.png" alt="">
                         </div>
                     </div>
-                    <div class="nav-item liked-song">
-                        <div class="nav-item-icon" data-title="Liked Song">
-                            <img src="assets/images/desktop/nav/icon-liked-song-1.png">
-                        </div>
-                        <div class="nav-item-title">
-                            <span>Liked Song</span>
+                    <div class="nav-playlists-sublist" onclick="event.stopPropagation()">
+                            <a href="playlistpage.html" class="nav-item nav-sublist-item">
+                                <div class="nav-item-icon">
+                                    <img src="assets/images/desktop/nav/icon-playlist-1.png" alt="">
+                                </div>
+                                <div class="nav-item-title"><span>Daft Punk Mix</span></div>
+                            </a>
+                            <a href="#" class="nav-item nav-sublist-item">
+                                <div class="nav-item-icon">
+                                    <img src="assets/images/desktop/nav/icon-playlist-1.png" alt="">
+                                </div>
+                                <div class="nav-item-title"><span>Chill stuff</span></div>
+                            </a>
+                            <a href="#" class="nav-item nav-sublist-item">
+                                <div class="nav-item-icon">
+                                    <img src="assets/images/desktop/nav/icon-playlist-1.png" alt="">
+                                </div>
+                                <div class="nav-item-title"><span>Rock n Roll</span></div>
+                            </a>
+                            <a href="#" class="nav-item nav-sublist-item">
+                                <div class="nav-item-icon">
+                                    <img src="assets/images/desktop/nav/icon-playlist-1.png" alt="">
+                                </div>
+                                <div class="nav-item-title"><span>The Jux Box</span></div>
+                            </a>
+                            <a href="#" class="nav-item nav-sublist-item">
+                                <div class="nav-item-icon">
+                                    <img src="assets/images/desktop/nav/icon-playlist-1.png" alt="">
+                                </div>
+                                <div class="nav-item-title"><span>Selected Linkin Park</span></div>
+                            </a>
+                            <a href="#" class="nav-item nav-sublist-item">
+                                <div class="nav-item-icon">
+                                    <img src="assets/images/desktop/nav/icon-playlist-1.png" alt="">
+                                </div>
+                                <div class="nav-item-title"><span>Vibe</span></div>
+                            </a>
                         </div>
                     </div>
                     <div class="nav-item saves">
@@ -352,9 +388,67 @@
         </footer>
     </div>
     <script>
+        function togglePlaylists(event, el) {
+            if (event.target.closest('.nav-playlists-sublist')) return;
+            el.classList.toggle('expanded');
+        }
         function toggleSidebar() {
             document.getElementById("container").classList.toggle("collapse");
         }
+
+        // Carousel functionality (same as Home page)
+        function initCarousel() {
+            const carouselSections = document.querySelectorAll('.search-section');
+            
+            carouselSections.forEach(section => {
+                const buttons = section.querySelectorAll('.section-nav-btn');
+                const cardsContainer = section.querySelector('.discover-grid-wrapper');
+                
+                if (buttons.length >= 2 && cardsContainer) {
+                    const prevBtn = buttons[0];
+                    const nextBtn = buttons[1];
+                    const cardWidth = 170 + 24; // card width + gap
+                    const scrollStep = cardWidth;
+                    const maxScroll = () => cardsContainer.scrollWidth - cardsContainer.clientWidth;
+
+                    prevBtn.addEventListener('click', function() {
+                        if (maxScroll() > 0) {
+                            let target = cardsContainer.scrollLeft - scrollStep;
+                            if (target <= 0) {
+                                cardsContainer.scrollTo({ left: maxScroll(), behavior: 'smooth' });
+                            } else {
+                                cardsContainer.scrollTo({ left: target, behavior: 'smooth' });
+                            }
+                        } else {
+                            const grid = cardsContainer.querySelector('.discover-grid, .genres-grid');
+                            const last = grid?.lastElementChild;
+                            if (last) {
+                                grid.insertBefore(last, grid.firstElementChild);
+                            }
+                        }
+                    });
+
+                    nextBtn.addEventListener('click', function() {
+                        if (maxScroll() > 0) {
+                            let target = cardsContainer.scrollLeft + scrollStep;
+                            if (target >= maxScroll()) {
+                                cardsContainer.scrollTo({ left: 0, behavior: 'smooth' });
+                            } else {
+                                cardsContainer.scrollTo({ left: target, behavior: 'smooth' });
+                            }
+                        } else {
+                            const grid = cardsContainer.querySelector('.discover-grid, .genres-grid');
+                            const first = grid?.firstElementChild;
+                            if (first) {
+                                grid.appendChild(first);
+                            }
+                        }
+                    });
+                }
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', initCarousel);
     </script>
 </body>
 </html>

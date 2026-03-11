@@ -1,8 +1,12 @@
+@use '../abstract/variables';
+
 .container {
     width: 100%;
-    max-width: 1771px;
-    margin: auto;
-    background-color: #060606;
+    max-width: variables.$page-width;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: variables.$base-bg-color;
+    opacity: 1;
     display: grid;
     grid-template-columns: clamp(180px, 18.4vw, 248px) 1fr ;  //(nav bar width), (content width), (frendly 358px)
     grid-template-rows: 54px auto 81px;             //(header height), (content height), (footer height)

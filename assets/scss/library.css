@@ -1,0 +1,265 @@
+@charset "UTF-8";
+/* ძირითადი ცვლადები */
+/* ============================================
+   Library Page Styles
+   ============================================ */
+.header-home.header-active {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #fff;
+  background-color: transparent !important;
+  border-radius: 0;
+  border-bottom: 2px solid #1DB954;
+}
+.header-home.header-active span {
+  color: #fff;
+}
+.header-home.header-active img {
+  filter: brightness(0) invert(1);
+}
+
+.nav-item-active {
+  background-color: #1DB954 !important;
+  border-radius: 5px;
+}
+.nav-item-active .nav-item-title span {
+  color: #fff !important;
+}
+.nav-item-active .nav-item-icon img {
+  filter: brightness(0) invert(1);
+}
+
+.header-add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #898989;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.header-add-btn:hover {
+  color: #fff;
+}
+
+.content-library .content-wrapper {
+  padding-top: 16px;
+}
+
+.library-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  height: 59px;
+  margin-bottom: 24px;
+}
+
+.library-view-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+}
+
+.library-view-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.library-view-btn img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) saturate(100%) invert(60%);
+}
+.library-view-btn:hover {
+  background-color: #202020;
+}
+.library-view-btn:hover img {
+  filter: brightness(0) saturate(100%) invert(100%);
+}
+.library-view-btn-active {
+  background-color: #1DB954;
+}
+.library-view-btn-active img {
+  filter: brightness(0) invert(1);
+}
+
+.library-sort-btn,
+.library-group-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  height: 40px;
+  padding: 0 16px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.library-sort-btn img,
+.library-group-btn img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) saturate(100%) invert(60%);
+}
+.library-sort-btn span,
+.library-group-btn span {
+  font-family: satoshi;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #898989;
+}
+.library-sort-btn:hover,
+.library-group-btn:hover {
+  background-color: #202020;
+}
+.library-sort-btn:hover img,
+.library-group-btn:hover img {
+  filter: brightness(0) saturate(100%) invert(100%);
+}
+.library-sort-btn:hover span,
+.library-group-btn:hover span {
+  color: #fff;
+}
+
+.library-search-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.library-search-btn img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) saturate(100%) invert(60%);
+}
+.library-search-btn:hover {
+  background-color: #202020;
+}
+.library-search-btn:hover img {
+  filter: brightness(0) saturate(100%) invert(100%);
+}
+
+.library-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 16px;
+  padding-bottom: 24px;
+}
+
+.library-card {
+  width: 170px;
+  height: 253.3px;
+  opacity: 1;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s;
+}
+.library-card:hover {
+  transform: scale(1.02);
+}
+.library-card-cover {
+  position: relative;
+  width: 170px;
+  height: 181px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1px;
+  background-color: #111111;
+  opacity: 1;
+}
+.library-card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+}
+.library-card-artist .library-card-cover {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+}
+.library-card-pin {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 40.41px;
+  height: 40.41px;
+  border-radius: 0.78px;
+  opacity: 1;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.library-card-pin-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.library-card-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 32px;
+  gap: 8px;
+}
+.library-card-text {
+  min-width: 0;
+  flex: 1;
+}
+.library-card-title {
+  font-family: satoshi;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #E0E0E0;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.library-card-subtitle {
+  font-family: satoshi;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #898989;
+  margin: 4px 0 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.library-card-count {
+  font-family: satoshi;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #898989;
+  flex-shrink: 0;
+}
+
+/*# sourceMappingURL=library.css.map */

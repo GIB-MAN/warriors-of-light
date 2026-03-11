@@ -1,8 +1,9 @@
 @use '../abstract/mixins';
+@use '../abstract/variables';
 
-.header{
+.header {
     grid-area: 1 / 2 / 2 / 4;
-    background-color: #060606;
+    background-color: variables.$base-bg-color;
     border-radius: 10px;
     margin:7px 7px 4px 0;    
 
@@ -18,7 +19,7 @@
         width: clamp(80px, 18vw, 190px);
         max-width: 210px;
         height:46px;
-        background-color:#111111;
+        background-color: variables.$base-bg-dark;
         border-radius: 10px;
         @include mixins.flex-start;
         gap:10.7px;
@@ -49,12 +50,69 @@
         max-width: 210px;
         @include mixins.flex-start;
         gap:10.7px;
-    
-    img{
-        margin-left:15px;
+        position: relative;
+        transition: color 0.2s;
+
+        &-icon {
+            position: relative;
+            display: inline-flex;
+            width: 20px;
+            height: 20px;
+            margin-left: 15px;
+
+            img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 20px;
+                height: 20px;
+                transition: opacity 0.2s;
+            }
+
+            .search-icon-default {
+                opacity: 1;
+            }
+
+            .search-icon-active {
+                opacity: 0;
+            }
         }
-    span{
-        @include mixins.satoshi_1-4_400;
+
+        > span:last-child {
+            @include mixins.satoshi_1-4_400;
+            transition: color 0.2s;
+        }
+
+        // Default: medium grey
+        color: variables.$base-font-color;
+        .search-icon-default { filter: brightness(0) saturate(100%) invert(60%); }
+        > span:last-child { color: variables.$base-font-color; }
+
+        // Hover: white
+        &:hover {
+            color: variables.$h-fonts-color;
+            .search-icon-default { filter: brightness(0) saturate(100%) invert(100%); }
+            > span:last-child { color: variables.$h-fonts-color; }
+        }
+
+        // Active: use provided filled lens icon
+        &.active {
+            background-color: variables.$base-bg-dark;
+            border-radius: 10px;
+            padding: 0 15px;
+            height: 46px;
+            color: #fff;
+
+            .search-icon-default {
+                opacity: 0;
+            }
+
+            .search-icon-active {
+                opacity: 1;
+                filter: none;
+            }
+
+            > span:last-child { color: variables.$h-fonts-color; }
         }
     }
     &-right-btn {

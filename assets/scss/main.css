@@ -1,8 +1,20 @@
-html, body {
+@charset "UTF-8";
+/* ძირითადი ცვლადები */
+* {
+  box-sizing: border-box;
+}
+
+html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0 0 95px 0;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
@@ -25,8 +37,10 @@ a {
 .container {
   width: 100%;
   max-width: 1771px;
-  margin: auto;
+  min-height: 100vh;
+  margin: 0 auto;
   background-color: #060606;
+  opacity: 1;
   display: grid;
   grid-template-columns: clamp(180px, 18.4vw, 248px) 1fr;
   grid-template-rows: 54px auto 81px;
@@ -97,15 +111,71 @@ a {
   align-items: center;
   justify-content: flex-start;
   gap: 10.7px;
+  position: relative;
+  transition: color 0.2s;
 }
-.header-search img {
+.header-search-icon {
+  position: relative;
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
   margin-left: 15px;
 }
-.header-search span {
+.header-search-icon img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  transition: opacity 0.2s;
+}
+.header-search-icon .search-icon-default {
+  opacity: 1;
+}
+.header-search-icon .search-icon-active {
+  opacity: 0;
+}
+.header-search > span:last-child {
   font-family: satoshi;
   font-size: 1.4rem;
   font-weight: 400;
   color: #E0E0E0;
+  transition: color 0.2s;
+}
+.header-search {
+  color: #898989;
+}
+.header-search .search-icon-default {
+  filter: brightness(0) saturate(100%) invert(60%);
+}
+.header-search > span:last-child {
+  color: #898989;
+}
+.header-search:hover {
+  color: #fff;
+}
+.header-search:hover .search-icon-default {
+  filter: brightness(0) saturate(100%) invert(100%);
+}
+.header-search:hover > span:last-child {
+  color: #fff;
+}
+.header-search.active {
+  background-color: #111111;
+  border-radius: 10px;
+  padding: 0 15px;
+  height: 46px;
+  color: #fff;
+}
+.header-search.active .search-icon-default {
+  opacity: 0;
+}
+.header-search.active .search-icon-active {
+  opacity: 1;
+  filter: none;
+}
+.header-search.active > span:last-child {
+  color: #fff;
 }
 .header-right-btn {
   display: flex;
@@ -203,6 +273,45 @@ a {
   }
 }
 /* menu hover title effects end*/
+.nav-playlists {
+  cursor: pointer;
+}
+.nav-playlists-toggle {
+  text-decoration: none;
+}
+.nav-playlists-sublist {
+  display: none;
+  padding-left: 32px;
+  margin-left: 11px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border-left: 1px solid #333;
+}
+.nav-playlists.expanded .nav-playlists-sublist {
+  display: block;
+}
+.nav-playlists.expanded .nav-item-sublist-arrow img {
+  transform: rotate(90deg);
+  transition: transform 0.2s ease;
+}
+.nav-playlists.expanded > .nav-item .nav-item-title span {
+  color: #fff;
+}
+.nav-playlists.expanded > .nav-item .nav-item-icon img {
+  filter: brightness(0) invert(1);
+}
+.nav-playlists-sublist .nav-item-title span {
+  color: #898989;
+}
+.nav-playlists-sublist .nav-item-icon img {
+  filter: brightness(0) saturate(100%) invert(60%);
+}
+
+.nav-sublist-item {
+  height: 36px;
+  margin-left: 0 !important;
+}
+
 @media (max-width: 768px) {
   .header-left-btn span {
     display: none;
@@ -218,14 +327,18 @@ a {
 }
 .content {
   grid-area: 2/2/3/3;
+  width: 100%;
+  min-width: 0;
+  max-width: 1491px;
   background-color: #060606;
   border: 1px solid #202020;
   border-radius: 10px;
   margin: 4px 0 0 0;
   padding: 0 25px;
-  max-width: 1491px;
-  height: calc(100vmin - 54px - 104px);
-  overflow-y: hidden;
+  height: 869px;
+  opacity: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
   scrollbar-width: none;
 }
 .content-header-btn {
@@ -268,6 +381,30 @@ a {
   align-items: center;
   justify-content: space-between;
 }
+.made-for-you-buttons {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  gap: 4px;
+}
+.made-for-you-buttons button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.made-for-you-buttons button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.made-for-you-buttons button img {
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
 .made-for-you-wrapper {
   width: 100%;
   max-width: 1440px;
@@ -287,12 +424,34 @@ a {
   justify-content: space-between;
   gap: 11px;
   margin-bottom: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #202020 transparent;
+  flex-wrap: nowrap;
+}
+.made-for-you-cards::-webkit-scrollbar {
+  height: 6px;
+}
+.made-for-you-cards::-webkit-scrollbar-track {
+  background: transparent;
+}
+.made-for-you-cards::-webkit-scrollbar-thumb {
+  background: #202020;
+  border-radius: 3px;
 }
 .made-for-you-card {
   width: 170px;
+  height: 253.3px;
+  flex-shrink: 0;
+  opacity: 1;
 }
 .made-for-you-card img {
-  margin: 8px 0;
+  width: 170px;
+  height: 181px;
+  object-fit: cover;
+  margin: 1px 0;
+  opacity: 1;
 }
 
 .card-name {
@@ -359,6 +518,30 @@ a {
   color: #E0E0E0;
   letter-spacing: 1.5px;
   line-height: 1.5;
+}
+.your-top-mixes-buttons {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  gap: 4px;
+}
+.your-top-mixes-buttons button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.your-top-mixes-buttons button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.your-top-mixes-buttons button img {
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
 }
 
 .friends-activity {
@@ -478,18 +661,24 @@ a {
 
 .footer {
   grid-area: 3/2/4/4;
+  width: 100%;
+  max-width: 1491px;
+  height: 81px;
   background-color: #333842;
   border-radius: 10px;
   border: 1px solid #202020;
   margin: 0 7px 7px 7px;
   padding: 0 21px;
+  opacity: 1;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 8px;
   position: fixed;
   bottom: 0;
-  left: clamp(180px, 18.4vw, 248px);
+  left: max(clamp(180px, 18.4vw, 248px), (100vw - 1771px) / 2 + clamp(180px, 18.4vw, 248px));
+  right: max(0px, (100vw - 1771px) / 2);
+  z-index: 100;
 }
 .footer-right-icons {
   width: 348px;
@@ -503,7 +692,7 @@ a {
 }
 
 .play-track {
-  color: white;
+  color: #fff;
 }
 
 .singer-info {
@@ -536,7 +725,7 @@ a {
 
 @media (max-width: 1024px) {
   .footer {
-    left: 85px;
+    grid-area: 3/2/4/4;
   }
 }
 @font-face {

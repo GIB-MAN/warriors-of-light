@@ -1,0 +1,366 @@
+@use './base/reset';
+@use './base/base';
+@use './abstract/variables';
+@use './abstract/mixins';
+
+// Playlist page - Daft Punk Mix reference
+
+// ========== Variables ==========
+$playlist-bg: #060606;
+$playlist-content-bg: #0a0a0a;
+$playlist-text-primary: #ffffff;
+$playlist-text-secondary: #898989;
+$playlist-border: #202020;
+$playlist-btn-green: #1db954;
+$playlist-card-bg: #1a1a1a;
+
+// ========== Nav - Playlists active state ==========
+.nav-item.playlist.active {
+  background-color: $playlist-border;
+  border-radius: 5px;
+
+  .nav-item-title span {
+    color: $playlist-text-primary;
+  }
+
+  .nav-item-icon img {
+    filter: brightness(0) invert(1);
+  }
+}
+
+// ========== Layout - replaces content grid area ==========
+.playlist-content {
+  grid-area: 2 / 2 / 3 / 3;
+  width: 100%;
+  min-width: 0;
+  max-width: 1491px;
+  height: calc(100vh - 54px - 81px - 16px);
+  min-height: 400px;
+  border-radius: 10px;
+  border: 1px solid $playlist-border;
+  padding: 0 25px;
+  margin: 4px 0 0 0;
+  background: linear-gradient(180deg, rgba(59, 79, 182, 0.47) 0%, rgba(6, 6, 6, 0.47) 100%);
+  opacity: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+.playlist-content-wrapper {
+  display: flex;
+  gap: 24px;
+  min-height: 100%;
+}
+
+// ========== Playlist details section ==========
+.playlist-details-section {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.playlist-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.playlist-title {
+  @include mixins.satoshi_custom(2.4rem, 700, $playlist-text-primary);
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.playlist-meta {
+  @include mixins.satoshi_custom(1.4rem, 400, $playlist-text-secondary);
+  margin: 0;
+}
+
+.playlist-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.playlist-btn-play {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: $playlist-btn-green;
+  border: none;
+  cursor: pointer;
+  @include mixins.flex;
+  // Play icon - asset will be provided
+  &::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 18px solid #000;
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+    margin-left: 4px;
+  }
+}
+
+.playlist-btn-shuffle,
+.playlist-btn-like,
+.playlist-btn-add,
+.playlist-btn-download,
+.playlist-btn-share,
+.playlist-btn-more,
+.playlist-btn-search {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  @include mixins.flex;
+  padding: 0;
+  transition: opacity 0.2s;
+
+  img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+    transition: filter 0.2s;
+  }
+
+  &:hover img {
+    opacity: 1;
+  }
+
+  &.liked img {
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+    opacity: 1;
+  }
+}
+
+.playlist-actions-separator {
+  width: 1px;
+  height: 24px;
+  background-color: $playlist-text-secondary;
+  opacity: 0.5;
+}
+
+// ========== Song list ==========
+.song-list-container {
+  flex: 1;
+  overflow-x: auto;
+}
+
+.song-list-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.song-list-table th,
+.song-list-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid $playlist-border;
+}
+
+.song-list-table thead th {
+  @include mixins.satoshi_custom(1.2rem, 400, $playlist-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.col-num {
+  width: 40px;
+}
+
+.col-title {
+  min-width: 280px;
+}
+
+.col-album {
+  min-width: 180px;
+}
+
+.col-duration {
+  width: 80px;
+  text-align: right;
+}
+
+.col-actions {
+  width: 48px;
+
+  &-icon {
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+  }
+}
+
+.song-row {
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.song-row .col-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.song-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  object-fit: cover;
+  background-color: $playlist-border;
+}
+
+.song-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.song-name {
+  @include mixins.satoshi_custom(1.4rem, 400, $playlist-text-primary);
+}
+
+.song-artist {
+  @include mixins.satoshi_custom(1.2rem, 400, $playlist-text-secondary);
+}
+
+.song-row .col-album {
+  @include mixins.satoshi_custom(1.4rem, 400, $playlist-text-secondary);
+}
+
+.song-row .col-duration {
+  @include mixins.satoshi_custom(1.4rem, 400, $playlist-text-secondary);
+}
+
+.song-like-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0;
+  transition: opacity 0.2s;
+
+  .song-row:hover & {
+    opacity: 1;
+  }
+
+  img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+    transition: filter 0.2s;
+  }
+
+  &:hover img {
+    opacity: 1;
+  }
+
+  &.liked img {
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+    opacity: 1;
+  }
+}
+
+// ========== Right sidebar ==========
+.playlist-right-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.playlist-card {
+  background-color: $playlist-card-bg;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.playlist-cover {
+  width: 100%;
+  max-width: 200px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: $playlist-border;
+}
+
+.playlist-card-title {
+  @include mixins.satoshi_custom(1.6rem, 700, $playlist-text-primary);
+  margin: 0;
+}
+
+.playlist-spotify-logo {
+  @include mixins.satoshi_custom(1.2rem, 400, $playlist-text-secondary);
+  opacity: 0.7;
+}
+
+// ========== Genre tags ==========
+.genre-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.genre-tag {
+  padding: 8px 16px;
+  border: 2px solid rgba($playlist-text-secondary, 0.25);
+  border-radius: 20px;
+  @include mixins.satoshi_custom(1.2rem, 400, $playlist-text-secondary);
+  transition: color 0.2s;
+
+  &:hover {
+    color: $playlist-text-primary;
+  }
+}
+
+// ========== Related artists ==========
+.related-artists {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.related-artists-title {
+  @include mixins.satoshi_custom(1.4rem, 700, $playlist-text-primary);
+  margin: 0 0 4px 0;
+}
+
+.related-artist {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.artist-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: $playlist-border;
+}
+
+.artist-name {
+  @include mixins.satoshi_custom(1.4rem, 400, $playlist-text-primary);
+}

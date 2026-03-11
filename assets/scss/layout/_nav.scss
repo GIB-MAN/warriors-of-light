@@ -1,9 +1,10 @@
 @use '../abstract/mixins';
+@use '../abstract/variables';
 
 .nav {
     grid-area: 1 / 1 / 4 / 2;
-    background-color: #060606;
-    border:1px solid #202020;
+    background-color: variables.$base-bg-color;
+    border: 1px solid variables.$base-border-color;
     border-radius: 10px;
     margin:7px 0 7px 7px;
 
@@ -23,10 +24,9 @@
             }
 
         &-title {
-            // width: 100%;
             max-width: 187px;
-            @include mixins.satoshi_custom(1.4rem,400,#898989);
-            }
+            @include mixins.satoshi_custom(1.4rem, 400, variables.$base-font-color);
+        }
         
         &-sublist-arrow {
             width: 40.4px; 
@@ -36,7 +36,7 @@
     }
 }
 .nav-item:hover {
-    background-color: #202020; 
+    background-color: variables.$base-bg-hover;
     border-radius: 5px;
 }
 
@@ -53,7 +53,7 @@
     top: 50%;
     transform: translateY(-50%) translateX(10px);
     background: #1f1f1f;
-    color:#898989;
+    color: variables.$base-font-color;
     padding: 8px 14px;
     border-radius: 8px;
     font-size: 1.4rem;
@@ -80,6 +80,56 @@
     }
 }
 /* menu hover title effects end*/
+
+// Playlists dropdown
+.nav-playlists {
+    cursor: pointer;
+
+    &-toggle {
+        text-decoration: none;
+    }
+
+    &-sublist {
+        display: none;
+        padding-left: 32px;
+        margin-left: 11px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        border-left: 1px solid variables.$base-border-dark;
+    }
+
+    &.expanded &-sublist {
+        display: block;
+    }
+
+    &.expanded .nav-item-sublist-arrow img {
+        transform: rotate(90deg);
+        transition: transform 0.2s ease;
+    }
+
+    // Playlists toggle - white when expanded
+    &.expanded > .nav-item .nav-item-title span {
+        color: variables.$h-fonts-color;
+    }
+
+    &.expanded > .nav-item .nav-item-icon img {
+        filter: brightness(0) invert(1);
+    }
+
+    // Dropdown items - grey
+    &-sublist .nav-item-title span {
+        color: variables.$base-font-color;
+    }
+
+    &-sublist .nav-item-icon img {
+        filter: brightness(0) saturate(100%) invert(60%);
+    }
+}
+
+.nav-sublist-item {
+    height: 36px;
+    margin-left: 0 !important;
+}
 
 @media (max-width:768px) {
     .header-left-btn span {

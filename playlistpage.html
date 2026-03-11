@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<!-- Playlist - ფლეილისტის გვერდი -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daft Punk Mix - Playlist</title>
+    <link rel="stylesheet" href="assets/scss/main.css">
+    <link rel="stylesheet" href="assets/scss/playlistpage.css">
+</head>
+<body>
+    <div class="container" id="container">
+    <!--  header section start  -->
+        <header class="header">
+            <div class="header-wrapper">
+                <div class="header-left-btn">
+                    <a href="index.html" class="header-home">
+                        <img src="assets/images/desktop/header/home-3.png" alt="Home">
+                        <span>Home</span>
+                    </a>
+                    <a href="#" class="header-discover">
+                        <img src="assets/images/desktop/header/discover-1.png" alt="Discover">
+                        <span>Discover</span>
+                    </a>
+                    <a href="searchpage.html" class="header-search active">
+                        <span class="header-search-icon">
+                            <img src="assets/images/desktop/header/search-1.png" alt="" class="search-icon-default">
+                            <img src="assets/images/desktop/search-page/search-active.png" alt="" class="search-icon-active">
+                        </span>
+                        <span>Search</span>
+                    </a>
+                </div>
+                <div class="header-right-btn">
+                    <a href="#" class="header-item-icon">
+                        <img src="assets/images/desktop/header/buzzer-1.png" alt="">
+                    </a>
+                    <a href="#" class="header-item-icon">
+                        <img src="assets/images/desktop/header/lock-open.png" alt="">
+                    </a>
+                    <a class="header-item-icon">
+                        <img src="assets/images/desktop/header/friends-1.png" alt="" onclick="friendsActivity()">
+                    </a>
+                    <a href="#" class="header-item-icon">
+                        <img src="assets/images/desktop/header/settings-1.png" alt="">
+                    </a>
+                    <a href="#" class="header-item-icon">
+                        <img src="assets/images/desktop/header/user-area.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </header>
+    <!--  header section end  -->
+
+    <!--  nav section start  -->
+        <nav class="nav">
+            <div class="nav-wrapper">
+                <a href="library.html" class="nav-item my-library">
+                    <div class="nav-item-icon" data-title="My Library">
+                        <img src="assets/images/desktop/nav/icon-my-library-1.png" alt="">
+                    </div>
+                    <div class="nav-item-title">
+                        <span>My Library</span>
+                    </div>
+                </a>
+                <a href="#" class="nav-item pins">
+                    <div class="nav-item-icon" data-title="Pins">
+                        <img src="assets/images/desktop/nav/icon-pins-1.png" alt="">
+                    </div>
+                    <div class="nav-item-title">
+                        <span>Pins</span>
+                    </div>
+                    <div class="nav-item-sublist-arrow">
+                        <img src="assets/images/desktop/nav/icon-sublist-arrow.png" alt="">
+                    </div>
+                </a>
+                <div class="nav-playlists expanded" onclick="togglePlaylists(event, this)">
+                    <div class="nav-item playlist nav-playlists-toggle active">
+                        <div class="nav-item-icon" data-title="Playlists">
+                            <img src="assets/images/desktop/nav/icon-playlist-1.png" alt="">
+                        </div>
+                        <div class="nav-item-title">
+                            <span>Playlists</span>
+                        </div>
+                        <div class="nav-item-sublist-arrow">
+                            <img src="assets/images/desktop/nav/icon-sublist-arrow.png" alt="">
+                        </div>
+                    </div>
+                    <div class="nav-playlists-sublist" onclick="event.stopPropagation()">
+                        <a href="playlistpage.html" class="nav-item nav-sublist-item">
+                            <div class="nav-item-icon">
+                                <img src="assets/images/desktop/nav/icon-playlist-1.png" alt="">
+                            </div>
+                            <div class="nav-item-title"><span>Daft Punk Mix</span></div>
+                        </a>
+                        <a href="#" class="nav-item nav-sublist-item">
+                            <div class="nav-item-icon">
+                                <img src="assets/images/desktop/nav/icon-playlist-1.png" alt="">
+                            </div>
+                            <div class="nav-item-title"><span>Chill stuff</span></div>
+                        </a>
+                        <a href="#" class="nav-item nav-sublist-item">
+                            <div class="nav-item-icon">
+                                <img src="assets/images/desktop/nav/icon-playlist-1.png" alt="">
+                            </div>
+                            <div class="nav-item-title"><span>Rock n Roll</span></div>
+                        </a>
+                        <a href="#" class="nav-item nav-sublist-item">
+                            <div class="nav-item-icon">
+                                <img src="assets/images/desktop/nav/icon-playlist-1.png" alt="">
+                            </div>
+                            <div class="nav-item-title"><span>The Jux Box</span></div>
+                        </a>
+                        <a href="#" class="nav-item nav-sublist-item">
+                            <div class="nav-item-icon">
+                                <img src="assets/images/desktop/nav/icon-playlist-1.png" alt="">
+                            </div>
+                            <div class="nav-item-title"><span>Selected Linkin Park</span></div>
+                        </a>
+                        <a href="#" class="nav-item nav-sublist-item">
+                            <div class="nav-item-icon">
+                                <img src="assets/images/desktop/nav/icon-playlist-1.png" alt="">
+                            </div>
+                            <div class="nav-item-title"><span>Vibe</span></div>
+                        </a>
+                    </div>
+                </div>
+                <a href="#" class="nav-item saves">
+                    <div class="nav-item-icon" data-title="Saves">
+                        <img src="assets/images/desktop/nav/icon-saves-1.png" alt="">
+                    </div>
+                    <div class="nav-item-title">
+                        <span>Saves</span>
+                    </div>
+                </a>
+                <a href="#" class="nav-item albums">
+                    <div class="nav-item-icon" data-title="Albums">
+                        <img src="assets/images/desktop/nav/icon-albums-1.png" alt="">
+                    </div>
+                    <div class="nav-item-title">
+                        <span>Albums</span>
+                    </div>
+                </a>
+                <a href="#" class="nav-item folders">
+                    <div class="nav-item-icon" data-title="Folders">
+                        <img src="assets/images/desktop/nav/icon-folders-1.png" alt="">
+                    </div>
+                    <div class="nav-item-title">
+                        <span>Folders</span>
+                    </div>
+                </a>
+                <a href="#" class="nav-item podcasts">
+                    <div class="nav-item-icon" data-title="Podcasts">
+                        <img src="assets/images/desktop/nav/icon-podcasts-1.png" alt="">
+                    </div>
+                    <div class="nav-item-title">
+                        <span>Podcasts</span>
+                    </div>
+                </a>
+                <a href="#" class="nav-item audiobooks">
+                    <div class="nav-item-icon" data-title="Audiobooks">
+                        <img src="assets/images/desktop/nav/icon-audiobooks-1.png" alt="">
+                    </div>
+                    <div class="nav-item-title">
+                        <span>Audiobooks</span>
+                    </div>
+                </a>
+                <a href="#" class="nav-item artists">
+                    <div class="nav-item-icon" data-title="Artists">
+                        <img src="assets/images/desktop/nav/icon-artists-1.png" alt="">
+                    </div>
+                    <div class="nav-item-title">
+                        <span>Artists</span>
+                    </div>
+                </a>
+            </div>
+        </nav>
+    <!--  nav section end  -->
+
+    <!--  playlist main content start  -->
+        <section class="playlist-content">
+            <div class="playlist-content-wrapper">
+                <!-- playlist details + song list -->
+                <div class="playlist-details-section">
+                    <div class="playlist-header">
+                        <h1 class="playlist-title">Daft Punk Mix</h1>
+                        <p class="playlist-meta">By Spotify • 50 songs • 3 hr 30 min</p>
+                        <div class="playlist-actions">
+                            <button class="playlist-btn-play" aria-label="Play"></button>
+                            <button class="playlist-btn-shuffle" aria-label="Shuffle"><img src="assets/images/desktop/playlist/icons/icons big (1).png" alt=""></button>
+                            <button class="playlist-btn-like" aria-label="Like" onclick="this.classList.toggle('liked')"><img src="assets/images/desktop/playlist/icons/icons big (2).png" alt=""></button>
+                            <button class="playlist-btn-add" aria-label="Add to library"><img src="assets/images/desktop/playlist/icons/icons big (3).png" alt=""></button>
+                            <button class="playlist-btn-download" aria-label="Download"><img src="assets/images/desktop/playlist/icons/icons big (4).png" alt=""></button>
+                            <button class="playlist-btn-share" aria-label="Share"><img src="assets/images/desktop/playlist/icons/icons big (5).png" alt=""></button>
+                            <button class="playlist-btn-more" aria-label="More options"><img src="assets/images/desktop/playlist/icons/icons big (6).png" alt=""></button>
+                            <span class="playlist-actions-separator"></span>
+                            <button class="playlist-btn-search" aria-label="Search in playlist"><img src="assets/images/desktop/playlist/icons/icons big (7).png" alt=""></button>
+                        </div>
+                    </div>
+                    <div class="song-list-container">
+                        <table class="song-list-table">
+                            <thead>
+                                <tr>
+                                    <th class="col-num">#</th>
+                                    <th class="col-title">Title</th>
+                                    <th class="col-album">Album</th>
+                                    <th class="col-duration">Duration</th>
+                                    <th class="col-actions"><img src="assets/images/desktop/playlist/icons/pc-like.png" alt="Like" class="col-actions-icon"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="song-row">
+                                    <td class="col-num">1</td>
+                                    <td class="col-title">
+                                        <img src="assets/images/desktop/playlist/Get-Lucky.png" alt="" class="song-thumb">
+                                        <div class="song-info">
+                                            <span class="song-name">Get Lucky</span>
+                                            <span class="song-artist">Daft Punk</span>
+                                        </div>
+                                    </td>
+                                    <td class="col-album">Random Access Memories</td>
+                                    <td class="col-duration">4:35</td>
+                                    <td class="col-actions"><button class="song-like-btn" aria-label="Like"><img src="assets/images/desktop/playlist/icons/pc-like.png" alt=""></button></td>
+                                </tr>
+                                <tr class="song-row">
+                                    <td class="col-num">2</td>
+                                    <td class="col-title">
+                                        <img src="assets/images/desktop/playlist/Instatnt-Crush.png" alt="" class="song-thumb">
+                                        <div class="song-info">
+                                            <span class="song-name">Instant Crush</span>
+                                            <span class="song-artist">Daft Punk, Julian Casablancas</span>
+                                        </div>
+                                    </td>
+                                    <td class="col-album">Random Access Memories</td>
+                                    <td class="col-duration">6:37</td>
+                                    <td class="col-actions"><button class="song-like-btn" aria-label="Like"><img src="assets/images/desktop/playlist/icons/pc-like.png" alt=""></button></td>
+                                </tr>
+                                <tr class="song-row">
+                                    <td class="col-num">3</td>
+                                    <td class="col-title">
+                                        <img src="assets/images/desktop/playlist/On-Melancholy-Hill.png" alt="" class="song-thumb">
+                                        <div class="song-info">
+                                            <span class="song-name">On Melancholy Hill</span>
+                                            <span class="song-artist">Gorillaz</span>
+                                        </div>
+                                    </td>
+                                    <td class="col-album">Plastic Beach</td>
+                                    <td class="col-duration">3:53</td>
+                                    <td class="col-actions"><button class="song-like-btn" aria-label="Like"><img src="assets/images/desktop/playlist/icons/pc-like.png" alt=""></button></td>
+                                </tr>
+                                <tr class="song-row">
+                                    <td class="col-num">4</td>
+                                    <td class="col-title">
+                                        <img src="assets/images/desktop/playlist/Tainted-Love.png" alt="" class="song-thumb">
+                                        <div class="song-info">
+                                            <span class="song-name">Tainted Love</span>
+                                            <span class="song-artist">Soft Cell</span>
+                                        </div>
+                                    </td>
+                                    <td class="col-album">Non-Stop Erotic Cabaret</td>
+                                    <td class="col-duration">2:33</td>
+                                    <td class="col-actions"><button class="song-like-btn" aria-label="Like"><img src="assets/images/desktop/playlist/icons/pc-like.png" alt=""></button></td>
+                                </tr>
+                                <tr class="song-row">
+                                    <td class="col-num">5</td>
+                                    <td class="col-title">
+                                        <img src="assets/images/desktop/playlist/One-More-Time.png" alt="" class="song-thumb">
+                                        <div class="song-info">
+                                            <span class="song-name">One More Time</span>
+                                            <span class="song-artist">Daft Punk</span>
+                                        </div>
+                                    </td>
+                                    <td class="col-album">Discovery</td>
+                                    <td class="col-duration">5:20</td>
+                                    <td class="col-actions"><button class="song-like-btn" aria-label="Like"><img src="assets/images/desktop/playlist/icons/pc-like.png" alt=""></button></td>
+                                </tr>
+                                <tr class="song-row">
+                                    <td class="col-num">6</td>
+                                    <td class="col-title">
+                                        <img src="assets/images/desktop/playlist/Electric-Feel.png" alt="" class="song-thumb">
+                                        <div class="song-info">
+                                            <span class="song-name">Electric Feel</span>
+                                            <span class="song-artist">MGMT</span>
+                                        </div>
+                                    </td>
+                                    <td class="col-album">Oracular Spectacular</td>
+                                    <td class="col-duration">3:49</td>
+                                    <td class="col-actions"><button class="song-like-btn" aria-label="Like"><img src="assets/images/desktop/playlist/icons/pc-like.png" alt=""></button></td>
+                                </tr>
+                                <tr class="song-row">
+                                    <td class="col-num">7</td>
+                                    <td class="col-title">
+                                        <img src="assets/images/desktop/playlist/Give-Life-Back-to-Music.png" alt="" class="song-thumb">
+                                        <div class="song-info">
+                                            <span class="song-name">Give Life Back to Music</span>
+                                            <span class="song-artist">Daft Punk</span>
+                                        </div>
+                                    </td>
+                                    <td class="col-album">Random Access Memories</td>
+                                    <td class="col-duration">4:35</td>
+                                    <td class="col-actions"><button class="song-like-btn" aria-label="Like"><img src="assets/images/desktop/playlist/icons/pc-like.png" alt=""></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- right sidebar -->
+                <aside class="playlist-right-sidebar">
+                    <div class="playlist-card">
+                        <img src="assets/images/desktop/playlist/daft-pank-mix.png" alt="Daft Punk Mix" class="playlist-cover">
+                        <h2 class="playlist-card-title">Daft Punk Mix</h2>
+                        <span class="playlist-spotify-logo">Spotify</span>
+                    </div>
+                    <div class="genre-tags">
+                        <span class="genre-tag">Funk</span>
+                        <span class="genre-tag">Electronic music</span>
+                        <span class="genre-tag">Disco</span>
+                        <span class="genre-tag">Soft Rock</span>
+                        <span class="genre-tag">Progressive pop</span>
+                    </div>
+                    <div class="related-artists">
+                        <h3 class="related-artists-title">Related artists</h3>
+                        <div class="related-artist">
+                            <img src="assets/images/desktop/playlist/daft-pank1.png" alt="Daft Punk" class="artist-avatar">
+                            <span class="artist-name">Daft Punk</span>
+                        </div>
+                        <div class="related-artist">
+                            <img src="assets/images/desktop/playlist/pharell-williams.png" alt="Pharrell Williams" class="artist-avatar">
+                            <span class="artist-name">Pharrell Williams</span>
+                        </div>
+                        <div class="related-artist">
+                            <img src="assets/images/desktop/playlist/nile-rodgers.png" alt="Nile Rodgers" class="artist-avatar">
+                            <span class="artist-name">Nile Rodgers</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    <!--  playlist main content end  -->
+
+    <!-- right sidebar friends-activity start -->
+        <section class="friends-activity">
+            <div class="friends-activity-wapper">
+                <div class="friends-activity-header">
+                    <div class="friends-activity-title">
+                        <h3>Friends Activity</h3>
+                    </div>
+                    <div class="friends-activity-btn">
+                        <div class="friends-item-icon">
+                            <img src="assets/images/desktop/friends-activity/add-friends-1.png" alt="">
+                        </div>
+                        <div class="friends-item-icon">
+                            <img src="assets/images/desktop/friends-activity/close-1.png" alt="" onclick="closeContainer()">
+                        </div>
+                    </div>
+                </div>
+                <div class="friends-activity-list">
+                    <div class="friends-activity-list-member">
+                        <img src="assets/images/desktop/friends-activity/friend4.png" alt="">
+                        <div class="friends-activity-member-content">
+                            <div class="friends-activity-member-name">
+                                <p>FriendlyMusicListener</p>
+                            </div>
+                            <div class="friends-activity-member-info">
+                                <div class="friends-activity-playsound">
+                                    <img src="assets/images/desktop/friends-activity/media-volume-anime.png" alt="">
+                                </div>
+                                <p class="sound-track-name">Goosebumps</p>
+                                <div class="friends-activity-dot">
+                                    <img src="assets/images/desktop/friends-activity/dot.png" alt="">
+                                </div>
+                                <p class="sound-track-autor">Travis Scott</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="friends-activity-list-member">
+                        <img src="assets/images/desktop/friends-activity/friend1.png" alt="">
+                        <div class="friends-activity-member-content">
+                            <div class="friends-activity-member-name">
+                                <p>AverageMusicEnjoyer</p>
+                            </div>
+                            <div class="friends-activity-member-info">
+                                <div class="friends-activity-playsound">
+                                    <img src="assets/images/desktop/friends-activity/media-volume-anime.png" alt="">
+                                </div>
+                                <p class="sound-track-name">Get Lucky</p>
+                                <div class="friends-activity-dot">
+                                    <img src="assets/images/desktop/friends-activity/dot.png" alt="">
+                                </div>
+                                <p class="sound-track-autor">Daft Punk</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!-- right sidebar friends-activity end -->
+
+    <!-- footer start -->
+        <footer class="footer">
+            <div class="control-icons">
+                <button>
+                    <img src="assets/images/desktop/footer/play-control/pause-1.png" alt="">
+                </button>
+                <button>
+                    <img src="assets/images/desktop/footer/play-control/back-1.png" alt="">
+                </button>
+                <button>
+                    <img src="assets/images/desktop/footer/play-control/forward-1.png" alt="">
+                </button>
+                <button>
+                    <img src="assets/images/desktop/footer/play-control/shuffle-1.png" alt="">
+                </button>
+                <button>
+                    <img src="assets/images/desktop/footer/play-control/loop-1.png" alt="">
+                </button>
+            </div>
+            <div class="play-time">
+                <span>2:23</span>
+            </div>
+            <div class="play-track">
+                <img src="assets/images/desktop/footer/play-control/track.png" alt="">
+            </div>
+            <div class="full-time">
+                <span>4:45</span>
+            </div>
+            <div class="video-mute">
+                <img src="assets/images/desktop/footer/play-control/mute-1.png" alt="">
+            </div>
+            <div class="singer-icon">
+                <img src="assets/images/desktop/footer/play-control/singer.png" alt="">
+            </div>
+            <div class="singer-info">
+                <span>Get Lucky</span>
+                <span>Daft Punk</span>
+                <span>Random Access Memories</span>
+            </div>
+            <div class="footer-right-icons">
+                <div class="singer-icon">
+                    <img src="assets/images/desktop/footer/play-control/heart-1.png" alt="">
+                </div>
+                <div class="singer-icon">
+                    <img src="assets/images/desktop/footer/play-control/pc-playlist-1.png" alt="">
+                </div>
+                <div class="singer-icon">
+                    <img src="assets/images/desktop/footer/play-control/pc-lyrics-1.png" alt="">
+                </div>
+                <div class="singer-icon">
+                    <img src="assets/images/desktop/footer/play-control/big-sound-1.png" alt="">
+                </div>
+                <div class="singer-icon">
+                    <img src="assets/images/desktop/footer/play-control/pc-playing-more-1.png" alt="">
+                </div>
+                <div class="singer-icon">
+                    <img src="assets/images/desktop/footer/play-control/separator-1.png" alt="">
+                </div>
+                <div class="singer-icon">
+                    <img src="assets/images/desktop/footer/play-control/pc-dj-1.png" alt="">
+                </div>
+                <div class="singer-icon">
+                    <img src="assets/images/desktop/footer/play-control/pc-queue-1.png" alt="">
+                </div>
+            </div>
+        </footer>
+    <!-- footer end -->
+    </div>
+    <script>
+        function togglePlaylists(event, el) {
+            if (event.target.closest('.nav-playlists-sublist')) return;
+            el.classList.toggle('expanded');
+        }
+        function friendsActivity() {
+            if (window.innerWidth > 768) {
+                document.getElementById("container").classList.toggle("view_hide");
+            }
+        }
+        function closeContainer() {
+            document.getElementById("container").classList.remove("view_hide");
+        }
+        window.addEventListener("resize", function () {
+            if (window.innerWidth <= 860) {
+                document.getElementById("container").classList.remove("view_hide");
+            }
+        });
+
+        // Like button - toggle green on click
+        document.querySelectorAll(".song-like-btn").forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                this.classList.toggle("liked");
+            });
+        });
+
+        // Carousel functionality
+        function initCarousel() {
+            const carouselSections = document.querySelectorAll('.made-for-you-wrapper, .your-top-mixes');
+            
+            carouselSections.forEach(section => {
+                const buttons = section.querySelector(':scope > div:first-child').querySelectorAll('button');
+                const cardsContainer = section.querySelector('.made-for-you-cards');
+                
+                if (buttons.length >= 2 && cardsContainer) {
+                    const prevBtn = buttons[0];
+                    const nextBtn = buttons[1];
+                    const cardWidth = 170 + 11; // card width + gap
+                    
+                    prevBtn.addEventListener('click', function() {
+                        cardsContainer.scrollBy({
+                            left: -cardWidth * 3,
+                            behavior: 'smooth'
+                        });
+                    });
+                    
+                    nextBtn.addEventListener('click', function() {
+                        cardsContainer.scrollBy({
+                            left: cardWidth * 3,
+                            behavior: 'smooth'
+                        });
+                    });
+                }
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', initCarousel);
+    </script>
+</body>
+</html>

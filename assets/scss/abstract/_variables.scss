@@ -1,6 +1,33 @@
-$base-bg-color:#060606;
-$base-font-color:#898989;
-$second-font-color:#E0E0E0;
-$h-fonts-color:#fff;
-$base-font-size:16px;
-$main-font-size:14px;
+/* ძირითადი ცვლადები */
+$base-bg-color: #060606;
+
+// Page / main container
+$page-width: 1771px;
+$page-height: 1024px;
+$base-font-color: #898989;
+$second-font-color: #E0E0E0;
+$h-fonts-color: #fff;
+$base-font-size: 16px;
+$main-font-size: 14px;
+$base-border-color: #202020;
+$base-border-dark: #333;
+$base-bg-hover: #202020;
+$base-bg-dark: #111111;
+$accent-green: #1DB954;
+
+// Main content container (Library, Home content area)
+$content-width: 1491px;
+$content-height: 869px;
+
+// Footer (player bar)
+$footer-width: 1491px;
+$footer-height: 81px;
+
+// Cards (Home, Library, Search)
+$card-width: 170px;
+$card-height: 253.3px;
+
+// Card image/photo
+$card-image-width: 170px;
+$card-image-height: 181px;
+$card-image-gap: 1px;
