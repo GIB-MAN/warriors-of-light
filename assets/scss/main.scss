@@ -1,5 +1,4 @@
 @use './base/reset';
-@use './base/base';
 @use './abstract/variables';
 @use './abstract/mixins';
 @use "./layout/header";
@@ -7,6 +6,8 @@
 @use './layout/content';
 @use './layout/friends_actv';
 @use './layout/footer';
+@use './abstract/media';
+@use './base/base';
 
 
 @font-face {
@@ -58,6 +59,53 @@
 }
 }
 
-@media (max-width:390px) {
 
+@media (max-width:480px){
+    .header-right-btn .media480{
+        display: none;
+    }
+}
+@media (max-width:390px){
+    .container {
+        width: 100%;
+        max-width: 390px;
+        height:100vh;
+        margin: auto;
+        background-color: #e98c8c;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 101px auto 156px;
+        gap:0;
+    }
+    .header-wrapper {
+        display:none;
+    }
+    .mobile-home-filter {
+        grid-area: 1 / 1 / 2 / 2;
+        background-color: #c0c0c0;
+        height: 101px;
+        border-radius:0;
+        margin:0;
+    }
+    .content {
+        grid-area: 2 / 1 / 3 / 2;
+        height: 564px;
+        border-radius:0;
+        margin:0;
+    }
+    .player-mob{
+        height: 61px;
+        width: 390px;
+        background-color: rgba(51, 56, 66, 1);
+    }
+    .header{
+        grid-area: 3 / 1 / 4 / 2;
+        width:390px;
+        height: 156px;
+        border-radius: 0;
+        margin:0;
+        position: fixed;
+        bottom:0; 
+        z-index: 5;
+    }
 }

@@ -2,14 +2,14 @@
 @use '../abstract/variables';
 
 .content {
-    grid-area: 2 / 2 / 3 / 3;
+    // grid-area: 2 / 2 / 3 / 3;   gadatanilia _base responsivisTvis
     background-color: variables.$base-bg-color;
     border:1px solid #202020;
     border-radius: 10px;
-    margin:4px 0 0 0;
+    margin:4px 0 10px 0;
     padding: 0 25px;
     max-width: 1491px;
-    height: calc(100vmin - 54px - 104px);
+    height: calc(100vh - 54px - 104px);
     overflow-y: hidden;
     scrollbar-width: none;
 
@@ -72,66 +72,12 @@
     &-card {
         padding-top:15px;
         width: 170px;
-        // border:1px solid red;
-        height: 240px;              // hoverisTvis
-        // position:relative;          // hoverisTvis
+        height: 240px;
         img {
             margin:0px 0;
-            //   width:100%;
-                // display:block;
-                // position:relative;          // hoverisTvis
-                // z-index:2;                  // hoverisTvis
-                // transition:all .3s ease;    // hoverisTvis
-        }
-            .cardimages-shadow{
-                position:relative;
-                width:170px;
-                
-            }
-            .cardimages-shadow::before,
-            .cardimages-shadow::after{
-                content:"";
-
-                position:absolute;
-                left:0;
-                width:100%;
-
-                border-radius:7.25px 7.25px 0 0;
-                background:#F4B8BD;
-                z-index:0;
-                transition:all .3s ease;
-                }
-                 
-            .cardimages-shadow::before{
-                height:6px;
-                top:-6px;
-                opacity:.6;
-                left:8px;
-                width:calc(100% - 16px);
-                    border-top:1px solid #0f0f0f;
-                
-                }
-
-                
-            .cardimages-shadow::after{
-                height:5px;
-                top:-11px;
-                opacity:.35;
-                left:18px;
-                width:calc(100% - 37px);
-                border-bottom:1px solid #0f0f0f;
-                
-                }
-            .cardimages {
-                    position:relative;
-                    border-top:1px solid #0f0f0f;
-                    border-radius:7.25px;
-                    overflow:hidden;
-                    z-index:2;
-                    transform:translateY(0);
-                    transition:all .3s ease;
             }
         }
+    
         &-card:hover {
             // box-shadow: 0 4px 8px 0 rgba(200, 200, 200, 0.2), 0 6px 20px 0 rgba(200, 200, 200, 0.19);
         }
@@ -144,12 +90,61 @@
             left:8px;
         }
 }
+.cardimages-shadow{
+    position:relative;
+    width:170px;
+    
+}
+.cardimages-shadow::before,
+.cardimages-shadow::after{
+    content:"";
+
+    position:absolute;
+    left:0;
+    width:100%;
+
+    border-radius:7.25px 7.25px 0 0;
+    background:#F4B8BD;
+    z-index:0;
+    transition:all .3s ease;
+    }
+        
+.cardimages-shadow::before{
+    height:6px;
+    top:-6px;
+    opacity:.6;
+    left:8px;
+    width:calc(100% - 16px);
+        border-top:1px solid #0f0f0f;
+    
+    }
+
+    
+.cardimages-shadow::after{
+    height:5px;
+    top:-11px;
+    opacity:.35;
+    left:18px;
+    width:calc(100% - 37px);
+    border-bottom:1px solid #0f0f0f;
+    
+    }
+.cardimages {
+        position:relative;
+        border-top:1px solid #0f0f0f;
+        border-radius:7.25px;
+        overflow:hidden;
+        z-index:2;
+        transform:translateY(0);
+        transition:all .3s ease;
+}
 .card{
     &-name {
         @include mixins.flex-between;
         }
     &-title {
         @include mixins.satoshi_custom(1.4rem,500,#E0E0E0);
+        margin:6px 0 8px 0;
         }
     &-rating{
         @include mixins.satoshi_custom(1.4rem,400,#E0E0E0);
@@ -187,6 +182,7 @@
 .your-top-mixes{
 
     &-title-btn {
+        height: 40.4px;
         @include mixins.flex-between;
         margin:30px 0 15px 0;
         gap:10px;
@@ -204,11 +200,23 @@
         overflow: hidden;
     }
     &-card {
+        padding-top:15px;
         width: 170px;
         img {
-            margin:8px 0;
+            margin:0;
         }
     
+    }
+    &-card:hover {
+        // box-shadow: 0 4px 8px 0 rgba(200, 200, 200, 0.2), 0 6px 20px 0 rgba(200, 200, 200, 0.19);
+    }
+    &-card:hover .cardimages-shadow::before {
+       width:calc(100% - 8px);
+       left:4px;
+    }
+    &-card:hover .cardimages-shadow::after {
+       width:calc(100% - 16px);
+       left:8px;
     }
     .card{
         &-name {

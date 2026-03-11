@@ -57,7 +57,7 @@
 }
 
 .container.view_hide {
-    grid-template-columns: clamp(180px, 18.4vw, 248px) 1fr 358px;  //(nav bar width), (content width), (frendly 358px) 
+    grid-template-columns: 248px 1fr 358px;  //(nav bar width), (content width), (frendly 358px) 
 }
 .container.view_hide .friends-activity{
     display:block;   

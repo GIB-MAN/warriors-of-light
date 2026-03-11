@@ -12,7 +12,8 @@
     gap:8px;
     position: fixed;
     bottom: 0;
-    left: clamp(180px, 18.4vw, 248px);
+    // left: clamp(180px, 18.4vw, 248px);
+    left: 248px;
 
     &-right-icons {
         width: 348px;
