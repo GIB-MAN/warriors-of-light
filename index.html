@@ -114,7 +114,8 @@
                             </div>
                         </a>
                     </li>
-                    <li>
+
+                    <li class="has-submenu">
                         <a href="#" class="nav-item pins">
                             <div class="nav-item-icon" data-title="Pins">
                                 <img src="assets/images/desktop/nav/icon-pins-1.png">
@@ -126,8 +127,13 @@
                                 <img src="assets/images/desktop/nav/icon-sublist-arrow.png">
                             </div>
                         </a>
+                        <ul class="nav-sublist">
+                            <li><img src="assets/images/desktop/nav/submenu-item-pins.png"><a href="#">Recent Pins</a></li>
+                            <li><img src="assets/images/desktop/nav/submenu-item-pins.png"><a href="#">Favorite Pins</a></li>
+                        </ul>
+
                     </li>
-                    <li>
+                    <li class="has-submenu">
                         <a href="#" class="nav-item playlist">
                             <div class="nav-item-icon" data-title="Playlists">
                                 <img src="assets/images/desktop/nav/icon-playlist-1.png">
@@ -139,6 +145,9 @@
                                 <img src="assets/images/desktop/nav/icon-sublist-arrow.png">
                             </div>
                         </a>
+                        <ul class="nav-sublist">
+                            <li><img src="assets/images/desktop/nav/submenu-item-playlist.png"><a href="#">Recent Pins</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#" class="nav-item liked-song">
@@ -759,10 +768,10 @@
                         </div>
                         <div class="friends-activity-btn">
                             <div class="friends-item-icon">
-                                <img src="assets/images/desktop/friends-activity/add-friends-1.png">
+                                <button><img src="assets/images/desktop/friends-activity/add-friends-1.png"></button>
                             </div>
                              <div class="friends-item-icon">
-                                <img src="assets/images/desktop/friends-activity/close-1.png" onclick="closeContainer()">
+                                <button><img src="assets/images/desktop/friends-activity/close-1.png" onclick="closeContainer()"></button>
                             </div>
                         </div>
                     </div>
@@ -972,7 +981,23 @@
         const ytm_scrollAmount = 180;
         ytm_next.addEventListener("click", () => {  YTM_carousel.scrollLeft += ytm_scrollAmount;});
         ytm_prev.addEventListener("click", () => {  YTM_carousel.scrollLeft -= ytm_scrollAmount;});
-    </script>    
+    </script> 
+    <script>
+        const menuItems = document.querySelectorAll('.has-submenu');
+        menuItems.forEach(item => {
+        const link = item.querySelector('.nav-item');
+        link.addEventListener('click', function(e){
+        e.preventDefault();
+        const isOpen = item.classList.contains('open');
+        // თავიდან ყველა ავკეცოთ
+        menuItems.forEach(el => el.classList.remove('open'));
+        // გაუხსნელი გავხსნათ
+        if(!isOpen){
+            item.classList.add('open');
+                }
+            });
+        });
+</script>   
 
 </body>
 </html>
