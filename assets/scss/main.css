@@ -23,6 +23,10 @@ a {
   color: #898989;
 }
 
+button {
+  cursor: pointer;
+}
+
 .header-wrapper {
   display: flex;
   align-items: center;
@@ -924,6 +928,45 @@ a {
 .player-mob-btn {
   width: 40.41px;
   height: 40.41px;
+}
+
+.nav-sublist {
+  list-style: none;
+  padding-left: 50px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+}
+.nav-sublist li {
+  margin: 6px 0;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.nav-sublist li:hover {
+  background-color: #202020;
+  border-radius: 5px;
+}
+.nav-sublist a {
+  font-family: satoshi;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #898989;
+  margin-left: 10px;
+}
+
+.has-submenu.open .nav-sublist {
+  max-height: 300px;
+}
+
+.nav-item-sublist-arrow img {
+  transition: transform 0.3s ease;
+}
+
+.has-submenu.open .nav-item-sublist-arrow img {
+  transform: rotate(90deg);
 }
 
 @media (min-width: 391px) {

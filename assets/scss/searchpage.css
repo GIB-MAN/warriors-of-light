@@ -23,6 +23,10 @@ a {
   color: #898989;
 }
 
+button {
+  cursor: pointer;
+}
+
 @media (min-width: 391px) {
   .container {
     width: 100%;

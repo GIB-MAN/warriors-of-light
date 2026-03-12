@@ -1,5 +1,6 @@
 @use '../abstract/mixins';
 @use '../abstract/variables';
+@use 'sass:list';
 
 .content {
     background-color: variables.$base-bg-color;
@@ -117,7 +118,6 @@
     
     }
 
-    
 .cardimages-shadow::after{
     height:5px;
     top:-11px;
@@ -147,28 +147,28 @@
     &-rating{
         @include mixins.satoshi_custom(1.4rem,400,#E0E0E0);
         &-c1{
-            color:nth(variables.$card-colors-mfy, 1);
+            color:list.nth(variables.$card-colors-mfy, 1);
         }
         &-c2{
-            color:nth(variables.$card-colors-mfy, 2);
+            color:list.nth(variables.$card-colors-mfy, 2);
         }
         &-c3{
-            color:nth(variables.$card-colors-mfy, 3);
+            color:list.nth(variables.$card-colors-mfy, 3);
         }
         &-c4{
-            color:nth(variables.$card-colors-mfy, 4);
+            color:list.nth(variables.$card-colors-mfy, 4);
         }
         &-c5{
-            color:nth(variables.$card-colors-mfy, 5);
+            color:list.nth(variables.$card-colors-mfy, 5);
         }
         &-c6{
-            color:nth(variables.$card-colors-mfy, 6);
+            color:list.nth(variables.$card-colors-mfy, 6);
         }
         &-c7{
-            color:nth(variables.$card-colors-mfy, 7);
+            color:list.nth(variables.$card-colors-mfy, 7);
         }
         &-c8{
-            color:nth(variables.$card-colors-mfy, 8);
+            color:list.nth(variables.$card-colors-mfy, 8);
         }
     }
     &-info p{
@@ -226,28 +226,28 @@
         &-rating{
             @include mixins.satoshi_custom(1.4rem,400,#E0E0E0);
             &-a1{
-                color:nth(variables.$card-colors-ytm, 1);
+                color:list.nth(variables.$card-colors-ytm, 1);
             }
             &-a2{
-                color:nth(variables.$card-colors-ytm, 2);
+                color:list.nth(variables.$card-colors-ytm, 2);
             }
             &-a3{
-                color:nth(variables.$card-colors-ytm, 3);
+                color:list.nth(variables.$card-colors-ytm, 3);
             }
             &-a4{
-                color:nth(variables.$card-colors-ytm, 4);
+                color:list.nth(variables.$card-colors-ytm, 4);
             }
             &-a5{
-                color:nth(variables.$card-colors-ytm, 5);
+                color:list.nth(variables.$card-colors-ytm, 5);
             }
             &-a6{
-                color:nth(variables.$card-colors-ytm, 6);
+                color:list.nth(variables.$card-colors-ytm, 6);
             }
             &-a7{
-                color:nth(variables.$card-colors-ytm, 7);
+                color:list.nth(variables.$card-colors-ytm, 7);
             }
             &-a8{
-                color:nth(variables.$card-colors-ytm, 8);
+                color:list.nth(variables.$card-colors-ytm, 8);
             }
         }
         &-info p{
