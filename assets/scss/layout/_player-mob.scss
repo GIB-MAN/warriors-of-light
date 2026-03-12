@@ -1,0 +1,48 @@
+@use '../abstract/mixins';
+@use '../abstract/variables';
+
+.player-mob {
+
+    border-radius:10px;
+    background-color: #333842;
+    
+    &-wrapper {
+        width: 359px;
+        height:61px;
+        padding:0 8px;
+        @include mixins.flex-between;
+    }
+    &-item {
+        width: 260px;
+        height:55px;
+        @include mixins.flex-start;
+        gap:8px;
+        position:relative;
+        &-info {
+            h2 {
+                @include mixins.satoshi_custom(1.2rem,100,variables.$second-font-color); 
+            }
+            p {
+                @include mixins.satoshi_custom(1.2rem,100,variables.$base-font-color); 
+            }
+        }
+    }
+    &-blend {
+            width: 80px;
+            height:55px;
+            background-image: linear-gradient(to left, rgba(51, 56, 66, 1)  60%,  rgba(51, 56, 66, 0.80) 80%, rgba(51, 56, 66, 0.60) 100%);
+            position: absolute;
+            right:0px;
+            z-index:10;
+        }
+    &-btns {
+        width: 90px;
+        height:55px;
+        @include mixins.flex;
+    }
+    &-btn {
+        width: 40.41px;
+        height:40.41px;
+    }
+    
+}

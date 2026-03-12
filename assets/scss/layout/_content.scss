@@ -2,11 +2,9 @@
 @use '../abstract/variables';
 
 .content {
-    // grid-area: 2 / 2 / 3 / 3;   gadatanilia _base responsivisTvis
     background-color: variables.$base-bg-color;
-    border:1px solid #202020;
     border-radius: 10px;
-    margin:4px 0 10px 0;
+    margin:4px ;
     padding: 0 25px;
     max-width: 1491px;
     height: calc(100vh - 54px - 104px);
@@ -37,7 +35,7 @@
     }
 }
 .card-wrapper {
-    height: calc(100vh - 220px); // ამით ვითვლი ქარდების სამიძრაო არეალს
+    height: calc(100vh - 220px); // ამით ვითვლი ქარდების სამოძრაო არეალს
     overflow-y: auto;
     box-sizing: border-box;
     scrollbar-width: none;
@@ -74,7 +72,7 @@
         width: 170px;
         height: 240px;
         img {
-            margin:0px 0;
+            margin:0;
             }
         }
     
@@ -92,7 +90,7 @@
 }
 .cardimages-shadow{
     position:relative;
-    width:170px;
+    //width:170px;
     
 }
 .cardimages-shadow::before,
@@ -329,4 +327,54 @@
         }
     }
 
+}
+
+
+/*     ------------- mobile version ----------------   */
+
+.content-wrapper-mob {
+    //background-color: red; //variables.$mobile-bg-color;
+    border:0;
+    .made-for-you-card,
+    .your-top-mixes-card {
+        padding-top:15px;
+        width: 142px;
+        height: 210px;
+    }
+    .made-for-you-wrapper,
+    .your-top-mixes-mob {
+        width: 100%;
+        max-width: 360px;
+        height: 270px;
+        padding:0 15px;
+    }
+}
+.play-list-mobile{
+    &-wrapper {
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        gap:10px;
+        padding:8px;
+    }
+    &-item {
+        width: 160px;
+        height: 42px;
+        padding:8px;
+        border-radius: 10px;
+        background-color: rgba(32, 32, 32, 1);
+        @include mixins.flex-start;
+        gap:8px;
+    
+        &-info {
+            h2 {
+                @include mixins.satoshi_custom(1.4rem,400,variables.$second-font-color); 
+            }
+            p {
+                @include mixins.satoshi_custom(1.2rem,400,variables.$base-font-color); 
+            }
+        }
+    }
 }
