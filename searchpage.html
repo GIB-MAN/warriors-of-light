@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="assets/scss/main.css">
+    <link rel="stylesheet" href="assets/scss/searchpage.css">
+</head>
+<body>
+    <div class="container" id="container">
+    <!--  header section start  -->
+        <header class="header search-header">
+            <div class="header-wrapper">
+                <dic class="header-left-btn">
+                    <a href="index.html" class="header-home">
+                        <img src="assets/images/desktop/header/home-3.png">
+                        <span>Home</span>
+                    </a>
+                    <div class="header-discover">
+                        <img src="assets/images/desktop/header/discover-1.png">
+                        <span>Discover</span>
+                    </div>
+                    <div class="header-search active">
+                        <img src="assets/images/desktop/header/search-1.png">
+                        <span>Search</span>
+                    </div>
+                </dic>
+                <div class="header-search-bar">
+                    <input type="text" class="header-search-input" placeholder="Search...">
+                </div>
+                <dic class="header-right-btn">
+                    <div class="header-item-icon">
+                        <img src="assets/images/desktop/header/buzzer-1.png">
+                    </div>
+                    <div class="header-item-icon">
+                        <img src="assets/images/desktop/header/lock-open.png">
+                    </div>
+                    <div class="header-item-icon">
+                        <img src="assets/images/desktop/header/friends-1.png" onclick="toggleSidebar()">
+                    </div>
+                    <div class="header-item-icon">
+                        <img src="assets/images/desktop/header/settings-1.png">
+                    </div>
+                    <div class="header-item-icon">
+                        <img src="assets/images/desktop/header/user-area.png">
+                    </div>
+                </dic>
+            </dic>
+        </header>
+    <!--  header section end  -->
+
+            <nav class="nav">
+                <div class="naw-wrapper">
+                    <div class="nav-item my-library">
+                        <div class="nav-item-icon" data-title="My Library">
+                            <img src="assets/images/desktop/nav/icon-my-library-1.png">
+                        </div>
+                        <div class="nav-item-title">
+                            <span>My Library</span>
+                        </div>
+                    </div>
+                    <div class="nav-item pins">
+                        <div class="nav-item-icon" data-title="Pins">
+                            <img src="assets/images/desktop/nav/icon-pins-1.png">
+                        </div>
+                        <div class="nav-item-title">
+                            <span>Pins</span>
+                        </div>
+                        <div class="nav-item-sublist-arrow">
+                            <img src="assets/images/desktop/nav/icon-sublist-arrow.png">
+                        </div>
+                    </div>
+                    <div class="nav-item playlist">
+                        <div class="nav-item-icon" data-title="Playlists">
+                            <img src="assets/images/desktop/nav/icon-playlist-1.png">
+                        </div>
+                        <div class="nav-item-title">
+                            <span>Playlists</span>
+                        </div>
+                        <div class="nav-item-sublist-arrow">
+                            <img src="assets/images/desktop/nav/icon-sublist-arrow.png">
+                        </div>
+                    </div>
+                    <div class="nav-item liked-song">
+                        <div class="nav-item-icon" data-title="Liked Song">
+                            <img src="assets/images/desktop/nav/icon-liked-song-1.png">
+                        </div>
+                        <div class="nav-item-title">
+                            <span>Liked Song</span>
+                        </div>
+                    </div>
+                    <div class="nav-item saves">
+                        <div class="nav-item-icon"  data-title="Saves">
+                            <img src="assets/images/desktop/nav/icon-saves-1.png">
+                        </div>
+                        <div class="nav-item-title">
+                            <span>Saves</span>
+                        </div>
+                    </div>
+                    <div class="nav-item albums">
+                        <div class="nav-item-icon" data-title="Albums">
+                            <img src="assets/images/desktop/nav/icon-albums-1.png">
+                        </div>
+                        <div class="nav-item-title">
+                            <span>Albums</span>
+                        </div>
+                    </div>
+                    <div class="nav-item folders">
+                        <div class="nav-item-icon" data-title="Folders">
+                            <img src="assets/images/desktop/nav/icon-folders-1.png">
+                        </div>
+                        <div class="nav-item-title">
+                            <span>Folders</span>
+                        </div>
+                    </div>
+                    <div class="nav-item podcasts">
+                        <div class="nav-item-icon" data-title="Podcasts">
+                            <img src="assets/images/desktop/nav/icon-podcasts-1.png">
+                        </div>
+                        <div class="nav-item-title">
+                            <span>Podcasts</span>
+                        </div>
+                    </div>
+                    <div class="nav-item audiobooks">
+                        <div class="nav-item-icon" data-title="Audiobooks">
+                            <img src="assets/images/desktop/nav/icon-audiobooks-1.png">
+                        </div>
+                        <div class="nav-item-title">
+                            <span>Audiobooks</span>
+                        </div>
+                    </div>
+                    <div class="nav-item artists">
+                        <div class="nav-item-icon" data-title="Artists">
+                            <img src="assets/images/desktop/nav/icon-artists-1.png">
+                        </div>
+                        <div class="nav-item-title">
+                            <span>Artists</span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+    <!--  nav section end  -->
+
+            <section class="content search-content">
+                <div class="content-wrapper">
+                    <!-- Recent searches -->
+                    <div class="search-section">
+                        <div class="search-section-header">
+                            <h3 class="search-section-title">Recent searches</h3>
+                            <a href="#" class="search-browse-all">Browse all</a>
+                        </div>
+                        <div class="recent-searches">
+                            <div class="recent-search-item">
+                                <button class="recent-search-remove" aria-label="Remove">×</button>
+                                <img src="assets/images/desktop/search-page/recent-searches/image 3.png" alt="Daft Punk">
+                                <span class="recent-search-name">Daft Punk</span>
+                            </div>
+                            <div class="recent-search-item">
+                                <button class="recent-search-remove" aria-label="Remove">×</button>
+                                <img src="assets/images/desktop/search-page/recent-searches/Frame 8 (1).png" alt="David Bowie">
+                                <span class="recent-search-name">David Bowie</span>
+                            </div>
+                            <div class="recent-search-item recent-search-item--album">
+                                <button class="recent-search-remove" aria-label="Remove">×</button>
+                                <img src="assets/images/desktop/search-page/recent-searches/Frame 8.png" alt="Black Holes">
+                                <span class="recent-search-name">Black Holes...</span>
+                                <span class="recent-search-sub">Muse</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Discover -->
+                    <div class="search-section discover-section">
+                        <div class="search-section-header">
+                            <h3 class="search-section-title">Discover</h3>
+                            <div class="search-section-nav">
+                                <button class="section-nav-btn"><img src="assets/images/desktop/content/back-card-1.png" alt="Back"></button>
+                                <button class="section-nav-btn"><img src="assets/images/desktop/content/next-card-1.png" alt="Next"></button>
+                            </div>
+                        </div>
+                        <div class="discover-grid-wrapper">
+                            <div class="discover-grid">
+                            <div class="discover-card" style="--card-bg: #1e3a5f;">
+                                <img src="assets/images/desktop/search-page/discover/1.png" alt="Made For You">
+                                <span class="discover-card-title">Made For You</span>
+                            </div>
+                            <div class="discover-card" style="--card-bg: #b45309;">
+                                <img src="assets/images/desktop/search-page/discover/2.png" alt="New Releases">
+                                <span class="discover-card-title">New Releases</span>
+                            </div>
+                            <div class="discover-card" style="--card-bg: #503750;">
+                                <img src="assets/images/desktop/search-page/discover/3.png" alt="Spotify Classics">
+                                <span class="discover-card-title">Spotify Classics</span>
+                            </div>
+                            <div class="discover-card" style="--card-bg: #503750;">
+                                <img src="assets/images/desktop/search-page/discover/4.png" alt="Charts">
+                                <span class="discover-card-title">Charts</span>
+                            </div>
+                            <div class="discover-card" style="--card-bg: #8d67ab;">
+                                <img src="assets/images/desktop/search-page/discover/5.png" alt="Trending">
+                                <span class="discover-card-title">Trending</span>
+                            </div>
+                            <div class="discover-card" style="--card-bg: #8d67ab;">
+                                <img src="assets/images/desktop/search-page/discover/6.png" alt="Discover">
+                                <span class="discover-card-title">Discover</span>
+                            </div>
+                            <div class="discover-card" style="--card-bg: #477d95;">
+                                <img src="assets/images/desktop/search-page/discover/7.png" alt="Spotify Singles">
+                                <span class="discover-card-title">Spotify Singles</span>
+                            </div>
+                            <div class="discover-card" style="--card-bg: #7358a7;">
+                                <img src="assets/images/desktop/search-page/discover/8.png" alt="Decades">
+                                <span class="discover-card-title">Decades</span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- Genres -->
+                    <div class="search-section">
+                        <div class="search-section-header">
+                            <h3 class="search-section-title">Genres</h3>
+                            <div class="search-section-nav">
+                                <button class="section-nav-btn"><img src="assets/images/desktop/content/back-card-1.png" alt="Back"></button>
+                                <button class="section-nav-btn"><img src="assets/images/desktop/content/next-card-1.png" alt="Next"></button>
+                            </div>
+                        </div>
+                        <div class="discover-grid-wrapper">
+                            <div class="discover-grid genres-grid">
+                            <div class="discover-card" style="--card-bg: #1db954;">
+                                <img src="assets/images/desktop/search-page/genres/1.png" alt="Pop">
+                                <span class="discover-card-title">Pop</span>
+                            </div>
+                            <div class="discover-card" style="--card-bg: #e13300;">
+                                <img src="assets/images/desktop/search-page/genres/2.png" alt="Country">
+                                <span class="discover-card-title">Country</span>
+                            </div>
+                            <div class="discover-card" style="--card-bg: #8d67ab;">
+                                <img src="assets/images/desktop/search-page/genres/3.png" alt="Hip-Hop">
+                                <span class="discover-card-title">Hip-Hop</span>
+                            </div>
+                            <div class="discover-card" style="--card-bg: #e91429;">
+                                <img src="assets/images/desktop/search-page/genres/4.png" alt="Rock">
+                                <span class="discover-card-title">Rock</span>
+                            </div>
+                            <div class="discover-card" style="--card-bg: #e8115b;">
+                                <img src="assets/images/desktop/search-page/genres/5.png" alt="Indie">
+                                <span class="discover-card-title">Indie</span>
+                            </div>
+                            <div class="discover-card" style="--card-bg: #477d95;">
+                                <img src="assets/images/desktop/search-page/genres/6.png" alt="Punk">
+                                <span class="discover-card-title">Punk</span>
+                            </div>
+                            <div class="discover-card" style="--card-bg: #ba5d07;">
+                                <img src="assets/images/desktop/search-page/genres/7.png" alt="Metal">
+                                <span class="discover-card-title">Metal</span>
+                            </div>
+                            <div class="discover-card" style="--card-bg: #1e3a5f;">
+                                <img src="assets/images/desktop/search-page/genres/8.png" alt="Instrumental">
+                                <span class="discover-card-title">Instrumental</span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="friends-activity" id="friends_actv">
+                <div class="friends-activity-wapper">
+                    <div class="friends-activity-header">
+                        <div class="friends-activity-title">
+                            <h3>Friends Activity</h3>
+                        </div>
+                        <div class="friends-activity-btn">
+                            <div class="friends-item-icon">
+                                <img src="assets/images/desktop/friends-activity/add-friends-1.png">
+                            </div>
+                             <div class="friends-item-icon">
+                                <img src="assets/images/desktop/friends-activity/close-1.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        <footer class="footer">
+            <div class="control-icons">
+                <button>
+                    <img src="assets/images/desktop/footer/play-control/pause-1.png" alt="discovery weekly">
+                </button>
+                <button>
+                    <img src="assets/images/desktop/footer/play-control/back-1.png" alt="discovery weekly">
+                </button>
+                <button>
+                    <img src="assets/images/desktop/footer/play-control/forward-1.png" alt="discovery weekly">
+                </button>
+                <button>
+                    <img src="assets/images/desktop/footer/play-control/shuffle-1.png" alt="discovery weekly">
+                </button>
+                <button>
+                    <img src="assets/images/desktop/footer/play-control/loop-1.png" alt="discovery weekly">
+                </button>
+            </div>
+            <div class="play-time">
+                <span>2:23</span>
+            </div>
+            <div class="play-track">
+                <img src="assets/images/desktop/footer/play-control/track.png" alt="discovery weekly">
+            </div>
+            <div class="full-time">
+                <span>4:45</span>
+            </div>
+            <div class="video-mute">
+                <img src="assets/images/desktop/footer/play-control/mute-1.png" alt="discovery weekly">
+            </div>
+            <div class="singer-icon">
+                <img src="assets/images/desktop/footer/play-control/singer.png" alt="discovery weekly">
+            </div>
+            <div class="singer-info">
+                <span>Get Lucky</span>
+                <span>Daft Punk</span>
+                <span>Random Access Memories</span>     
+            </div>
+            <div class="footer-right-icons">
+                <div class="singer-icon">
+                    <img src="assets/images/desktop/footer/play-control/heart-1.png" alt="discovery weekly">
+                </div>
+                <div class="singer-icon">
+                    <img src="assets/images/desktop/footer/play-control/pc-playlist-1.png" alt="discovery weekly">
+                </div>
+                <div class="singer-icon">
+                    <img src="assets/images/desktop/footer/play-control/pc-lyrics-1.png" alt="discovery weekly">
+                </div>
+                <div class="singer-icon">
+                    <img src="assets/images/desktop/footer/play-control/big-sound-1.png" alt="discovery weekly">
+                </div>
+                <div class="singer-icon">
+                    <img src="assets/images/desktop/footer/play-control/pc-playing-more-1.png" alt="discovery weekly">
+                </div>
+                <div class="singer-icon">
+                    <img src="assets/images/desktop/footer/play-control/separator-1.png" alt="discovery weekly">
+                </div>
+                <div class="singer-icon">
+                    <img src="assets/images/desktop/footer/play-control/pc-dj-1.png" alt="discovery weekly">
+                </div>
+                <div class="singer-icon">
+                    <img src="assets/images/desktop/footer/play-control/pc-queue-1.png" alt="discovery weekly">
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        function toggleSidebar() {
+            document.getElementById("container").classList.toggle("collapse");
+        }
+    </script>
+</body>
+</html>

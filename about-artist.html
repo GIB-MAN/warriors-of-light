@@ -3,113 +3,456 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/scss/main.css">
+    <link rel="stylesheet" href="assets/scss/main.css">
 </head>
 
 <body>
+    <div class="container" id="container">
+        <!--  header section start  -->
+        <header class="header">
+            <div class="header-wrapper">
+                <dic class="header-left-btn">
+                    <a href="#" class="header-home">
+                        <img src="assets/images/desktop/header/home-3.png">
+                        <span>Home</span>
+                    </a>
+                    <a href="#" class="header-discover">
+                        <img src="assets/images/desktop/header/discover-1.png">
+                        <span>Discover</span>
+                    </a>
+                    <a href="#" class="header-search">
+                        <img src="assets/images/desktop/header/search-1.png">
+                        <span>Search</span>
+                    </a>
+                </dic>
+                <dic class="header-right-btn">
+                    <a href="#" class="header-item-icon">
+                        <img src="assets/images/desktop/header/buzzer-1.png">
+                    </a>
+                    <a href="#" class="header-item-icon">
+                        <img src="assets/images/desktop/header/lock-open.png">
+                    </a>
+                    <a class="header-item-icon">
+                        <img src="assets/images/desktop/header/friends-1.png" onclick="friendsActivity()">
+                    </a>
+                    <a href="#" class="header-item-icon">
+                        <img src="assets/images/desktop/header/settings-1.png">
+                    </a>
+                    <a href="#" class="header-item-icon">
+                        <img src="assets/images/desktop/header/user-area.png">
+                    </a>
+                </dic>
+                </dic>
+        </header>
+        <!--  header section end  -->
+        <!-- <main> -->
+        <nav class="nav">
+            <div class="nav-wrapper">
+                <a href="#" class="nav-item my-library">
+                    <div class="nav-item-icon" data-title="My Library">
+                        <img src="assets/images/desktop/nav/icon-my-library-1.png">
+                    </div>
+                    <div class="nav-item-title">
+                        <span>My Library</span>
+                    </div>
+                </a>
+                <a href="#" class="nav-item pins">
+                    <div class="nav-item-icon" data-title="Pins">
+                        <img src="assets/images/desktop/nav/icon-pins-1.png">
+                    </div>
+                    <div class="nav-item-title">
+                        <span>Pins</span>
+                    </div>
+                    <div class="nav-item-sublist-arrow">
+                        <img src="assets/images/desktop/nav/icon-sublist-arrow.png">
+                    </div>
+                </a>
+                <a href="#" class="nav-item playlist">
+                    <div class="nav-item-icon" data-title="Playlists">
+                        <img src="assets/images/desktop/nav/icon-playlist-1.png">
+                    </div>
+                    <div class="nav-item-title">
+                        <span>Playlists</span>
+                    </div>
+                    <div class="nav-item-sublist-arrow">
+                        <img src="assets/images/desktop/nav/icon-sublist-arrow.png">
+                    </div>
+                </a>
+                <a href="#" class="nav-item liked-song">
+                    <div class="nav-item-icon" data-title="Liked Song">
+                        <img src="assets/images/desktop/nav/icon-liked-song-1.png">
+                    </div>
+                    <div class="nav-item-title">
+                        <span>Liked Song</span>
+                    </div>
+                </a>
+                <a href="#" class="nav-item saves">
+                    <div class="nav-item-icon" data-title="Saves">
+                        <img src="assets/images/desktop/nav/icon-saves-1.png">
+                    </div>
+                    <div class="nav-item-title">
+                        <span>Saves</span>
+                    </div>
+                </a>
+                <a href="#" class="nav-item albums">
+                    <div class="nav-item-icon" data-title="Albums">
+                        <img src="assets/images/desktop/nav/icon-albums-1.png">
+                    </div>
+                    <div class="nav-item-title">
+                        <span>Albums</span>
+                    </div>
+                </a>
+                <a href="#" class="nav-item folders">
+                    <div class="nav-item-icon" data-title="Folders">
+                        <img src="assets/images/desktop/nav/icon-folders-1.png">
+                    </div>
+                    <div class="nav-item-title">
+                        <span>Folders</span>
+                    </div>
+                </a>
+                <a href="#" class="nav-item podcasts">
+                    <div class="nav-item-icon" data-title="Podcasts">
+                        <img src="assets/images/desktop/nav/icon-podcasts-1.png">
+                    </div>
+                    <div class="nav-item-title">
+                        <span>Podcasts</span>
+                    </div>
+                </a>
+                <a href="#" class="nav-item audiobooks">
+                    <div class="nav-item-icon" data-title="Audiobooks">
+                        <img src="assets/images/desktop/nav/icon-audiobooks-1.png">
+                    </div>
+                    <div class="nav-item-title">
+                        <span>Audiobooks</span>
+                    </div>
+                </a>
+                <a href="#" class="nav-item artists">
+                    <div class="nav-item-icon" data-title="Artists">
+                        <img src="assets/images/desktop/nav/icon-artists-1.png">
+                    </div>
+                    <div class="nav-item-title">
+                        <span>Artists</span>
+                    </div>
+                </a>
 
-    <main class="about-artist-page">
-        <!-- HERO -->
-        <section class="about-artist-hero">
-            <img class="about-artist-hero-image"
-                src="./assets/images/desktop/cards/icons-and-frames-Nazi/daft-punk2.png" alt="Daft Punk cover">
-            <div class="about-artist-hero-overlay"></div>
+            </div>
+        </nav>
+        <!--  nav section end  -->
 
-            <div class="about-artist-hero-content">
-                <div class="about-artist-hero-info">
-                    <h1 class="about-artist-title">Daft Punk</h1>
-                    <p class="about-artist-monthly-listeners">20,795,080 monthly listeners</p>
+        <main class="about-artist-page">
+            <!-- HERO -->
+            <section class="about-artist-hero">
+                <img class="about-artist-hero-image"
+                    src="./assets/images/desktop/cards/icons-and-frames-Nazi/daft-punk2.png" alt="Daft Punk cover">
+                <div class="about-artist-hero-overlay"></div>
+
+                <div class="about-artist-hero-content">
+                    <div class="about-artist-hero-info">
+                        <h1 class="about-artist-title">Daft Punk</h1>
+                        <p class="about-artist-monthly-listeners">20,795,080 monthly listeners</p>
+                    </div>
+
+                    <div class="about-artist-hero-actions">
+                        <button class="about-artist-play-button" type="button" aria-label="Play">
+                            <img src="./assets/images/desktop/cards/icons-and-frames-Nazi/play-active.png" alt="Play">
+                        </button>
+
+                        <button class="about-artist-follow-button" type="button" aria-label="Follow">
+                            <img src="./assets/images/desktop/cards/icons-and-frames-Nazi/follow.png" alt="Follow">
+                        </button>
+
+                        <button class="about-artist-icon-button" type="button" aria-label="Add">
+                            <img src="./assets/images/desktop/cards/icons-and-frames-Nazi/plus-active.png" alt="Add">
+                        </button>
+
+                        <button class="about-artist-icon-button" type="button" aria-label="More">
+                            <img src="./assets/images/desktop/cards/icons-and-frames-Nazi/create-active.png" alt="More">
+                        </button>
+
+                        <button class="about-artist-icon-button" type="button" aria-label="Options">
+                            <img src="./assets/images/desktop/cards/icons-and-frames-Nazi/dots-active.png"
+                                alt="Options">
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MENU -->
+            <section class="about-artist-menu" aria-label="Artist navigation">
+                <div class="about-artist-menu-list">
+                    <a href="#">Home</a>
+                    <a href="#">Albums</a>
+                    <a href="#">Singles and EPs</a>
+                    <a href="#">Compilations</a>
+                    <a href="#">Merch</a>
+                    <a href="#about-artist-description" aria-current="page">About</a>
+                    <a href="#">Features &amp; More</a>
+
+                    <button class="about-artist-menu-search" type="button" aria-label="Search">
+                        <img src="./assets/images/desktop/cards/icons-and-frames-Nazi/search-icon.png" alt="Search">
+                    </button>
+                </div>
+            </section>
+
+            <div class="about-artist-line"></div>
+
+            <!-- ABOUT -->
+            <section class="about-artist-details">
+                <div class="about-artist-rank-badge">
+                    <img class="about-artist-rank-image"
+                        src="./assets/images/desktop/cards/icons-and-frames-Nazi/star.png" alt="Rank badge">
                 </div>
 
-                <div class="about-artist-hero-actions">
-                    <button class="about-artist-play-button" type="button" aria-label="Play">
-                        <img src="./assets/images/desktop/cards/icons-and-frames-Nazi/play-active.png" alt="Play">
-                    </button>
+                <div class="about-artist-description" id="about-artist-description">
+                    <p>
+                        As they evolved from '90s French house pioneers to 2000s dance tastemakers to mainstream heroes
+                        in the 2010s, Daft Punk remained one of dance music's most iconic acts. With their early singles
+                        and 1997's instant-classic debut album Homework, Guy-Manuel de Homem-Christo and Thomas
+                        Bangalter quickly won acclaim for their skill at blending their beloved Chicago house and
+                        Detroit techno with pop, funk, indie rock, and hip-hop into nostalgic yet futuristic forms. Not
+                        content to just widen electronic music's popularity, on 2001's Discovery they reinvented the
+                        then-unfashionable sounds of mid-'80s soft rock and R&B into stylish tracks that also had a
+                        childlike wonder. Despite their sizable popularity, Daft Punk were never afraid to challenge
+                        their listeners, which they did with 2005's cold and dystopic Human After All. Even when they
+                        polarized their audience, there was never any doubt that they staged groundbreaking concerts,
+                        and the tour captured on Alive 2007 helped pave the way for arena-sized EDM, particularly in the
+                        U.S. With 2013's Random Access Memories, the duo once again looked to the past to create the
+                        future,
+                    </p>
+                </div>
 
-                    <button class="about-artist-follow-button" type="button" aria-label="Follow">
-                        <img src="./assets/images/desktop/cards/icons-and-frames-Nazi/follow.png" alt="Follow">
-                    </button>
+                <aside class="about-artist-stats" aria-label="Statistics">
+                    <div class="about-artist-stat-item">
+                        <div class="about-artist-stat-number">9,868,787</div>
+                        <span>Followers</span>
+                    </div>
 
-                    <button class="about-artist-icon-button" type="button" aria-label="Add">
-                        <img src="./assets/images/desktop/cards/icons-and-frames-Nazi/plus-active.png" alt="Add">
-                    </button>
+                    <div class="about-artist-stat-item">
+                        <div class="about-artist-stat-number">22,430,353</div>
+                        <span>Monthly Listeners</span>
+                    </div>
 
-                    <button class="about-artist-icon-button" type="button" aria-label="More">
-                        <img src="./assets/images/desktop/cards/icons-and-frames-Nazi/create-active.png" alt="More">
-                    </button>
+                    <div class="about-artist-city-item">
+                        <div class="about-artist-city-name">Paris, FR</div>
+                        <span>391,036 listeners</span>
+                    </div>
 
-                    <button class="about-artist-icon-button" type="button" aria-label="Options">
-                        <img src="./assets/images/desktop/cards/icons-and-frames-Nazi/dots-active.png" alt="Options">
-                    </button>
+                    <div class="about-artist-city-item">
+                        <div class="about-artist-city-name">Mexico City, MX</div>
+                        <span>367,878 listeners</span>
+                    </div>
+                </aside>
+            </section>
+        </main>
+        <!-- Your Top Mixes end  -->
+
+
+        </section>
+
+        <!-- right sidebar friends-activity start -->
+
+        <section class="friends-activity"> <!-- id="friends_actv" -->
+            <div class="friends-activity-wapper">
+                <div class="friends-activity-header">
+                    <div class="friends-activity-title">
+                        <h3>Friends Activity</h3>
+                    </div>
+                    <div class="friends-activity-btn">
+                        <div class="friends-item-icon">
+                            <img src="assets/images/desktop/friends-activity/add-friends-1.png">
+                        </div>
+                        <div class="friends-item-icon">
+                            <img src="assets/images/desktop/friends-activity/close-1.png" onclick="closeContainer()">
+                        </div>
+                    </div>
+                </div>
+                <div class="friends-activity-list">
+                    <div class="friends-activity-list-member">
+                        <img src="assets/images/desktop/friends-activity/friend4.png">
+                        <div class="friends-activity-member-content">
+                            <div class="friends-activity-member-name">
+                                <p>FriendlyMusicListener</p>
+                            </div>
+                            <div class="friends-activity-member-info">
+                                <div class="friends-activity-playsound">
+                                    <img src="assets/images/desktop/friends-activity/media-volume-anime.png">
+                                </div>
+                                <p class="sound-track-name">Goosebumps</p>
+                                <div class="friends-activity-dot">
+                                    <img src="assets/images/desktop/friends-activity/dot.png">
+                                </div>
+                                <p class="sound-track-autor">Travis Scott</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="friends-activity-list-member">
+                        <img src="assets/images/desktop/friends-activity/friend1.png">
+                        <div class="friends-activity-member-content">
+                            <div class="friends-activity-member-name">
+                                <p>AverageMusicEnjoyer</p>
+                            </div>
+                            <div class="friends-activity-member-info">
+                                <div class="friends-activity-playsound">
+                                    <img src="assets/images/desktop/friends-activity/media-volume-anime.png">
+                                </div>
+                                <p class="sound-track-name">Get Lucky</p>
+                                <div class="friends-activity-dot">
+                                    <img src="assets/images/desktop/friends-activity/dot.png">
+                                </div>
+                                <p class="sound-track-autor">Daft Punk</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="friends-activity-list-member">
+                        <img src="assets/images/desktop/friends-activity/friend2.png">
+                        <div class="friends-activity-member-content">
+                            <div class="friends-activity-member-name">
+                                <p>MusicEnthusiast</p>
+                            </div>
+                            <div class="friends-activity-member-info">
+                                <div class="friends-activity-playsound">
+                                    <p class="sound-track-autor">1h</p>
+                                </div>
+                                <p class="sound-track-name">would he</p>
+                                <div class="friends-activity-dot">
+                                    <img src="assets/images/desktop/friends-activity/dot.png">
+                                </div>
+                                <p class="sound-track-autor">joji</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="friends-activity-list-member">
+                        <img src="assets/images/desktop/friends-activity/friend3.png">
+                        <div class="friends-activity-member-content">
+                            <div class="friends-activity-member-name">
+                                <p>IListenToMusic56</p>
+                            </div>
+                            <div class="friends-activity-member-info">
+                                <div class="friends-activity-playsound">
+                                    <p class="sound-track-autor">1h</p>
+                                </div>
+                                <p class="sound-track-name">6h Rockstar</p>
+                                <div class="friends-activity-dot">
+                                    <img src="assets/images/desktop/friends-activity/dot.png">
+                                </div>
+                                <p class="sound-track-autor">Post Malone</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- MENU -->
-        <section class="about-artist-menu" aria-label="Artist navigation">
-            <div class="about-artist-menu-list">
-                <a href="#">Home</a>
-                <a href="#">Albums</a>
-                <a href="#">Singles and EPs</a>
-                <a href="#">Compilations</a>
-                <a href="#">Merch</a>
-                <a href="#about-artist-description" aria-current="page">About</a>
-                <a href="#">Features &amp; More</a>
+        <!-- right sidebar friends-activity end -->
 
-                <button class="about-artist-menu-search" type="button" aria-label="Search">
-                    <img src="./assets/images/desktop/cards/icons-and-frames-Nazi/search-icon.png" alt="Search">
+        <!-- </main> -->
+
+        <!-- footer start -->
+
+        <footer class="footer">
+            <div class="control-icons">
+                <button>
+                    <img src="assets/images/desktop/footer/play-control/pause-1.png" alt="discovery weekly">
+                </button>
+                <button>
+                    <img src="assets/images/desktop/footer/play-control/back-1.png" alt="discovery weekly">
+                </button>
+                <button>
+                    <img src="assets/images/desktop/footer/play-control/forward-1.png" alt="discovery weekly">
+                </button>
+                <button>
+                    <img src="assets/images/desktop/footer/play-control/shuffle-1.png" alt="discovery weekly">
+                </button>
+                <button>
+                    <img src="assets/images/desktop/footer/play-control/loop-1.png" alt="discovery weekly">
                 </button>
             </div>
-        </section>
-
-        <div class="about-artist-line"></div>
-
-        <!-- ABOUT -->
-        <section class="about-artist-details">
-            <div class="about-artist-rank-badge">
-                <img class="about-artist-rank-image" src="./assets/images/desktop/cards/icons-and-frames-Nazi/star.png"
-                    alt="Rank badge">
+            <div class="play-time">
+                <span>2:23</span>
+            </div>
+            <div class="play-track">
+                <img src="assets/images/desktop/footer/play-control/track.png" alt="discovery weekly">
+            </div>
+            <div class="full-time">
+                <span>4:45</span>
+            </div>
+            <div class="video-mute">
+                <img src="assets/images/desktop/footer/play-control/mute-1.png" alt="discovery weekly">
+            </div>
+            <div class="singer-icon">
+                <img src="assets/images/desktop/footer/play-control/singer.png" alt="discovery weekly">
+            </div>
+            <div class="singer-info">
+                <span>Get Lucky</span>
+                <span>Daft Punk</span>
+                <span>Random Access Memories</span>
+            </div>
+            <div class="footer-right-icons">
+                <div class="singer-icon">
+                    <img src="assets/images/desktop/footer/play-control/heart-1.png" alt="discovery weekly">
+                </div>
+                <div class="singer-icon">
+                    <img src="assets/images/desktop/footer/play-control/pc-playlist-1.png" alt="discovery weekly">
+                </div>
+                <div class="singer-icon">
+                    <img src="assets/images/desktop/footer/play-control/pc-lyrics-1.png" alt="discovery weekly">
+                </div>
+                <div class="singer-icon">
+                    <img src="assets/images/desktop/footer/play-control/big-sound-1.png" alt="discovery weekly">
+                </div>
+                <div class="singer-icon">
+                    <img src="assets/images/desktop/footer/play-control/pc-playing-more-1.png" alt="discovery weekly">
+                </div>
+                <div class="singer-icon">
+                    <img src="assets/images/desktop/footer/play-control/separator-1.png" alt="discovery weekly">
+                </div>
+                <div class="singer-icon">
+                    <img src="assets/images/desktop/footer/play-control/pc-dj-1.png" alt="discovery weekly">
+                </div>
+                <div class="singer-icon">
+                    <img src="assets/images/desktop/footer/play-control/pc-queue-1.png" alt="discovery weekly">
+                </div>
             </div>
 
-            <div class="about-artist-description" id="about-artist-description">
-                <p>
-                    As they evolved from '90s French house pioneers to 2000s dance tastemakers to mainstream heroes in
-                    the 2010s, Daft Punk remained one of dance music's most iconic acts. With their early singles and
-                    1997's instant-classic debut album Homework, Guy-Manuel de Homem-Christo and Thomas
-                    Bangalter quickly won acclaim for their skill at blending their beloved Chicago house and Detroit
-                    techno with pop, funk, indie rock, and hip-hop into nostalgic yet futuristic forms. Not content to
-                    just widen electronic music's popularity, on 2001's Discovery they reinvented the then-unfashionable
-                    sounds of mid-'80s soft rock and R&B into stylish tracks that also had a childlike wonder. Despite
-                    their sizable popularity, Daft Punk were never afraid to challenge their listeners, which they did
-                    with 2005's cold and dystopic Human After All. Even when they polarized their audience, there was
-                    never any doubt that they staged groundbreaking concerts, and the tour captured on Alive 2007 helped
-                    pave the way for arena-sized EDM, particularly in the U.S. With 2013's Random Access Memories, the
-                    duo once again looked to the past to create the future.
-                </p>
-            </div>
+        </footer>
 
-            <aside class="about-artist-stats" aria-label="Statistics">
-                <div class="about-artist-stat-item">
-                    <div class="about-artist-stat-number">9,868,787</div>
-                    <span>Followers</span>
-                </div>
+        <!-- footer end -->
+    </div>
+    <script>
+        function friendsActivity() {
+            if (window.innerWidth > 768) {
+                document.getElementById("container").classList.toggle("view_hide");
+            }
+        }
+        function closeContainer() {
+            document.getElementById("container").classList.remove("view_hide");
+        }
+        window.addEventListener("resize", function () {
+            if (window.innerWidth <= 860) {
+                document.getElementById("container").classList.remove("view_hide");
+            }
+        });
+    </script>
+    <script>
+        const MFY_carousel = document.getElementById("MFY_carousel");
+        const mfy_next = document.getElementById("MFY_next");
+        const mfy_prev = document.getElementById("MFY_prev");
+        const mfy_scrollAmount = 180;
+        mfy_next.addEventListener("click", () => { MFY_carousel.scrollLeft += mfy_scrollAmount; });
+        mfy_prev.addEventListener("click", () => { MFY_carousel.scrollLeft -= mfy_scrollAmount; });
+    </script>
+    <script>
+        const YTM_carousel = document.getElementById("YTM_carousel");
+        const ytm_next = document.getElementById("YTM_next");
+        const ytm_prev = document.getElementById("YTM_prev");
+        const ytm_scrollAmount = 180;
+        ytm_next.addEventListener("click", () => { YTM_carousel.scrollLeft += ytm_scrollAmount; });
+        ytm_prev.addEventListener("click", () => { YTM_carousel.scrollLeft -= ytm_scrollAmount; });
+    </script>
 
-                <div class="about-artist-stat-item">
-                    <div class="about-artist-stat-number">22,430,353</div>
-                    <span>Monthly Listeners</span>
-                </div>
+</body>
 
-                <div class="about-artist-city-item">
-                    <div class="about-artist-city-name">Paris, FR</div>
-                    <span>391,036 listeners</span>
-                </div>
-
-                <div class="about-artist-city-item">
-                    <div class="about-artist-city-name">Mexico City, MX</div>
-                    <span>367,878 listeners</span>
-                </div>
-            </aside>
-        </section>
-    </main>
+</html>

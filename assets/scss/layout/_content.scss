@@ -9,8 +9,10 @@
     margin:4px 0 0 0;
     padding: 0 25px;
     max-width: 1491px;
-    height:100%;
-    overflow: hidden;
+    height: calc(100vmin - 54px - 104px);
+    overflow-y: hidden;
+    scrollbar-width: none;
+
 
     &-header-btn {
         height: 59px;
@@ -34,12 +36,18 @@
         }
     }
 }
-
+.card-wrapper {
+    height: calc(100vh - 220px); // ამით ვითვლი ქარდების სამიძრაო არეალს
+    overflow-y: auto;
+    box-sizing: border-box;
+    scrollbar-width: none;
+}
 .made-for-you {
     &-title-btn{
         height: 40.4px;
         margin:10px 0;
         @include mixins.flex-between;
+        gap: 10px;
         }
 
     &-wrapper {
@@ -55,17 +63,86 @@
         }
 
     &-cards {
-        @include mixins.flex-between;
+        @include mixins.flex-start;
         gap:11px;
         margin-bottom: 10px;
+        scroll-behavior: smooth;
+        overflow: hidden;
         }
     &-card {
+        padding-top:15px;
         width: 170px;
+        // border:1px solid red;
+        height: 240px;              // hoverisTvis
+        // position:relative;          // hoverisTvis
         img {
-            margin:8px 0;
+            margin:0px 0;
+            //   width:100%;
+                // display:block;
+                // position:relative;          // hoverisTvis
+                // z-index:2;                  // hoverisTvis
+                // transition:all .3s ease;    // hoverisTvis
         }
-    
-    }
+            .cardimages-shadow{
+                position:relative;
+                width:170px;
+                
+            }
+            .cardimages-shadow::before,
+            .cardimages-shadow::after{
+                content:"";
+
+                position:absolute;
+                left:0;
+                width:100%;
+
+                border-radius:7.25px 7.25px 0 0;
+                background:#F4B8BD;
+                z-index:0;
+                transition:all .3s ease;
+                }
+                 
+            .cardimages-shadow::before{
+                height:6px;
+                top:-6px;
+                opacity:.6;
+                left:8px;
+                width:calc(100% - 16px);
+                    border-top:1px solid #0f0f0f;
+                
+                }
+
+                
+            .cardimages-shadow::after{
+                height:5px;
+                top:-11px;
+                opacity:.35;
+                left:18px;
+                width:calc(100% - 37px);
+                border-bottom:1px solid #0f0f0f;
+                
+                }
+            .cardimages {
+                    position:relative;
+                    border-top:1px solid #0f0f0f;
+                    border-radius:7.25px;
+                    overflow:hidden;
+                    z-index:2;
+                    transform:translateY(0);
+                    transition:all .3s ease;
+            }
+        }
+        &-card:hover {
+            // box-shadow: 0 4px 8px 0 rgba(200, 200, 200, 0.2), 0 6px 20px 0 rgba(200, 200, 200, 0.19);
+        }
+        &-card:hover .cardimages-shadow::before {
+            width:calc(100% - 8px);
+            left:4px;
+        }
+        &-card:hover .cardimages-shadow::after {
+            width:calc(100% - 16px);
+            left:8px;
+        }
 }
 .card{
     &-name {
@@ -77,28 +154,28 @@
     &-rating{
         @include mixins.satoshi_custom(1.4rem,400,#E0E0E0);
         &-c1{
-            color:#CE6E9A;
+            color:nth(variables.$card-colors-mfy, 1);
         }
         &-c2{
-            color:#95E6D3;
+            color:nth(variables.$card-colors-mfy, 2);
         }
         &-c3{
-            color:#F4B8BD;
+            color:nth(variables.$card-colors-mfy, 3);
         }
         &-c4{
-            color:#C3E7B7;
+            color:nth(variables.$card-colors-mfy, 4);
         }
         &-c5{
-            color:#F37FA6;
+            color:nth(variables.$card-colors-mfy, 5);
         }
         &-c6{
-            color:#A0BEC8;
+            color:nth(variables.$card-colors-mfy, 6);
         }
         &-c7{
-            color:#FDD87D;
+            color:nth(variables.$card-colors-mfy, 7);
         }
         &-c8{
-            color:#D4B2A9;
+            color:nth(variables.$card-colors-mfy, 8);
         }
     }
     &-info p{
@@ -112,6 +189,136 @@
     &-title-btn {
         @include mixins.flex-between;
         margin:30px 0 15px 0;
-    gap:10px;
+        gap:10px;
     }
+    &-title h3{
+        @include mixins.satoshi_custom(2rem,700,variables.$second-font-color);
+        letter-spacing: 1.5px;
+        line-height: 1.5;
+    }
+    &-cards {
+        @include mixins.flex-between;
+        gap:11px;
+        margin-bottom: 10px;
+        scroll-behavior: smooth;
+        overflow: hidden;
+    }
+    &-card {
+        width: 170px;
+        img {
+            margin:8px 0;
+        }
+    
+    }
+    .card{
+        &-name {
+            @include mixins.flex-between;
+            }
+        &-title {
+            @include mixins.satoshi_custom(1.4rem,500,#E0E0E0);
+            }
+        &-rating{
+            @include mixins.satoshi_custom(1.4rem,400,#E0E0E0);
+            &-a1{
+                color:nth(variables.$card-colors-ytm, 1);
+            }
+            &-a2{
+                color:nth(variables.$card-colors-ytm, 2);
+            }
+            &-a3{
+                color:nth(variables.$card-colors-ytm, 3);
+            }
+            &-a4{
+                color:nth(variables.$card-colors-ytm, 4);
+            }
+            &-a5{
+                color:nth(variables.$card-colors-ytm, 5);
+            }
+            &-a6{
+                color:nth(variables.$card-colors-ytm, 6);
+            }
+            &-a7{
+                color:nth(variables.$card-colors-ytm, 7);
+            }
+            &-a8{
+                color:nth(variables.$card-colors-ytm, 8);
+            }
+        }
+        &-info p{
+            @include mixins.satoshi_custom(1.2rem,400,#898989);
+            letter-spacing: 0.3px;
+            line-height: 1.5;
+        }
+    }
+
+}
+
+
+.your-favorite-artists{
+
+    &-title-btn {
+        @include mixins.flex-between;
+        margin:30px 0 15px 0;
+        gap:10px;
+    }
+    &-title h3{
+        @include mixins.satoshi_custom(2rem,700,variables.$second-font-color);
+        letter-spacing: 1.5px;
+        line-height: 1.5;
+    }
+    &-cards {
+        @include mixins.flex-start;
+        gap:11px;
+        margin-bottom: 10px;
+        scroll-behavior: smooth;
+        overflow: hidden;
+    }
+    &-card {
+        width: 170px;
+        img {
+            margin:8px 0;
+        }
+    
+    }
+    .card{
+        &-name {
+            @include mixins.flex-between;
+            }
+        &-title {
+            @include mixins.satoshi_custom(1.4rem,500,#E0E0E0);
+            }
+        &-rating{
+            @include mixins.satoshi_custom(1.4rem,400,#E0E0E0);
+            &-a1{
+                color:#CCF665;
+            }
+            &-a2{
+                color:#F9E72C;
+            }
+            &-a3{
+                color:#9BF0E2;
+            }
+            &-a4{
+                color:#FFCBD4;
+            }
+            &-a5{
+                color:#FFCBD4;
+            }
+            &-a6{
+                color:#FFC668;
+            }
+            &-a7{
+                color:#27856B;
+            }
+            &-a8{
+                color:#DD138B;
+            }
+        }
+        &-info p{
+            @include mixins.satoshi_custom(1.2rem,400,#898989);
+            letter-spacing: 0.3px;
+            line-height: 1.5;
+        }
+    }
+
 }
