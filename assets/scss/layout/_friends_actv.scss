@@ -57,7 +57,7 @@
 }
 
 .container.view_hide {
-    grid-template-columns: clamp(180px, 18.4vw, 248px) 1fr 358px;  //(nav bar width), (content width), (frendly 358px) 
+    grid-template-columns: 248px 1fr 358px;  //(nav bar width), (content width), (frendly 358px) 
 }
 .container.view_hide .friends-activity{
     display:block;   
@@ -66,7 +66,6 @@
     border-radius: 10px;
     margin:4px 8px 0 0;
     border:1px solid #202020;
-    border-radius: 10px;
     padding: 10px;
 
     &-wrapper {

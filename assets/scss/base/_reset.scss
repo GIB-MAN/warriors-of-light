@@ -15,8 +15,12 @@ button {
     background-color: transparent;
     border: none;
     color:#E0E0E0;
+    cursor: pointer;
 }
 a {
     text-decoration: none;
     color: variables.$base-font-color
+}
+button {
+    cursor: pointer;
 }

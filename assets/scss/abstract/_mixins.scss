@@ -29,3 +29,8 @@
     font-weight: $font-weight;
     color:$font-color;
 }
+@mixin flex-evenly {
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+}

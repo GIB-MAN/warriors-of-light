@@ -1,16 +1,16 @@
 @use './base/reset';
-@use './base/base';
 @use './abstract/variables';
 @use './abstract/mixins';
 @use "./layout/header";
 @use './layout/nav';
 @use './layout/content';
+@use './layout/mobile';
 @use './layout/friends_actv';
 @use './layout/footer';
-@use './layout/about-artist';
-@use './layout/grid-albums';
-@use './layout/list-albums';
-@use './layout/artist';
+@use './layout/player-mob';
+@use './abstract/submenu';
+@use './base/base';
+
 
 @font-face {
     font-family: Satoshi;

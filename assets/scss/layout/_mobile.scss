@@ -1,0 +1,61 @@
+@use '../abstract/mixins';
+@use '../abstract/variables';
+
+.mobile-home-filter {
+    
+    &-wrapper {
+        width:100%;
+
+        background-color: variables.$mobile-bg-color;
+    
+    }
+    &-pannel {
+        @include mixins.flex-between;
+        width: 100%;
+        position: fixed;
+        top:0;
+        z-index: 5;
+        background-color: variables.$mobile-bg-color;
+    }
+
+    &-clock {
+        width:115px;
+        height:47px;
+        @include mixins.flex;
+        gap:4px;
+        span {
+            @include mixins.satoshi_custom(1.7rem,800,variables.$base-font-color);
+        }
+    }
+    &-space {
+        width:160px;
+        height:47px;
+    }
+    &-icons {
+        width:115px;
+        height:47px;
+        @include mixins.flex;
+        gap:8px;
+    }
+    &-buttons {
+        margin-top:47px;
+        height:54px;
+        padding:0 15px;
+        @include mixins.flex-start;
+        gap:10px;
+
+        button{
+            padding:10px 15px;
+            border-radius: 8px;
+            background-color: rgb(32, 32, 32);
+            @include mixins.satoshi_custom(1.2rem,500,variables.$base-font-color);
+        }
+        button:last-child{
+            padding:0;
+            border-radius: 0;
+            background: none;
+            margin-left: auto;
+        }
+    }
+    
+}

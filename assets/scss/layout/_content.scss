@@ -1,15 +1,14 @@
 @use '../abstract/mixins';
 @use '../abstract/variables';
+@use 'sass:list';
 
 .content {
-    grid-area: 2 / 2 / 3 / 3;
     background-color: variables.$base-bg-color;
-    border:1px solid #202020;
     border-radius: 10px;
-    margin:4px 0 0 0;
+    margin:4px ;
     padding: 0 25px;
     max-width: 1491px;
-    height: calc(100vmin - 54px - 104px);
+    height: calc(100vh - 54px - 104px);
     overflow-y: hidden;
     scrollbar-width: none;
 
@@ -24,6 +23,19 @@
             padding:8px 15px;
             border-radius: 8px;
             background-color: #202020;
+            position:relative;
+            font-weight:400;
+        }
+        & a::after{
+            content: attr(data-text);
+            font-weight:800;
+            visibility:hidden;
+            height:0;
+            overflow:hidden;
+            display:block;
+        }
+        & a:hover {
+            font-weight:800;
         }
         & button{
             margin-left:auto;
@@ -37,7 +49,7 @@
     }
 }
 .card-wrapper {
-    height: calc(100vh - 220px); // ამით ვითვლი ქარდების სამიძრაო არეალს
+    height: calc(100vh - 220px); // ამით ვითვლი ქარდების სამოძრაო არეალს
     overflow-y: auto;
     box-sizing: border-box;
     scrollbar-width: none;
@@ -72,68 +84,22 @@
     &-card {
         padding-top:15px;
         width: 170px;
-        // border:1px solid red;
-        height: 240px;              // hoverisTvis
-        // position:relative;          // hoverisTvis
+        height: 240px;
+        position: relative;
+        transition: background 0.4s linear;
         img {
-            margin:0px 0;
-            //   width:100%;
-                // display:block;
-                // position:relative;          // hoverisTvis
-                // z-index:2;                  // hoverisTvis
-                // transition:all .3s ease;    // hoverisTvis
-        }
-            .cardimages-shadow{
-                position:relative;
-                width:170px;
-                
-            }
-            .cardimages-shadow::before,
-            .cardimages-shadow::after{
-                content:"";
-
-                position:absolute;
-                left:0;
-                width:100%;
-
-                border-radius:7.25px 7.25px 0 0;
-                background:#F4B8BD;
-                z-index:0;
-                transition:all .3s ease;
-                }
-                 
-            .cardimages-shadow::before{
-                height:6px;
-                top:-6px;
-                opacity:.6;
-                left:8px;
-                width:calc(100% - 16px);
-                    border-top:1px solid #0f0f0f;
-                
-                }
-
-                
-            .cardimages-shadow::after{
-                height:5px;
-                top:-11px;
-                opacity:.35;
-                left:18px;
-                width:calc(100% - 37px);
-                border-bottom:1px solid #0f0f0f;
-                
-                }
-            .cardimages {
-                    position:relative;
-                    border-top:1px solid #0f0f0f;
-                    border-radius:7.25px;
-                    overflow:hidden;
-                    z-index:2;
-                    transform:translateY(0);
-                    transition:all .3s ease;
+            margin:0;
             }
         }
+    
         &-card:hover {
-            // box-shadow: 0 4px 8px 0 rgba(200, 200, 200, 0.2), 0 6px 20px 0 rgba(200, 200, 200, 0.19);
+            cursor: pointer;
+            //box-shadow: 4px 4px 8px 0 rgba(200, 200, 200, 0.2), 4px 4px 8px 0 rgba(200, 200, 200, 0.19);
+            //background: linear-gradient(to top, rgba(32, 32, 32, 1)  10%,  rgba(32, 32, 32, 0.5) 20%, rgba(32, 32, 32, 0.2) 30%);
+        }
+        &-card:hover .card-hover-play-btn {
+            opacity: 1; 
+            transform:translateY(-10px);
         }
         &-card:hover .cardimages-shadow::before {
             width:calc(100% - 8px);
@@ -144,38 +110,102 @@
             left:8px;
         }
 }
+.card-hover-play-btn {
+    @include mixins.flex;
+    width:42px;
+    height:42px;
+    border-radius: 50%;
+    background-color: #1ED760;
+    position: absolute;
+    top: 140px;
+    right:15px;
+    z-index: 100;
+    opacity: 0;
+    transition: all 0.3s linear;
+    img {width:15px;
+        transform:translateX(1px);
+        }
+}
+.cardimages-shadow{
+    position:relative;
+    //width:170px;
+    
+}
+.cardimages-shadow::before,
+.cardimages-shadow::after{
+    content:"";
+
+    position:absolute;
+    left:0;
+    width:100%;
+
+    border-radius:7.25px 7.25px 0 0;
+    background:#F4B8BD;
+    z-index:0;
+    transition:all .3s ease;
+    }
+        
+.cardimages-shadow::before{
+    height:6px;
+    top:-6px;
+    opacity:.6;
+    left:8px;
+    width:calc(100% - 16px);
+        border-top:1px solid #0f0f0f;
+    
+    }
+
+.cardimages-shadow::after{
+    height:5px;
+    top:-11px;
+    opacity:.35;
+    left:18px;
+    width:calc(100% - 37px);
+    border-bottom:1px solid #0f0f0f;
+    
+    }
+.cardimages {
+        position:relative;
+        border-top:1px solid #0f0f0f;
+        border-radius:7.25px;
+        overflow:hidden;
+        z-index:2;
+        transform:translateY(0);
+        transition:all .3s ease;
+}
 .card{
     &-name {
         @include mixins.flex-between;
         }
     &-title {
         @include mixins.satoshi_custom(1.4rem,500,#E0E0E0);
+        margin:6px 0 8px 0;
         }
     &-rating{
         @include mixins.satoshi_custom(1.4rem,400,#E0E0E0);
         &-c1{
-            color:nth(variables.$card-colors-mfy, 1);
+            color:list.nth(variables.$card-colors-mfy, 1);
         }
         &-c2{
-            color:nth(variables.$card-colors-mfy, 2);
+            color:list.nth(variables.$card-colors-mfy, 2);
         }
         &-c3{
-            color:nth(variables.$card-colors-mfy, 3);
+            color:list.nth(variables.$card-colors-mfy, 3);
         }
         &-c4{
-            color:nth(variables.$card-colors-mfy, 4);
+            color:list.nth(variables.$card-colors-mfy, 4);
         }
         &-c5{
-            color:nth(variables.$card-colors-mfy, 5);
+            color:list.nth(variables.$card-colors-mfy, 5);
         }
         &-c6{
-            color:nth(variables.$card-colors-mfy, 6);
+            color:list.nth(variables.$card-colors-mfy, 6);
         }
         &-c7{
-            color:nth(variables.$card-colors-mfy, 7);
+            color:list.nth(variables.$card-colors-mfy, 7);
         }
         &-c8{
-            color:nth(variables.$card-colors-mfy, 8);
+            color:list.nth(variables.$card-colors-mfy, 8);
         }
     }
     &-info p{
@@ -187,6 +217,7 @@
 .your-top-mixes{
 
     &-title-btn {
+        height: 40.4px;
         @include mixins.flex-between;
         margin:30px 0 15px 0;
         gap:10px;
@@ -204,11 +235,32 @@
         overflow: hidden;
     }
     &-card {
+        padding-top:15px;
         width: 170px;
+        position: relative;
+        transition: background-image 0.5s linear;
         img {
-            margin:8px 0;
+            margin:0;
         }
     
+    }
+    &-card:hover {
+         cursor: pointer;
+            // box-shadow: 0 4px 8px 0 rgba(200, 200, 200, 0.2), 0 6px 20px 0 rgba(200, 200, 200, 0.19);
+            //background-image: linear-gradient(to top, rgba(32, 32, 32, 1)  10%,  rgba(32, 32, 32, 0.5) 60%, rgba(32, 32, 32, 0.2) 100%);
+        }
+    &-card:hover .card-hover-play-btn {
+        opacity: 1;
+        transform:translateY(-10px);
+        }
+    
+    &-card:hover .cardimages-shadow::before {
+       width:calc(100% - 8px);
+       left:4px;
+    }
+    &-card:hover .cardimages-shadow::after {
+       width:calc(100% - 16px);
+       left:8px;
     }
     .card{
         &-name {
@@ -220,28 +272,28 @@
         &-rating{
             @include mixins.satoshi_custom(1.4rem,400,#E0E0E0);
             &-a1{
-                color:nth(variables.$card-colors-ytm, 1);
+                color:list.nth(variables.$card-colors-ytm, 1);
             }
             &-a2{
-                color:nth(variables.$card-colors-ytm, 2);
+                color:list.nth(variables.$card-colors-ytm, 2);
             }
             &-a3{
-                color:nth(variables.$card-colors-ytm, 3);
+                color:list.nth(variables.$card-colors-ytm, 3);
             }
             &-a4{
-                color:nth(variables.$card-colors-ytm, 4);
+                color:list.nth(variables.$card-colors-ytm, 4);
             }
             &-a5{
-                color:nth(variables.$card-colors-ytm, 5);
+                color:list.nth(variables.$card-colors-ytm, 5);
             }
             &-a6{
-                color:nth(variables.$card-colors-ytm, 6);
+                color:list.nth(variables.$card-colors-ytm, 6);
             }
             &-a7{
-                color:nth(variables.$card-colors-ytm, 7);
+                color:list.nth(variables.$card-colors-ytm, 7);
             }
             &-a8{
-                color:nth(variables.$card-colors-ytm, 8);
+                color:list.nth(variables.$card-colors-ytm, 8);
             }
         }
         &-info p{
@@ -275,11 +327,22 @@
     }
     &-card {
         width: 170px;
+        position: relative;
         img {
             margin:8px 0;
         }
     
     }
+    &-card:hover {
+         cursor: pointer;
+            //box-shadow: 4px 4px 8px 0 rgba(200, 200, 200, 0.2), 4px 4px 8px 0 rgba(200, 200, 200, 0.19);
+            //background: linear-gradient(to top, rgba(32, 32, 32, 1)  10%,  rgba(32, 32, 32, 0.5) 35%, rgba(32, 32, 32, 0.2) 60%);
+        }
+    &-card:hover .card-hover-play-btn {
+        opacity: 1;
+        transform:translateY(-10px);
+        }
+
     .card{
         &-name {
             @include mixins.flex-between;
@@ -321,4 +384,55 @@
         }
     }
 
+}
+
+
+/*     ------------- mobile version ----------------   */
+
+.content-wrapper-mob {
+    //background-color: red; //variables.$mobile-bg-color;
+    border:0;
+    .made-for-you-card,
+    .your-top-mixes-card {
+        padding-top:15px;
+        width: 142px;
+        height: 210px;
+        position: relative;
+    }
+    .made-for-you-wrapper,
+    .your-top-mixes-mob {
+        width: 100%;
+        max-width: 360px;
+        height: 270px;
+        padding:0 15px;
+    }
+}
+.play-list-mobile{
+    &-wrapper {
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        gap:10px;
+        padding:8px;
+    }
+    &-item {
+        width: 160px;
+        height: 42px;
+        padding:8px;
+        border-radius: 10px;
+        background-color: rgba(32, 32, 32, 1);
+        @include mixins.flex-start;
+        gap:8px;
+    
+        &-info {
+            h2 {
+                @include mixins.satoshi_custom(1.4rem,400,variables.$second-font-color); 
+            }
+            p {
+                @include mixins.satoshi_custom(1.2rem,400,variables.$base-font-color); 
+            }
+        }
+    }
 }
