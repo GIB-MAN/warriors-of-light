@@ -83,7 +83,7 @@
     border-radius: 50%;
     background: #1ed760;
     cursor: pointer;
-    @include mixins.flex();
+    @include mixins.flex;
 
     img {
         width: 18px;
@@ -115,7 +115,7 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
     background: rgba(0, 0, 0, 0.25);
     cursor: pointer;
-    @include mixins.flex();
+    @include mixins.flex;
     flex-shrink: 0;
 
     img {
@@ -170,7 +170,7 @@
     margin-left: 4px;
     background: transparent;
     cursor: pointer;
-    @include mixins.flex();
+    @include mixins.flex;
     flex-shrink: 0;
 
     img {
