@@ -1,63 +1,90 @@
 @use './base/reset';
-@use './base/base';
 @use './abstract/variables';
 @use './abstract/mixins';
 @use "./layout/header";
 @use './layout/nav';
 @use './layout/content';
+@use './layout/mobile';
 @use './layout/friends_actv';
 @use './layout/footer';
+@use './layout/player-mob';
+@use './abstract/submenu';
+@use './base/base';
 
 
 @font-face {
     font-family: Satoshi;
     src: url(webfonts/Satoshi-Regular.woff2);
-  }
+}
+
 @media (max-width:1024px) {
-    
+
     .container {
-        grid-template-columns: 85px 1fr;  //(nav bar width), (content width)
-        gap:8px;
-        }
+        grid-template-columns: 85px 1fr; //(nav bar width), (content width)
+        gap: 8px;
+    }
+
     .container.view_hide {
-        grid-template-columns: 85px 1fr 358px;  //(nav bar width), (content width), (frendly 358px) 
-    
-        }
+        grid-template-columns: 85px 1fr 358px; //(nav bar width), (content width), (frendly 358px) 
+
+    }
 
     .nav-item-title {
-        display:none
-        }
+        display: none
+    }
 
     .nav-item-sublist-arrow {
-        margin-left:-10px;
-        width: 20px;    
-        }
-
-    .header-right-btn{
-        gap:5px;
-    }
+        margin-left: -10px;
+        width: 20px;
     }
 
-@media (max-width:768px) {
-    .header-left-btn span {
-        display:none;
+    .header-right-btn {
+        gap: 5px;
     }
-    .header-left-btn{
-        gap:0;
+}
+
+.nav-item {
+    gap: 0.7px;
+    margin-left: 1px;
+}
+
+.nav-item-title {
+    display: none
+}
+
+HEAD .nav-item-sublist-arrow {
+    margin-left: 5px;
+
+    .header-right-btn {
+        gap: 0;
     }
-    .header-right-btn{
-        gap:0;
-    }
+
     .header-home,
     .header-discover,
     .header-search {
-       width: 55px;
+        width: 55px;
+
     }
-    .friends-activity{
-    display: none;
-}
+
+    .friends-activity {
+        display: none;
+    }
 }
 
-@media (max-width:390px) {
+@media (max-width:768px) {
+    .header-left-btn span {
+        display: none;
+    }
 
+    .header-left-btn {
+        gap: 0;
+    }
+
+    .header-home,
+    .header-discover,
+    .header-search {
+        width: 55px;
+    }
 }
+
+@media (max-width:390px) {}

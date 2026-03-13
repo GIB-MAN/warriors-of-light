@@ -11,143 +11,226 @@
     <div class="container" id="container">
     <!--  header section start  -->
         <header class="header">
-            <div class="header-wrapper">
-                <dic class="header-left-btn">
+            <div class="header-wrapper desktop">
+                <div class="header-left-btn">
                     <a href="#" class="header-home">
-                        <img src="assets/images/desktop/header/home-3.png">
+                        <img src="assets/images/desktop/header/home-3.png" alt="">
                         <span>Home</span>
                     </a>
                     <a href="#" class="header-discover">
-                        <img src="assets/images/desktop/header/discover-1.png">
+                        <img src="assets/images/desktop/header/discover-1.png" alt="">
                         <span>Discover</span>
                     </a>
                     <a href="#" class="header-search">
-                        <img src="assets/images/desktop/header/search-1.png">
+                        <img src="assets/images/desktop/header/search-1.png" alt="">
                         <span>Search</span>
                     </a>
-                </dic>
-                <dic class="header-right-btn">
+                </div>
+                <div class="header-right-btn">
                     <a href="#" class="header-item-icon">
-                        <img src="assets/images/desktop/header/buzzer-1.png">
-                    </a>
-                    <a href="#" class="header-item-icon">
-                        <img src="assets/images/desktop/header/lock-open.png">
-                    </a>
-                    <a class="header-item-icon">
-                        <img src="assets/images/desktop/header/friends-1.png" onclick="friendsActivity()">
+                        <img src="assets/images/desktop/header/buzzer-1.png" alt="">
                     </a>
                     <a href="#" class="header-item-icon">
-                        <img src="assets/images/desktop/header/settings-1.png">
+                        <img src="assets/images/desktop/header/lock-open.png" alt="">
+                    </a>
+                    <a class="header-item-icon media480">
+                        <img src="assets/images/desktop/header/friends-1.png" alt="" onclick="friendsActivity()">
                     </a>
                     <a href="#" class="header-item-icon">
-                        <img src="assets/images/desktop/header/user-area.png">
+                        <img src="assets/images/desktop/header/settings-1.png" alt="">
                     </a>
-                </dic>
-            </dic>
+                    <a href="#" class="header-item-icon media480">
+                        <img src="assets/images/desktop/header/user-area.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="header-mob mobile">
+                <div class="player-mob mobile">
+                    <div class="player-mob-wrapper">
+                        <div class="player-mob-item">
+                            <div class="player-mob-img">
+                                <img src="assets/images/mobile/cards/small/darf-punk.png" alt="">
+                            </div>
+                            <div class="player-mob-item-info">
+                                <h2>Get Lucky (feat. Pharrell Willia</h2>
+                                <p>Daft Punk</p>
+                            </div>
+                            <div class="player-mob-blend"></div>
+                        </div>
+                        <div class="player-mob-btns">
+                            <button class="player-mob-btn"><img src="assets/images/mobile/player/grouping.png" alt=""></button>
+                            <button class="player-mob-btn"><img src="assets/images/mobile/player/play.png" alt=""></button>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="header-mob-wrapper">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="assets/images/mobile/header/home-3.png" alt="">
+                            <span>Home</span>                            
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="assets/images/mobile/header/discover-1.png" alt="">
+                            <span>Discover</span>                            
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="assets/images/mobile/header/search-1.png" alt="">
+                            <span>Search</span>                            
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="assets/images/mobile/header/icon-my-library-1.png" alt="">
+                            <span>Library</span>                            
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="assets/images/mobile/header/user-1.png" alt="">
+                            <span>Me</span>                            
+                        </a>
+                    </li>
+                </ul>
+                </div>
+            </div>
         </header>
     <!--  header section end  -->
-    <!-- <main> -->
+    <!--  nav section start  -->
             <nav class="nav">
-                <div class="nav-wrapper">
-                    <a href="#" class="nav-item my-library">
-                        <div class="nav-item-icon" data-title="My Library">
-                            <img src="assets/images/desktop/nav/icon-my-library-1.png">
-                        </div>
-                        <div class="nav-item-title">
-                            <span>My Library</span>
-                        </div>
-                    </a>
-                    <a href="#" class="nav-item pins">
-                        <div class="nav-item-icon" data-title="Pins">
-                            <img src="assets/images/desktop/nav/icon-pins-1.png">
-                        </div>
-                        <div class="nav-item-title">
-                            <span>Pins</span>
-                        </div>
-                        <div class="nav-item-sublist-arrow">
-                            <img src="assets/images/desktop/nav/icon-sublist-arrow.png">
-                        </div>
-                    </a>
-                    <a href="#" class="nav-item playlist">
-                        <div class="nav-item-icon" data-title="Playlists">
-                            <img src="assets/images/desktop/nav/icon-playlist-1.png">
-                        </div>
-                        <div class="nav-item-title">
-                            <span>Playlists</span>
-                        </div>
-                        <div class="nav-item-sublist-arrow">
-                            <img src="assets/images/desktop/nav/icon-sublist-arrow.png">
-                        </div>
-                    </a>
-                    <a href="#" class="nav-item liked-song">
-                        <div class="nav-item-icon" data-title="Liked Song">
-                            <img src="assets/images/desktop/nav/icon-liked-song-1.png">
-                        </div>
-                        <div class="nav-item-title">
-                            <span>Liked Song</span>
-                        </div>
-                    </a>
-                    <a href="#" class="nav-item saves">
-                        <div class="nav-item-icon"  data-title="Saves">
-                            <img src="assets/images/desktop/nav/icon-saves-1.png">
-                        </div>
-                        <div class="nav-item-title">
-                            <span>Saves</span>
-                        </div>
-                    </a>
-                    <a href="#" class="nav-item albums">
-                        <div class="nav-item-icon" data-title="Albums">
-                            <img src="assets/images/desktop/nav/icon-albums-1.png">
-                        </div>
-                        <div class="nav-item-title">
-                            <span>Albums</span>
-                        </div>
-                    </a>
-                    <a href="#" class="nav-item folders">
-                        <div class="nav-item-icon" data-title="Folders">
-                            <img src="assets/images/desktop/nav/icon-folders-1.png">
-                        </div>
-                        <div class="nav-item-title">
-                            <span>Folders</span>
-                        </div>
-                    </a>
-                    <a href="#" class="nav-item podcasts">
-                        <div class="nav-item-icon" data-title="Podcasts">
-                            <img src="assets/images/desktop/nav/icon-podcasts-1.png">
-                        </div>
-                        <div class="nav-item-title">
-                            <span>Podcasts</span>
-                        </div>
-                    </a>
-                    <a href="#" class="nav-item audiobooks">
-                        <div class="nav-item-icon" data-title="Audiobooks">
-                            <img src="assets/images/desktop/nav/icon-audiobooks-1.png">
-                        </div>
-                        <div class="nav-item-title">
-                            <span>Audiobooks</span>
-                        </div>
-                    </a>
-                    <a href="#" class="nav-item artists">
-                        <div class="nav-item-icon" data-title="Artists">
-                            <img src="assets/images/desktop/nav/icon-artists-1.png">
-                        </div>
-                        <div class="nav-item-title">
-                            <span>Artists</span>
-                        </div>
-                    </a>
-                    
-                </div>
-            </nav>
-<!--  nav section end  -->
+                <ul class="nav-wrapper desktop">
+                    <li>
+                        <a href="#" class="nav-item my-library">
+                            <div class="nav-item-icon" data-title="My Library">
+                                <img src="assets/images/desktop/nav/icon-my-library-1.png" alt="">
+                            </div>
+                            <div class="nav-item-title">
+                                <span>My Library</span>
+                            </div>
+                        </a>
+                    </li>
 
-            <section class="content">
-                <div class="content-wrapper">
+                    <li class="has-submenu">
+                        <a href="#" class="nav-item pins">
+                            <div class="nav-item-icon" data-title="Pins">
+                                <img src="assets/images/desktop/nav/icon-pins-1.png" alt="">
+                            </div>
+                            <div class="nav-item-title">
+                                <span>Pins</span>
+                            </div>
+                            <div class="nav-item-sublist-arrow">
+                                <img src="assets/images/desktop/nav/icon-sublist-arrow.png" alt="">
+                            </div>
+                        </a>
+                        <ul class="nav-sublist">
+                            <li><img src="assets/images/desktop/nav/submenu-item-pins.png" alt=""><a href="#">Chill stuf</a></li>
+                            <li><img src="assets/images/desktop/nav/submenu-item-pins.png" alt=""><a href="#">Rock n Roll</a></li>
+                        </ul>
+
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#" class="nav-item playlist">
+                            <div class="nav-item-icon" data-title="Playlists">
+                                <img src="assets/images/desktop/nav/icon-playlist-1.png" alt="">
+                            </div>
+                            <div class="nav-item-title">
+                                <span>Playlists</span>
+                            </div>
+                            <div class="nav-item-sublist-arrow">
+                                <img src="assets/images/desktop/nav/icon-sublist-arrow.png" alt="">
+                            </div>
+                        </a>
+                        <ul class="nav-sublist">
+                            <li><img src="assets/images/desktop/nav/submenu-item-playlist.png" alt=""><a href="#">The Jux Box</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item liked-song">
+                            <div class="nav-item-icon" data-title="Liked Song">
+                                <img src="assets/images/desktop/nav/icon-liked-song-1.png" alt="">
+                            </div>
+                            <div class="nav-item-title">
+                                <span>Liked Song</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item saves">
+                            <div class="nav-item-icon"  data-title="Saves">
+                                <img src="assets/images/desktop/nav/icon-saves-1.png" alt="">
+                            </div>
+                            <div class="nav-item-title">
+                                <span>Saves</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item albums">
+                            <div class="nav-item-icon" data-title="Albums">
+                                <img src="assets/images/desktop/nav/icon-albums-1.png" alt="">
+                            </div>
+                            <div class="nav-item-title">
+                                <span>Albums</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item folders">
+                            <div class="nav-item-icon" data-title="Folders">
+                                <img src="assets/images/desktop/nav/icon-folders-1.png" alt="">
+                            </div>
+                            <div class="nav-item-title">
+                                <span>Folders</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item podcasts">
+                            <div class="nav-item-icon" data-title="Podcasts">
+                                <img src="assets/images/desktop/nav/icon-podcasts-1.png" alt="">
+                            </div>
+                            <div class="nav-item-title">
+                                <span>Podcasts</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item audiobooks">
+                            <div class="nav-item-icon" data-title="Audiobooks">
+                                <img src="assets/images/desktop/nav/icon-audiobooks-1.png" alt="">
+                            </div>
+                            <div class="nav-item-title">
+                                <span>Audiobooks</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="artist.html" class="nav-item artists">
+                            <div class="nav-item-icon" data-title="Artists">
+                                <img src="assets/images/desktop/nav/icon-artists-1.png" alt="">
+                            </div>
+                            <div class="nav-item-title">
+                                <span>Artists</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        <!--  nav section end  -->
+        <!--  main section start  -->
+            <main class="content">
+                <div class="content-wrapper desktop">
                     <div class="content-header-btn">
-                        <a href="#" class="active">All</a>
-                        <a href="#">Music</a>
-                        <a href="#">Podcast</a>
-                        <a href="#">Audiobooks</a>
-                        <button><img src="assets/images/desktop/content/header-right-togle-1.png"></button>
+                        <a href="#" data-text="All" class="active">All</a>
+                        <a href="#" data-text="Music">Music</a>
+                        <a href="#" data-text="Podcast">Podcast</a>
+                        <a href="#" data-text="Audiobooks">Audiobooks</a>
+                        <button><img src="assets/images/desktop/content/header-right-togle-1.png" alt=""></button>
                     </div>
                     
 
@@ -159,34 +242,57 @@
                                     <h3>Made For You</h3>
                                 </div>
                                 <div class="made-for-you-buttons">
-                                    <button><img src="assets/images/desktop/content/back-card-1.png"></button>
-                                    <button><img src="assets/images/desktop/content/next-card-1.png"></button>
-                                    <button><img src="assets/images/desktop/content/more-1.png"></button>
+                                    <button class="MFY_nav MFY_left" id="MFY_prev"><img src="assets/images/desktop/content/back-card-1.png" alt=""></button>
+                                    <button class="MFY_nav MFY_right" id="MFY_next"><img src="assets/images/desktop/content/next-card-1.png" alt=""></button>
+                                    <button><img src="assets/images/desktop/content/more-1.png" alt=""></button>
                                 </div>
                             </div>
-                            <div class="made-for-you-cards">
-                                <div class="made-for-you-card">
-                                    <img src="assets/images/desktop/cards/for-you-made/discovery-weekly.png" alt="discovery weekly">
-                                    <div class="card-name">
-                                        <h2 class="card-title">Discovery Weekly</h2>
-                                        <h2 class="card-rating card-rating-c1">50</h2>
-                                    </div>
-                                    <div class="card-info">
-                                        <p>Your weekly mixtape of fresh music.</p>
-                                    </div>
-                                </div>
-                                <div class="made-for-you-card">
-                                    <img src="assets/images/desktop/cards/for-you-made/daily-mix-1.png" alt="discovery weekly">
-                                    <div class="card-name">
-                                        <h2 class="card-title">Daily Mix 1</h2>
-                                        <h2 class="card-rating card-rating-c2">50</h2>  <!-- #95E6D3  -->
-                                    </div>
-                                    <div class="card-info">
-                                        <p>Linkin Park, System Of A Down, Coal Chamber...</p>
-                                    </div>
-                                </div>
-                                <div class="made-for-you-card">
-                                    <img src="assets/images/desktop/cards/for-you-made/daily-mix-2.png" alt="discovery weekly">
+                            <div class="made-for-you-cards" id="MFY_carousel">
+                                <article class="made-for-you-card">
+                                    <figure>
+                                        <div class="cardimages-shadow">
+                                            <div class="cardimages">
+                                                <img src="assets/images/desktop/cards/for-you-made/discovery-weekly.png" alt="discovery weekly">
+                                            </div>
+                                        </div>
+                                        <div class="card-name">
+                                            <h2 class="card-title">Discovery Weekly</h2>
+                                            <h2 class="card-rating card-rating-c1">50</h2>   <!-- #CE6E9A  -->
+                                        </div>
+                                        <figcaption class="card-info">
+                                            <p>Your weekly mixtape of fresh music.</p>
+                                        </figcaption>
+                                    </figure>
+                                    <button class="card-hover-play-btn">
+                                        <img src="assets/images/desktop/content/play-big.svg" alt="">
+                                    </button>
+                                </article>
+                                <article class="made-for-you-card">
+                                    <figure>
+                                        <div class="cardimages-shadow">
+                                            <div class="cardimages">
+                                                <img src="assets/images/desktop/cards/for-you-made/daily-mix-1.png" alt="Daily Mix 1">
+                                            </div>
+                                        </div>
+                                        <div class="card-name">
+                                            <h2 class="card-title">Daily Mix 1</h2>
+                                            <h2 class="card-rating card-rating-c2">50</h2>  <!-- #95E6D3  -->
+                                        </div>
+                                        <figcaption class="card-info">
+                                            <p>Linkin Park, System Of A Down, Coal Chamber...</p>
+                                        </figcaption>
+                                    </figure>
+                                    <button class="card-hover-play-btn">
+                                        <img src="assets/images/desktop/content/play-big.svg" alt="">
+                                    </button>
+                                </article>
+                                <article class="made-for-you-card">
+                                     <figure>
+                                        <div class="cardimages-shadow">
+                                            <div class="cardimages">
+                                                <img src="assets/images/desktop/cards/for-you-made/daily-mix-2.png" alt="Daily Mix 2">
+                                            </div>
+                                        </div>
                                     <div class="card-name">
                                         <h2 class="card-title">Daily Mix 2</h2>   <!-- #F4B8BD  -->
                                         <h2 class="card-rating card-rating-c3">50</h2>
@@ -194,9 +300,18 @@
                                     <div class="card-info">
                                         <p>YAvril Lavigne, Lorde, Charli XCX and more</p>
                                     </div>
-                                </div>
-                                <div class="made-for-you-card">
-                                    <img src="assets/images/desktop/cards/for-you-made/daily-mix-3.png" alt="discovery weekly">
+                                    </figure>
+                                    <button class="card-hover-play-btn">
+                                        <img src="assets/images/desktop/content/play-big.svg" alt="">
+                                    </button>
+                                </article>
+                                <article class="made-for-you-card">
+                                    <figure>
+                                        <div class="cardimages-shadow">
+                                            <div class="cardimages">
+                                                <img src="assets/images/desktop/cards/for-you-made/daily-mix-3.png" alt="Daily Mix 3">
+                                            </div>
+                                        </div>
                                     <div class="card-name">
                                         <h2 class="card-title">Daily Mix 3</h2>   <!-- #C3E7B7  -->
                                         <h2 class="card-rating card-rating-c4">50</h2>
@@ -204,9 +319,18 @@
                                     <div class="card-info">
                                         <p>The Strokes, Martin Garrix, MGMT and more</p>
                                     </div>
-                                </div>
-                                <div class="made-for-you-card">
-                                    <img src="assets/images/desktop/cards/for-you-made/daily-mix-4.png" alt="discovery weekly">
+                                    </figure>
+                                    <button class="card-hover-play-btn">
+                                        <img src="assets/images/desktop/content/play-big.svg" alt="">
+                                    </button>
+                                </article>
+                                <article class="made-for-you-card">
+                                    <figure>
+                                        <div class="cardimages-shadow">
+                                            <div class="cardimages">
+                                                <img src="assets/images/desktop/cards/for-you-made/daily-mix-4.png" alt="Daily Mix 4">
+                                            </div>
+                                        </div>
                                     <div class="card-name">
                                         <h2 class="card-title">Daily Mix 4</h2>   <!-- #F37FA6  -->
                                         <h2 class="card-rating card-rating-c5">50</h2>
@@ -214,9 +338,18 @@
                                     <div class="card-info">
                                         <p>Chuck Berry, Elvis Presley, Roy Orbison and more</p>
                                     </div>
-                                </div>
-                                <div class="made-for-you-card">
-                                    <img src="assets/images/desktop/cards/for-you-made/daily-mix-6.png" alt="discovery weekly">
+                                    </figure>
+                                    <button class="card-hover-play-btn">
+                                        <img src="assets/images/desktop/content/play-big.svg" alt="">
+                                    </button>
+                                </article>
+                                <article class="made-for-you-card">
+                                    <figure>
+                                        <div class="cardimages-shadow">
+                                            <div class="cardimages">
+                                                <img src="assets/images/desktop/cards/for-you-made/daily-mix-6.png" alt="Daily Mix 6">
+                                            </div>
+                                        </div>
                                     <div class="card-name">
                                         <h2 class="card-title">Daily Mix 6</h2>   <!-- #A0BEC8  -->
                                         <h2 class="card-rating card-rating-c6">50</h2>
@@ -224,9 +357,18 @@
                                     <div class="card-info">
                                         <p>Frank Sinatra, Gerhard Trede, Dean Martin and more</p>
                                     </div>
-                                </div>
-                                <div class="made-for-you-card">
-                                    <img src="assets/images/desktop/cards/for-you-made/nirvana.png" alt="discovery weekly">
+                                    </figure>
+                                    <button class="card-hover-play-btn">
+                                        <img src="assets/images/desktop/content/play-big.svg" alt="">
+                                    </button>
+                                </article>
+                                <article class="made-for-you-card">
+                                    <figure>
+                                        <div class="cardimages-shadow">
+                                            <div class="cardimages">
+                                                <img src="assets/images/desktop/cards/for-you-made/nirvana.png" alt="Nirvana Radio">
+                                            </div>
+                                        </div>
                                     <div class="card-name">
                                         <h2 class="card-title">Nirvana Radio</h2>   <!-- #FDD87D  -->
                                         <h2 class="card-rating card-rating-c7">50</h2>
@@ -234,9 +376,18 @@
                                     <div class="card-info">
                                         <p>The Strokes, Martin Garrix, MGMT and more</p>
                                     </div>
-                                </div>
-                                <div class="made-for-you-card">
-                                    <img src="assets/images/desktop/cards/for-you-made/fall-out-boy.png" alt="discovery weekly">
+                                    </figure>
+                                    <button class="card-hover-play-btn">
+                                        <img src="assets/images/desktop/content/play-big.svg" alt="">
+                                    </button>
+                                </article>
+                                <article class="made-for-you-card">
+                                    <figure>
+                                        <div class="cardimages-shadow">
+                                            <div class="cardimages">
+                                                <img src="assets/images/desktop/cards/for-you-made/fall-out-boy.png" alt="Fall Out Boy Radi">
+                                            </div>
+                                        </div>
                                     <div class="card-name">
                                         <h2 class="card-title">Fall Out Boy Radi</h2>   <!-- #D4B2A9  -->
                                         <h2 class="card-rating card-rating-c8">50</h2>
@@ -244,7 +395,11 @@
                                     <div class="card-info">
                                         <p>With Panic! At The Disco, The All-American Rejects,...</p>
                                     </div>
-                                </div>
+                                    </figure>
+                                    <button class="card-hover-play-btn">
+                                        <img src="assets/images/desktop/content/play-big.svg" alt="">
+                                    </button>
+                                </article>
                             </div>
                         </div>
                             <!-- Made For You end  -->
@@ -256,44 +411,336 @@
                                     <h3>Your Top Mixes</h3>
                                 </div>
                                 <div class="your-top-mixes-buttons">
-                                    <button><img src="assets/images/desktop/content/back-card-1.png"></button>
-                                    <button><img src="assets/images/desktop/content/next-card-1.png"></button>
-                                    <button><img src="assets/images/desktop/content/more-1.png"></button>
+                                    <button id="YTM_prev"><img src="assets/images/desktop/content/back-card-1.png" alt=""></button>
+                                    <button id="YTM_next"><img src="assets/images/desktop/content/next-card-1.png" alt=""></button>
+                                    <button><img src="assets/images/desktop/content/more-1.png" alt=""></button>
                                 </div>
                             </div>
-                            <div class="made-for-you-cards">
-                            <div class="made-for-you-card">
-                                    <img src="assets/images/desktop/cards/for-you-made/daily-mix-3.png" alt="discovery weekly">
+                            <div class="your-top-mixes-cards" id="YTM_carousel">
+                                <article class="your-top-mixes-card">
+                                    <figure>
+                                        <div class="cardimages-shadow">
+                                            <div class="cardimages">
+                                                <img src="assets/images/desktop/cards/you-top-mixes/rock-mix.png" alt="Rock Mix">
+                                            </div>
+                                        </div>
+                                        <div class="card-name">
+                                            <h2 class="card-title">Rock Mix</h2>   <!-- #CCF665  -->
+                                            <h2 class="card-rating card-rating-a1">50</h2>
+                                        </div>
+                                        <figcaption class="card-info">
+                                            <p>Red Hot Chili Peppers, R.E.M., Guns N’ Roses...</p>
+                                        </figcaption>
+                                    </figure>
+                                    <button class="card-hover-play-btn">
+                                        <img src="assets/images/desktop/content/play-big.svg" alt="">
+                                    </button>
+                                </article>
+                                <article class="your-top-mixes-card">
+                                    <figure>
+                                        <div class="cardimages-shadow">
+                                            <div class="cardimages">
+                                                <img src="assets/images/desktop/cards/you-top-mixes/chill-mix.png" alt="Chill Mix">
+                                            </div>
+                                        </div>
+                                        <div class="card-name">
+                                            <h2 class="card-title">Chill Mix</h2>   <!-- #F9E72C  -->
+                                            <h2 class="card-rating card-rating-a2">50</h2>
+                                        </div>
+                                        <figcaption class="card-info">
+                                            <p>MF DOOM, Daft Punk, The Chainsmokers, and more</p>
+                                        </figcaption>
+                                    </figure>
+                                    <button class="card-hover-play-btn">
+                                        <img src="assets/images/desktop/content/play-big.svg" alt="">
+                                    </button>
+                                </article>
+                                <article class="your-top-mixes-card">
+                                    <figure>
+                                        <div class="cardimages-shadow">
+                                            <div class="cardimages">
+                                                <img src="assets/images/desktop/cards/you-top-mixes/pop-mix.png" alt="Pop Mix">
+                                            </div>
+                                        </div>
+                                        <div class="card-name">
+                                            <h2 class="card-title">Pop Mix</h2>   <!-- #9BF0E2  -->
+                                            <h2 class="card-rating card-rating-a3">50</h2>
+                                        </div>
+                                        <figcaption class="card-info">
+                                            <p>Red Hot Chili Peppers, R.E.M., Guns N’ Roses...</p>
+                                        </figcaption>
+                                    </figure>
+                                    <button class="card-hover-play-btn">
+                                        <img src="assets/images/desktop/content/play-big.svg" alt="">
+                                    </button>
+                                </article>
+                                <article class="your-top-mixes-card">
+                                    <figure>
+                                        <div class="cardimages-shadow">
+                                            <div class="cardimages">
+                                                <img src="assets/images/desktop/cards/you-top-mixes/daft-punk-mix.png" alt="Daft Punk Mix">
+                                            </div>
+                                        </div>
+                                        <div class="card-name">
+                                            <h2 class="card-title">Daft Punk Mix</h2>   <!-- #FFCBD4  -->
+                                            <h2 class="card-rating card-rating-a4">50</h2>
+                                        </div>
+                                        <figcaption class="card-info">
+                                            <p>Daft Punk, MGMT, Muse, and more</p>
+                                        </figcaption>
+                                    </figure>
+                                    <button class="card-hover-play-btn">
+                                        <img src="assets/images/desktop/content/play-big.svg" alt="">
+                                    </button>
+                                </article>
+                                <article class="your-top-mixes-card">
+                                    <figure>
+                                        <div class="cardimages-shadow">
+                                            <div class="cardimages">
+                                                <img src="assets/images/desktop/cards/you-top-mixes/happy-mix.png" alt="Happy Mix">
+                                            </div>
+                                        </div>
+                                        <div class="card-name">
+                                            <h2 class="card-title">Happy Mix</h2>    <!-- #FFCBD4  -->
+                                            <h2 class="card-rating card-rating-a5">50</h2>
+                                        </div>
+                                        <figcaption class="card-info">
+                                            <p>The Turtles, Van Morrison, ABBA and more</p>
+                                        </figcaption>
+                                    </figure>
+                                    <button class="card-hover-play-btn">
+                                        <img src="assets/images/desktop/content/play-big.svg" alt="">
+                                    </button>
+                                </article>
+                                <article class="your-top-mixes-card">
+                                    <figure>
+                                        <div class="cardimages-shadow">
+                                            <div class="cardimages">
+                                                <img src="assets/images/desktop/cards/you-top-mixes/david-bowie-mix.png" alt="David Bowie Mix">
+                                            </div>
+                                        </div>
+                                        <div class="card-name">
+                                            <h2 class="card-title">David Bowie Mix</h2>   <!-- #FFC668  -->
+                                            <h2 class="card-rating card-rating-a6">50</h2>
+                                        </div>
+                                        <figcaption class="card-info">
+                                            <p>Soft Cell, The Who and The Clash</p>
+                                        </figcaption>
+                                    </figure>
+                                    <button class="card-hover-play-btn">
+                                        <img src="assets/images/desktop/content/play-big.svg" alt="">
+                                    </button>
+                                </article>
+                                <article class="your-top-mixes-card">
+                                    <figure>
+                                        <div class="cardimages-shadow">
+                                            <div class="cardimages">
+                                                <img src="assets/images/desktop/cards/you-top-mixes/upbeat-mix.png" alt="Upbeat Mix">
+                                            </div>
+                                        </div>
+                                        <div class="card-name">
+                                            <h2 class="card-title">Upbeat Mix</h2>
+                                            <h2 class="card-rating card-rating-a7">50</h2>  <!-- #27856B  -->
+                                        </div>
+                                        <figcaption class="card-info">
+                                            <p>Kylie Minogue, Charli XCX, Cage The Elephant and...</p>
+                                        </figcaption>
+                                    </figure>
+                                    <button class="card-hover-play-btn">
+                                        <img src="assets/images/desktop/content/play-big.svg" alt="">
+                                    </button>
+                                </article>
+                                <article class="your-top-mixes-card">
+                                    <figure>
+                                        <div class="cardimages-shadow">
+                                            <div class="cardimages">
+                                                <img src="assets/images/desktop/cards/you-top-mixes/60s-mix.png" alt="60s Mix">
+                                            </div>
+                                        </div>
+                                        <div class="card-name">
+                                            <h2 class="card-title">60s Mix</h2>   <!-- #DD138B  -->
+                                            <h2 class="card-rating card-rating-a8">50</h2>
+                                        </div>
+                                        <figcaption class="card-info">
+                                            <p>Chuck Berry, Skeeter David, Van Morrison and...</p>
+                                        </figcaption>
+                                    </figure>
+                                    <button class="card-hover-play-btn">
+                                        <img src="assets/images/desktop/content/play-big.svg" alt="">
+                                    </button>
+                                </article>
+                            </div>
+                        </div>
+                        <!-- Your Top Mixes end  -->  
+
+                        <!-- Your favorite artists start -->
+
+                        <div class="your-favorite-artists">
+                            <div class="your-favorite-artists-title-btn">
+                                <div class="your-favorite-artists-title">
+                                    <h3>Your favorite artists</h3>
+                                </div>
+                                <div class="your-favorite-artists-buttons">
+                                    <button><img src="assets/images/desktop/content/back-card-1.png" alt=""></button>
+                                    <button><img src="assets/images/desktop/content/next-card-1.png" alt=""></button>
+                                    <button><img src="assets/images/desktop/content/more-1.png" alt=""></button>
+                                </div>
+                            </div>
+                            <div class="your-favorite-artists-cards">
+                                <div class="your-favorite-artists-card">
+                                    <img src="assets/images/desktop/cards/your-favorite-artists/guns-n-roses.png" alt="Guns N' Roses">
                                     <div class="card-name">
-                                        <h2 class="card-title">Daily Mix 3</h2>   <!-- #C3E7B7  -->
+                                        <h2 class="card-title">Guns N' Roses</h2>   <!-- #C3E7B7  -->
                                         <h2 class="card-rating card-rating-c4">50</h2>
                                     </div>
                                     <div class="card-info">
                                         <p>The Strokes, Martin Garrix, MGMT and more</p>
                                     </div>
+                                    <button class="card-hover-play-btn">
+                                        <img src="assets/images/desktop/content/play-big.svg" alt="">
+                                    </button>
                                 </div>
-                                <div class="made-for-you-card">
-                                    <img src="assets/images/desktop/cards/for-you-made/nirvana.png" alt="discovery weekly">
+                                <div class="your-favorite-artists-card">
+                                    <img src="assets/images/desktop/cards/your-favorite-artists/darf-punk.png" alt="Darf Punk">
                                     <div class="card-name">
-                                        <h2 class="card-title">Nirvana Radio</h2>   <!-- #FDD87D  -->
+                                        <h2 class="card-title">Darf Punk</h2>   <!-- #FDD87D  -->
                                         <h2 class="card-rating card-rating-c7">50</h2>
                                     </div>
                                     <div class="card-info">
                                         <p>The Strokes, Martin Garrix, MGMT and more</p>
                                     </div>
+                                    <button class="card-hover-play-btn">
+                                        <img src="assets/images/desktop/content/play-big.svg" alt="">
+                                    </button>
                                 </div>
-                                <div class="made-for-you-card">
-                                    <img src="assets/images/desktop/cards/for-you-made/fall-out-boy.png" alt="discovery weekly">
+                                <div class="your-favorite-artists-card">
+                                    <img src="assets/images/desktop/cards/your-favorite-artists/david-bowie.png" alt="David Bowie">
                                     <div class="card-name">
-                                        <h2 class="card-title">Fall Out Boy Radi</h2>   <!-- #D4B2A9  -->
+                                        <h2 class="card-title">David Bowie</h2>   <!-- #D4B2A9  -->
                                         <h2 class="card-rating card-rating-c8">50</h2>
                                     </div>
                                     <div class="card-info">
                                         <p>With Panic! At The Disco, The All-American Rejects,...</p>
                                     </div>
+                                    <button class="card-hover-play-btn">
+                                        <img src="assets/images/desktop/content/play-big.svg" alt="">
+                                    </button>
                                 </div>
-                                <div class="made-for-you-card">
-                                    <img src="assets/images/desktop/cards/for-you-made/daily-mix-2.png" alt="discovery weekly">
+                                
+                            </div>
+                        </div>
+                        <!--  Your favorite artists end  -->
+                    </div>
+                </div>
+            <!--  content-wrapper end  -->
+            <!--  content wrapper mobile start  -->
+                <div class="content-wrapper-mob mobile">
+                    <!-- play list start -->
+                        <div class="play-list-mobile">
+                            <div class="play-list-mobile-wrapper">
+                                <div class="play-list-mobile-item">
+                                    <div class="play-list-mobile-img">
+                                        <img src="assets/images/mobile/cards/small/darf-punk.png" alt="">
+                                    </div>
+                                    <div class="play-list-mobile-item-info">
+                                        <h2>Get Lucky (feat...</h2>
+                                        <p>Daft Punk</p>
+                                    </div>
+                                </div>
+                                <div class="play-list-mobile-item">
+                                    <div class="play-list-mobile-img">
+                                        <img src="assets/images/mobile/cards/small/daily-mix-2.png" alt="">
+                                    </div>
+                                    <div class="play-list-mobile-item-info">
+                                        <h2>Daily Mix 2</h2>
+                                    </div></div>
+                                <div class="play-list-mobile-item">
+                                    <div class="play-list-mobile-img">
+                                        <img src="assets/images/mobile/cards/small/daily-mix-1.png" alt="">
+                                    </div>
+                                    <div class="play-list-mobile-item-info">
+                                        <h2>Daily Mix 1</h2>
+                                    </div>
+                                </div>
+                                <div class="play-list-mobile-item">
+                                    <div class="play-list-mobile-img">
+                                        <img src="assets/images/mobile/cards/small/darf-punk.png" alt="">
+                                    </div>
+                                    <div class="play-list-mobile-item-info">
+                                        <h2>Instant Crush</h2>
+                                        <p>Daft Punk</p>
+                                    </div>
+                                </div>
+                                <div class="play-list-mobile-item">
+                                    <div class="play-list-mobile-img">
+                                        <img src="assets/images/mobile/cards/small/darf-punk.png" alt="">
+                                    </div>
+                                    <div class="play-list-mobile-item-info">
+                                        <h2>Around the wo...</h2>
+                                        <p>Daft Punk</p>
+                                    </div>
+                                </div>
+                                <div class="play-list-mobile-item">
+                                    <div class="play-list-mobile-img">
+                                        <img src="assets/images/mobile/cards/small/rock-mix.png" alt="">
+                                    </div>
+                                    <div class="play-list-mobile-item-info">
+                                        <h2>Rock Mix</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- play list end -->
+                    <!-- mobile Made For You start  -->
+                        <div class="made-for-you-wrapper">
+                            <div class="made-for-you-title-btn">
+                                <div class="made-for-you-title">
+                                    <h3>Made For You</h3>
+                                </div>
+                                <div class="made-for-you-buttons">
+                                    <button><img src="assets/images/mobile/content/more-1.png" alt=""></button>
+                                </div>
+                            </div>
+                            <div class="made-for-you-cards" id="MFY_carousel_mob">
+                                <article class="made-for-you-card">
+                                    <figure>
+                                        <div class="cardimages-shadow">
+                                            <div class="cardimages">
+                                                <img src="assets/images/mobile/cards/for-you-made/discovery-weekly.png" alt="discovery weekly">
+                                            </div>
+                                        </div>
+                                        <div class="card-name">
+                                            <h2 class="card-title">Discovery Weekly</h2>
+                                            <h2 class="card-rating card-rating-c1">50</h2>   <!-- #CE6E9A  -->
+                                        </div>
+                                        <figcaption class="card-info">
+                                            <p>Your weekly mixtape of fresh music.</p>
+                                        </figcaption>
+                                    </figure>
+                                </article>
+                                <article class="made-for-you-card">
+                                    <figure>
+                                        <div class="cardimages-shadow">
+                                            <div class="cardimages">
+                                                <img src="assets/images/mobile/cards/for-you-made/daily-mix-1.png" alt="Daily Mix 1">
+                                            </div>
+                                        </div>
+                                        <div class="card-name">
+                                            <h2 class="card-title">Daily Mix 1</h2>
+                                            <h2 class="card-rating card-rating-c2">50</h2>  <!-- #95E6D3  -->
+                                        </div>
+                                        <figcaption class="card-info">
+                                            <p>Linkin Park, System Of A Down, Coal Chamber...</p>
+                                        </figcaption>
+                                    </figure>
+                                </article>
+                                <article class="made-for-you-card">
+                                     <figure>
+                                        <div class="cardimages-shadow">
+                                            <div class="cardimages">
+                                                <img src="assets/images/mobile/cards/for-you-made/daily-mix-2.png" alt="Daily Mix 2">
+                                            </div>
+                                        </div>
                                     <div class="card-name">
                                         <h2 class="card-title">Daily Mix 2</h2>   <!-- #F4B8BD  -->
                                         <h2 class="card-rating card-rating-c3">50</h2>
@@ -301,157 +748,80 @@
                                     <div class="card-info">
                                         <p>YAvril Lavigne, Lorde, Charli XCX and more</p>
                                     </div>
-                                </div>
-                                <div class="made-for-you-card">
-                                    <img src="assets/images/desktop/cards/for-you-made/discovery-weekly.png" alt="discovery weekly">
-                                    <div class="card-name">
-                                        <h2 class="card-title">Discovery Weekly</h2>
-                                        <h2 class="card-rating card-rating-c1">50</h2>
-                                    </div>
-                                    <div class="card-info">
-                                        <p>Your weekly mixtape of fresh music.</p>
-                                    </div>
-                                </div>
-                                <div class="made-for-you-card">
-                                    <img src="assets/images/desktop/cards/for-you-made/daily-mix-4.png" alt="discovery weekly">
-                                    <div class="card-name">
-                                        <h2 class="card-title">Daily Mix 4</h2>   <!-- #F37FA6  -->
-                                        <h2 class="card-rating card-rating-c5">50</h2>
-                                    </div>
-                                    <div class="card-info">
-                                        <p>Chuck Berry, Elvis Presley, Roy Orbison and more</p>
-                                    </div>
-                                </div>
-                                <div class="made-for-you-card">
-                                    <img src="assets/images/desktop/cards/for-you-made/daily-mix-1.png" alt="discovery weekly">
-                                    <div class="card-name">
-                                        <h2 class="card-title">Daily Mix 1</h2>
-                                        <h2 class="card-rating card-rating-c2">50</h2>  <!-- #95E6D3  -->
-                                    </div>
-                                    <div class="card-info">
-                                        <p>Linkin Park, System Of A Down, Coal Chamber...</p>
-                                    </div>
-                                </div>
-                                <div class="made-for-you-card">
-                                    <img src="assets/images/desktop/cards/for-you-made/daily-mix-6.png" alt="discovery weekly">
-                                    <div class="card-name">
-                                        <h2 class="card-title">Daily Mix 6</h2>   <!-- #A0BEC8  -->
-                                        <h2 class="card-rating card-rating-c6">50</h2>
-                                    </div>
-                                    <div class="card-info">
-                                        <p>Frank Sinatra, Gerhard Trede, Dean Martin and more</p>
-                                    </div>
-                                </div>
+                                    </figure>
+                                </article>
                             </div>
                         </div>
-                        <!-- Your Top Mixes end  -->  
-
-                        <!--  ეს დროებითის სტარტია  -->
-
-                        <div class="your-top-mixes">
+                    <!-- mobile Made For You end  -->
+                    <!-- mobile Your Top Mixes start  -->  
+                        <div class="your-top-mixes-mob">
                             <div class="your-top-mixes-title-btn">
                                 <div class="your-top-mixes-title">
                                     <h3>Your Top Mixes</h3>
                                 </div>
                                 <div class="your-top-mixes-buttons">
-                                    <button><img src="assets/images/desktop/content/back-card-1.png"></button>
-                                    <button><img src="assets/images/desktop/content/next-card-1.png"></button>
-                                    <button><img src="assets/images/desktop/content/more-1.png"></button>
+                                    <button><img src="assets/images/mobile/content/more-1.png" alt=""></button>
                                 </div>
                             </div>
-                            <div class="made-for-you-cards">
-                            <div class="made-for-you-card">
-                                    <img src="assets/images/desktop/cards/for-you-made/daily-mix-3.png" alt="discovery weekly">
-                                    <div class="card-name">
-                                        <h2 class="card-title">Daily Mix 3</h2>   <!-- #C3E7B7  -->
-                                        <h2 class="card-rating card-rating-c4">50</h2>
-                                    </div>
-                                    <div class="card-info">
-                                        <p>The Strokes, Martin Garrix, MGMT and more</p>
-                                    </div>
-                                </div>
-                                <div class="made-for-you-card">
-                                    <img src="assets/images/desktop/cards/for-you-made/nirvana.png" alt="discovery weekly">
-                                    <div class="card-name">
-                                        <h2 class="card-title">Nirvana Radio</h2>   <!-- #FDD87D  -->
-                                        <h2 class="card-rating card-rating-c7">50</h2>
-                                    </div>
-                                    <div class="card-info">
-                                        <p>The Strokes, Martin Garrix, MGMT and more</p>
-                                    </div>
-                                </div>
-                                <div class="made-for-you-card">
-                                    <img src="assets/images/desktop/cards/for-you-made/fall-out-boy.png" alt="discovery weekly">
-                                    <div class="card-name">
-                                        <h2 class="card-title">Fall Out Boy Radi</h2>   <!-- #D4B2A9  -->
-                                        <h2 class="card-rating card-rating-c8">50</h2>
-                                    </div>
-                                    <div class="card-info">
-                                        <p>With Panic! At The Disco, The All-American Rejects,...</p>
-                                    </div>
-                                </div>
-                                <div class="made-for-you-card">
-                                    <img src="assets/images/desktop/cards/for-you-made/daily-mix-2.png" alt="discovery weekly">
-                                    <div class="card-name">
-                                        <h2 class="card-title">Daily Mix 2</h2>   <!-- #F4B8BD  -->
-                                        <h2 class="card-rating card-rating-c3">50</h2>
-                                    </div>
-                                    <div class="card-info">
-                                        <p>YAvril Lavigne, Lorde, Charli XCX and more</p>
-                                    </div>
-                                </div>
-                                <div class="made-for-you-card">
-                                    <img src="assets/images/desktop/cards/for-you-made/discovery-weekly.png" alt="discovery weekly">
-                                    <div class="card-name">
-                                        <h2 class="card-title">Discovery Weekly</h2>
-                                        <h2 class="card-rating card-rating-c1">50</h2>
-                                    </div>
-                                    <div class="card-info">
-                                        <p>Your weekly mixtape of fresh music.</p>
-                                    </div>
-                                </div>
-                                <div class="made-for-you-card">
-                                    <img src="assets/images/desktop/cards/for-you-made/daily-mix-4.png" alt="discovery weekly">
-                                    <div class="card-name">
-                                        <h2 class="card-title">Daily Mix 4</h2>   <!-- #F37FA6  -->
-                                        <h2 class="card-rating card-rating-c5">50</h2>
-                                    </div>
-                                    <div class="card-info">
-                                        <p>Chuck Berry, Elvis Presley, Roy Orbison and more</p>
-                                    </div>
-                                </div>
-                                <div class="made-for-you-card">
-                                    <img src="assets/images/desktop/cards/for-you-made/daily-mix-1.png" alt="discovery weekly">
-                                    <div class="card-name">
-                                        <h2 class="card-title">Daily Mix 1</h2>
-                                        <h2 class="card-rating card-rating-c2">50</h2>  <!-- #95E6D3  -->
-                                    </div>
-                                    <div class="card-info">
-                                        <p>Linkin Park, System Of A Down, Coal Chamber...</p>
-                                    </div>
-                                </div>
-                                <div class="made-for-you-card">
-                                    <img src="assets/images/desktop/cards/for-you-made/daily-mix-6.png" alt="discovery weekly">
-                                    <div class="card-name">
-                                        <h2 class="card-title">Daily Mix 6</h2>   <!-- #A0BEC8  -->
-                                        <h2 class="card-rating card-rating-c6">50</h2>
-                                    </div>
-                                    <div class="card-info">
-                                        <p>Frank Sinatra, Gerhard Trede, Dean Martin and more</p>
-                                    </div>
-                                </div>
+                            <div class="your-top-mixes-cards" id="YTM_carousel_mob">
+                                <article class="your-top-mixes-card">
+                                    <figure>
+                                        <div class="cardimages-shadow">
+                                            <div class="cardimages">
+                                                <img src="assets/images/mobile/cards/you-top-mixes/rock-mix.png" alt="Rock Mix">
+                                            </div>
+                                        </div>
+                                        <div class="card-name">
+                                            <h2 class="card-title">Rock Mix</h2>   <!-- #CCF665  -->
+                                            <h2 class="card-rating card-rating-a1">50</h2>
+                                        </div>
+                                        <figcaption class="card-info">
+                                            <p>Red Hot Chili Peppers, R.E.M., Guns N’ Roses...</p>
+                                        </figcaption>
+                                    </figure>
+                                </article>
+                                <article class="your-top-mixes-card">
+                                    <figure>
+                                        <div class="cardimages-shadow">
+                                            <div class="cardimages">
+                                                <img src="assets/images/mobile/cards/you-top-mixes/chill-mix.png" alt="Chill Mix">
+                                            </div>
+                                        </div>
+                                        <div class="card-name">
+                                            <h2 class="card-title">Chill Mix</h2>   <!-- #F9E72C  -->
+                                            <h2 class="card-rating card-rating-a2">50</h2>
+                                        </div>
+                                        <figcaption class="card-info">
+                                            <p>MF DOOM, Daft Punk, The Chainsmokers, and more</p>
+                                        </figcaption>
+                                    </figure>
+                                </article>
+                                <article class="your-top-mixes-card">
+                                    <figure>
+                                        <div class="cardimages-shadow">
+                                            <div class="cardimages">
+                                                <img src="assets/images/mobile/cards/you-top-mixes/pop-mix.png" alt="Pop Mix">
+                                            </div>
+                                        </div>
+                                        <div class="card-name">
+                                            <h2 class="card-title">Pop Mix</h2>   <!-- #9BF0E2  -->
+                                            <h2 class="card-rating card-rating-a3">50</h2>
+                                        </div>
+                                        <figcaption class="card-info">
+                                            <p>Red Hot Chili Peppers, R.E.M., Guns N’ Roses...</p>
+                                        </figcaption>
+                                    </figure>
+                                </article>
                             </div>
                         </div>
-                        <!--  ეს დროებითის ენდია  -->
-                    </div>
+                    <!-- mobile Your Top Mixes end  -->
                 </div>
+            <!--  content wrapper mobile end  -->
+            </main>
+        <!--  main section end  -->
+        <!-- right sidebar friends-activity start -->
 
-
-            </section>
-
-            <!-- right sidebar friends-activity start -->
-
-            <section class="friends-activity">  <!-- id="friends_actv" -->
+            <section class="friends-activity desktop">  <!-- id="friends_actv" -->
                 <div class="friends-activity-wapper">
                     <div class="friends-activity-header">
                         <div class="friends-activity-title">
@@ -459,52 +829,52 @@
                         </div>
                         <div class="friends-activity-btn">
                             <div class="friends-item-icon">
-                                <img src="assets/images/desktop/friends-activity/add-friends-1.png">
+                                <button><img src="assets/images/desktop/friends-activity/add-friends-1.png" alt=""></button>
                             </div>
                              <div class="friends-item-icon">
-                                <img src="assets/images/desktop/friends-activity/close-1.png" onclick="closeContainer()">
+                                <button><img src="assets/images/desktop/friends-activity/close-1.png"  alt="" onclick="closeContainer()"></button>
                             </div>
                         </div>
                     </div>
                     <div class="friends-activity-list">
                         <div class="friends-activity-list-member">
-                            <img src="assets/images/desktop/friends-activity/friend4.png">
+                            <img src="assets/images/desktop/friends-activity/friend4.png" alt="">
                             <div class="friends-activity-member-content">
                                 <div class="friends-activity-member-name">
                                     <p>FriendlyMusicListener</p>
                                 </div>
                                 <div class="friends-activity-member-info">
                                     <div class="friends-activity-playsound">
-                                        <img src="assets/images/desktop/friends-activity/media-volume-anime.png">
+                                        <img src="assets/images/desktop/friends-activity/media-volume-anime.png" alt="">
                                     </div>
                                     <p class="sound-track-name">Goosebumps</p>
                                     <div class="friends-activity-dot">
-                                        <img src="assets/images/desktop/friends-activity/dot.png">
+                                        <img src="assets/images/desktop/friends-activity/dot.png" alt="">
                                     </div>
                                     <p class="sound-track-autor">Travis Scott</p>
                                 </div>
                             </div>
                         </div>
                         <div class="friends-activity-list-member">
-                            <img src="assets/images/desktop/friends-activity/friend1.png">
+                            <img src="assets/images/desktop/friends-activity/friend1.png" alt="">
                             <div class="friends-activity-member-content">
                                 <div class="friends-activity-member-name">
                                     <p>AverageMusicEnjoyer</p>
                                 </div>
                                 <div class="friends-activity-member-info">
                                     <div class="friends-activity-playsound">
-                                        <img src="assets/images/desktop/friends-activity/media-volume-anime.png">
+                                        <img src="assets/images/desktop/friends-activity/media-volume-anime.png" alt="">
                                     </div>
                                     <p class="sound-track-name">Get Lucky</p>
                                     <div class="friends-activity-dot">
-                                        <img src="assets/images/desktop/friends-activity/dot.png">
+                                        <img src="assets/images/desktop/friends-activity/dot.png" alt="">
                                     </div>
                                     <p class="sound-track-autor">Daft Punk</p>
                                 </div>
                             </div>
                         </div>
                         <div class="friends-activity-list-member">
-                            <img src="assets/images/desktop/friends-activity/friend2.png">
+                            <img src="assets/images/desktop/friends-activity/friend2.png" alt="">
                             <div class="friends-activity-member-content">
                                 <div class="friends-activity-member-name">
                                     <p>MusicEnthusiast</p>
@@ -515,14 +885,14 @@
                                     </div>
                                     <p class="sound-track-name">would he</p>
                                     <div class="friends-activity-dot">
-                                        <img src="assets/images/desktop/friends-activity/dot.png">
+                                        <img src="assets/images/desktop/friends-activity/dot.png" alt="">
                                     </div>
                                     <p class="sound-track-autor">joji</p>
                                 </div>
                             </div>
                         </div>
                         <div class="friends-activity-list-member">
-                            <img src="assets/images/desktop/friends-activity/friend3.png">
+                            <img src="assets/images/desktop/friends-activity/friend3.png" alt="">
                             <div class="friends-activity-member-content">
                                 <div class="friends-activity-member-name">
                                     <p>IListenToMusic56</p>
@@ -533,7 +903,7 @@
                                     </div>
                                     <p class="sound-track-name">6h Rockstar</p>
                                     <div class="friends-activity-dot">
-                                        <img src="assets/images/desktop/friends-activity/dot.png">
+                                        <img src="assets/images/desktop/friends-activity/dot.png" alt="">
                                     </div>
                                     <p class="sound-track-autor">Post Malone</p>
                                 </div>
@@ -545,12 +915,36 @@
             
         <!-- right sidebar friends-activity end -->
 
-        <!-- </main> -->
+        <div class="mobile-home-filter">
+            <div class="mobile-home-filter-wrapper">
+                <div class="mobile-home-filter-pannel">
+                        <div class="mobile-home-filter-clock">
+                            <span>9:41</span>
+                            <img src="assets/images/mobile/home-filter/clock-arrow.png" alt="">                
+                        </div>
+                        <div class="mobile-home-filter-space"></div>
+                        <div class="mobile-home-filter-icons">
+                            <img src="assets/images/mobile/home-filter/network.png" alt="">
+                            <img src="assets/images/mobile/home-filter/data.png" alt="">
+                            <img src="assets/images/mobile/home-filter/battery.png" alt="">    
+                        </div>
+                </div>
+                <div class="mobile-home-filter-buttons">
+                    <button>Music</button>
+                    <button>Podcasts</button>
+                    <button>Audiobooks</button>
+                    <button class="bg-none"><img src="assets/images/mobile/home-filter/filter-btn.png" alt=""></button>
+                
+                </div>
+
+            </div>
+            
+        </div>
 
         <!-- footer start -->
          
-        <footer class="footer">
-            <div class="control-icons">
+        <footer class="footer desktop"> 
+             <div class="control-icons">
                 <button>
                     <img src="assets/images/desktop/footer/play-control/pause-1.png" alt="discovery weekly">
                 </button>
@@ -611,10 +1005,10 @@
                 </div>
                 <div class="singer-icon">
                     <img src="assets/images/desktop/footer/play-control/pc-queue-1.png" alt="discovery weekly">
-                </div>
+                </div> 
             </div>
-
         </footer>
+        
     
     <!-- footer end -->
     </div>
@@ -630,9 +1024,41 @@
         window.addEventListener("resize", function () {
             if (window.innerWidth <= 860) {
         document.getElementById("container").classList.remove("view_hide");
-    }
-});
+            }
+        });
     </script>
+    <script>
+        const MFY_carousel = document.getElementById("MFY_carousel");
+        const mfy_next = document.getElementById("MFY_next");
+        const mfy_prev = document.getElementById("MFY_prev");
+        const mfy_scrollAmount = 180;
+        mfy_next.addEventListener("click", () => {  MFY_carousel.scrollLeft += mfy_scrollAmount;});
+        mfy_prev.addEventListener("click", () => {  MFY_carousel.scrollLeft -= mfy_scrollAmount;});
+    </script>
+    <script>
+        const YTM_carousel = document.getElementById("YTM_carousel");
+        const ytm_next = document.getElementById("YTM_next");
+        const ytm_prev = document.getElementById("YTM_prev");
+        const ytm_scrollAmount = 180;
+        ytm_next.addEventListener("click", () => {  YTM_carousel.scrollLeft += ytm_scrollAmount;});
+        ytm_prev.addEventListener("click", () => {  YTM_carousel.scrollLeft -= ytm_scrollAmount;});
+    </script> 
+    <script>
+        const menuItems = document.querySelectorAll('.has-submenu');
+        menuItems.forEach(item => {
+        const link = item.querySelector('.nav-item');
+        link.addEventListener('click', function(e){
+        e.preventDefault();
+        const isOpen = item.classList.contains('open');
+        // თავიდან ყველა ავკეცოთ
+        menuItems.forEach(el => el.classList.remove('open'));
+        // გაუხსნელი გავხსნათ
+        if(!isOpen){
+            item.classList.add('open');
+                }
+            });
+        });
+</script>   
 
 </body>
 </html>

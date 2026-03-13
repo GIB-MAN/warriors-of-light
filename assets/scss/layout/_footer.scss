@@ -7,15 +7,29 @@
     border-radius: 10px;
     border:1px solid #202020;
     margin:0 7px 7px 7px;
-    padding:0 21px;
+    padding:0 11px;
     @include mixins.flex-start;
     gap:8px;
     position: fixed;
     bottom: 0;
-    left: clamp(180px, 18.4vw, 248px);
+    // left: clamp(180px, 18.4vw, 248px);
+    left: 248px;
 
     &-right-icons {
         width: 348px;
+    }
+    .control-icons {
+        @include mixins.flex;
+    
+        button { 
+            width:38px;
+            height:38px;
+            @include mixins.flex;
+        }
+        button:nth-child(1) { 
+            border-radius: 50%;
+            background-color: #1ED760;
+        }
     }
 }
 .play-time, .full-time {

@@ -1,0 +1,493 @@
+@use '../abstract/mixins';
+@use '../abstract/variables';
+
+.list-albums-page {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    background: #060606;
+    color: #fff;
+    border-radius: 10px;
+    padding-bottom: 24px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.list-albums-hero {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    aspect-ratio: 1291 / 370;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+
+    &-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    &-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.05) 0%,
+                rgba(0, 0, 0, 0.45) 55%,
+                rgba(0, 0, 0, 0.92) 100%);
+    }
+
+    &-content {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 18px;
+        padding: 0 26px;
+        z-index: 2;
+        @include mixins.flex-between();
+        align-items: flex-end;
+        gap: 20px;
+    }
+
+    &-actions {
+        @include mixins.flex();
+        gap: 12px;
+        flex-shrink: 0;
+    }
+}
+
+.list-albums-item-title {
+    margin: 0 0 8px;
+
+    a {
+        font-family: Satoshi, Arial, sans-serif;
+        font-size: 2.7rem;
+        font-weight: 700;
+        color: #e0e0e0;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+}
+
+.list-albums-monthly-listeners {
+    margin: 0;
+    font-family: Satoshi, Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.list-albums-play-button {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #1ed760;
+    cursor: pointer;
+    @include mixins.flex();
+
+    img {
+        width: 18px;
+        height: 18px;
+        display: block;
+    }
+}
+
+.list-albums-follow-button {
+    height: 34px;
+    border-radius: 999px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    img {
+        display: block;
+        height: 34px;
+        width: auto;
+    }
+}
+
+.list-albums-icon-button {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    @include mixins.flex();
+    flex-shrink: 0;
+
+    img {
+        width: 16px;
+        height: 16px;
+        display: block;
+    }
+}
+
+/* =========================
+   MENU
+========================= */
+
+.list-albums-menu {
+    padding: 0 24px;
+}
+
+.list-albums-menu-list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    min-width: 0;
+    width: 100%;
+}
+
+.list-albums-menu-primary {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    min-width: 0;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+}
+
+.list-albums-menu-primary a {
+    font-family: Satoshi, Arial, sans-serif;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    padding: 18px 0 16px;
+    position: relative;
+    white-space: normal;
+    word-break: break-word;
+}
+
+.list-albums-menu-primary a[data-active='true'] {
+    color: #fff;
+}
+
+.list-albums-menu-primary a[data-active='true']::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #1ed760;
+    border-radius: 2px;
+}
+
+.list-albums-menu-actions {
+    width: 83px;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.list-albums-menu-icon {
+    width: 37px;
+    height: 37px;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 37px;
+        height: 37px;
+        display: block;
+    }
+}
+
+.list-albums-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    margin: 0;
+}
+
+/* =========================
+   TABLE / LIST
+========================= */
+
+.list-albums-content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 22px 12px 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.list-albums-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.list-albums-row {
+    width: 100%;
+}
+
+.list-albums-cover-cell {
+    width: 130px;
+    padding: 0 16px 18px 0;
+    vertical-align: top;
+
+    a {
+        display: block;
+        width: 130px;
+        height: 130px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    img {
+        width: 130px;
+        height: 130px;
+        object-fit: cover;
+        display: block;
+        border-radius: 8px;
+    }
+}
+
+.list-albums-info-cell {
+    padding: 0 12px 18px 0;
+    vertical-align: top;
+    width: auto;
+}
+
+.list-albums-arrow-cell {
+    width: 40px;
+    padding: 0 28px 0 18px;
+    vertical-align: top;
+    text-align: right;
+
+    a {
+        width: 40px;
+        height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2px;
+    }
+
+    img {
+        width: 40px;
+        height: 40px;
+        display: block;
+    }
+}
+
+.list-albums-item-title {
+    margin: 0 0 8px;
+    width: 100%;
+    max-width: 258px;
+
+    a {
+        display: inline-block;
+        text-decoration: none;
+        font-family: Satoshi, Arial, sans-serif;
+        font-size: 2.7rem;
+        font-weight: 700;
+        line-height: 1;
+        color: #e0e0e0;
+    }
+}
+
+.list-albums-item-meta {
+    width: 100%;
+    max-width: 210px;
+    margin: 0 0 10px;
+    font-family: Satoshi, Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #898989;
+
+    span {
+        margin: 0 6px;
+    }
+}
+
+.list-albums-item-actions {
+    width: 100%;
+    max-width: 366px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+
+    button {
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 40px;
+    }
+
+    img {
+        width: 40px;
+        height: 40px;
+        display: block;
+    }
+}
+
+.list-albums-divider-row td {
+    padding: 0 0 18px;
+}
+
+.list-albums-divider-row hr {
+    border: none;
+    height: 1px;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+    .list-albums-hero-content {
+        padding: 0 18px;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .list-albums-title {
+        font-size: 3.2rem;
+    }
+
+    .list-albums-menu {
+        padding: 0 18px;
+    }
+
+    .list-albums-menu-primary {
+        gap: 16px;
+    }
+
+    .list-albums-content {
+        padding: 20px 12px 0;
+    }
+
+    .list-albums-cover-cell {
+        width: 100px;
+
+        a,
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    .list-albums-item-title a {
+        font-size: 2rem;
+    }
+
+    .list-albums-item-actions {
+        max-width: 100%;
+        gap: 6px;
+
+        button,
+        img {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    .list-albums-arrow-cell {
+        width: 32px;
+
+        a,
+        img {
+            width: 32px;
+            height: 32px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .list-albums-menu-list {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .list-albums-menu-actions {
+        margin-left: auto;
+    }
+
+    .list-albums-table,
+    .list-albums-table tbody,
+    .list-albums-row,
+    .list-albums-cover-cell,
+    .list-albums-info-cell,
+    .list-albums-arrow-cell {
+        display: block;
+        width: 100%;
+    }
+
+    .list-albums-row {
+        position: relative;
+        padding-bottom: 18px;
+    }
+
+    .list-albums-cover-cell {
+        padding: 0 0 12px;
+
+        a,
+        img {
+            width: 110px;
+            height: 110px;
+        }
+    }
+
+    .list-albums-info-cell {
+        padding: 0;
+    }
+
+    .list-albums-arrow-cell {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0;
+        text-align: right;
+    }
+
+    .list-albums-item-title {
+        max-width: 100%;
+    }
+
+    .list-albums-item-meta {
+        max-width: 100%;
+    }
+
+    .list-albums-item-actions {
+        max-width: 100%;
+    }
+
+    .list-albums-divider-row {
+        display: block;
+    }
+
+    .list-albums-divider-row td {
+        display: block;
+        width: 100%;
+        padding: 0 0 18px;
+    }
+}
