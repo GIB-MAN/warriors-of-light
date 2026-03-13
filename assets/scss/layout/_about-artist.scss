@@ -1,0 +1,413 @@
+@use '../abstract/mixins';
+@use '../abstract/variables';
+
+.about-artist-page {
+    width: 100%;
+    min-width: 0;
+    background: #060606;
+    color: #fff;
+    border-radius: 10px;
+    padding-bottom: 24px;
+}
+
+/* =========================
+   HERO
+========================= */
+.about-artist-hero {
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: 1491 / 426;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+
+    &-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    &-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.05) 0%,
+                rgba(0, 0, 0, 0.45) 55%,
+                rgba(0, 0, 0, 0.92) 100%);
+    }
+
+    &-content {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 18px;
+        z-index: 2;
+        padding: 0 26px;
+        @include mixins.flex-between();
+        align-items: flex-end;
+        gap: 20px;
+    }
+
+    &-info {
+        min-width: 0;
+    }
+
+    &-actions {
+        @include mixins.flex();
+        gap: 12px;
+        flex-shrink: 0;
+    }
+}
+
+.about-artist-title {
+    margin: 0 0 8px;
+    font-family: Satoshi, Arial, sans-serif;
+    font-size: 4.4rem;
+    font-weight: 800;
+    line-height: 1.05;
+    color: #fff;
+}
+
+.about-artist-monthly-listeners {
+    margin: 0;
+    font-family: Satoshi, Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.about-artist-play-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #1ed760;
+    cursor: pointer;
+    @include mixins.flex();
+
+    img {
+        width: 18px;
+        height: 18px;
+        display: block;
+    }
+}
+
+.about-artist-follow-button {
+    height: 39px;
+    border-radius: 999px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    img {
+        display: block;
+        height: 34px;
+        width: auto;
+    }
+}
+
+.about-artist-icon-button {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    @include mixins.flex();
+    flex-shrink: 0;
+
+    img {
+        width: 16px;
+        height: 16px;
+        display: block;
+    }
+}
+
+/* =========================
+   MENU
+========================= */
+.about-artist-menu {
+    padding: 14px 24px 0;
+}
+
+.about-artist-menu-list {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+
+    a {
+        position: relative;
+        padding: 10px 0;
+        font-family: Satoshi, Arial, sans-serif;
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 1.2;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+
+        &[data-active='true'] {
+            color: #fff;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -2px;
+                width: 100%;
+                height: 2px;
+                background: #1ed760;
+                border-radius: 2px;
+            }
+        }
+    }
+}
+
+.about-artist-menu-search {
+    padding: 0;
+    margin-left: 4px;
+    background: transparent;
+    cursor: pointer;
+    @include mixins.flex();
+    flex-shrink: 0;
+
+    img {
+        width: 40px;
+        height: 40px;
+        display: block;
+        opacity: 0.9;
+    }
+}
+
+.about-artist-divider {
+    height: 1px;
+    margin: 0 24px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   ABOUT DETAILS
+========================= */
+.about-artist-details {
+    padding: 18px 24px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.about-artist-rank-badge {
+    width: 132px;
+    height: 132px;
+    flex: 0 0 132px;
+}
+
+.about-artist-rank-image {
+    width: 132px;
+    height: 132px;
+    display: block;
+}
+
+.about-artist-description {
+    width: 100%;
+    max-width: 650px;
+    flex: 1 1 auto;
+
+    p {
+        margin: 0;
+        font-family: Satoshi, Arial, sans-serif;
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 1.75;
+        letter-spacing: 0.03em;
+        color: #e0e0e0;
+    }
+}
+
+.about-artist-stats {
+    width: 149px;
+    margin-left: auto;
+    margin-right: 70px;
+    margin-top: -10px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    text-align: left;
+    flex: 0 0 149px;
+}
+
+.about-artist-stat-item {
+    width: 149px;
+    min-height: 71px;
+}
+
+.about-artist-stat-item span {
+    display: block;
+    margin-top: 6px;
+    font-family: Satoshi, Arial, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.about-artist-stat-number {
+    font-family: Satoshi, Arial, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.about-artist-stat-label {
+    display: block;
+    margin-top: 6px;
+    font-family: Satoshi, Arial, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.about-artist-city-name {
+    font-family: Satoshi, Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    line-height: 1.3;
+    color: #fff;
+}
+
+.about-artist-city-item span {
+    display: block;
+    margin-top: 6px;
+    font-family: Satoshi, Arial, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.3;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.about-artist-city-listeners {
+    display: block;
+    margin-top: 6px;
+    font-family: Satoshi, Arial, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1200px) {
+    .about-artist-details {
+        grid-template-columns: 132px minmax(0, 1fr);
+        grid-template-areas:
+            'rank desc'
+            'stats stats';
+        row-gap: 18px;
+    }
+
+    .about-artist-rank-badge {
+        grid-area: rank;
+    }
+
+    .about-artist-description {
+        grid-area: desc;
+    }
+
+    .about-artist-stats {
+        grid-area: stats;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .about-artist-stat-item,
+    .about-artist-city-item {
+        width: auto;
+        min-width: 149px;
+    }
+}
+
+@media (max-width: 900px) {
+    .about-artist-hero-content {
+        padding: 0 18px;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .about-artist-title {
+        font-size: 3.2rem;
+    }
+
+    .about-artist-menu-list {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .about-artist-details {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .about-artist-rank-badge {
+        margin: 0 auto;
+    }
+
+    .about-artist-description {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .about-artist-stats {
+        width: 100%;
+        margin-left: 0;
+        flex: unset;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    .about-artist-stat-item,
+    .about-artist-city-item {
+        width: auto;
+        min-width: 149px;
+    }
+}
+
+@media (max-width: 520px) {
+    .about-artist-title {
+        font-size: 2.6rem;
+    }
+
+    .about-artist-hero-content {
+        bottom: 14px;
+        padding: 0 16px;
+    }
+
+    .about-artist-hero-actions {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .about-artist-menu {
+        padding: 14px 16px 0;
+    }
+
+    .about-artist-divider {
+        margin: 0 16px;
+    }
+
+    .about-artist-details {
+        padding: 18px 16px 0;
+        gap: 18px;
+    }
+
+    .about-artist-stats {
+        gap: 18px;
+    }
+}

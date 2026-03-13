@@ -1,0 +1,912 @@
+@use '../abstract/mixins';
+@use '../abstract/variables';
+
+.artist-page {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    background: #060606;
+    color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding-bottom: 24px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.artist-hero {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    aspect-ratio: 1291 / 370;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+
+    &-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    &-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom,
+                rgba(0, 0, 0, 0.05) 0%,
+                rgba(0, 0, 0, 0.42) 58%,
+                rgba(0, 0, 0, 0.90) 100%);
+    }
+
+    &-content {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 18px;
+        padding: 0 24px;
+        z-index: 2;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 24px;
+    }
+
+    &-info {
+        min-width: 0;
+    }
+
+    &-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+    }
+}
+
+/* =========================
+   HERO SECTION CLUB EFFECT
+========================= */
+
+.artist-hero {
+
+    &:hover .artist-hero-overlay {
+        animation: clubLights 1.4s linear infinite;
+        opacity: 0.35;
+    }
+
+}
+
+.artist-hero:hover .artist-hero-image {
+    filter: brightness(1.15) saturate(1.35);
+}
+
+@keyframes clubLights {
+
+    0% {
+        background: radial-gradient(circle at 20% 30%, rgba(255, 0, 128, 0.35), transparent 40%);
+    }
+
+    25% {
+        background: radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.35), transparent 40%);
+    }
+
+    50% {
+        background: radial-gradient(circle at 30% 70%, rgba(255, 255, 0, 0.30), transparent 40%);
+    }
+
+    75% {
+        background: radial-gradient(circle at 70% 80%, rgba(0, 255, 128, 0.30), transparent 40%);
+    }
+
+    100% {
+        background: radial-gradient(circle at 20% 30%, rgba(255, 0, 128, 0.35), transparent 40%);
+    }
+
+}
+
+.artist-title {
+    margin: 0 0 10px;
+    font-family: Satoshi, Arial, sans-serif;
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #e0e0e0;
+}
+
+.artist-monthly-listeners {
+    margin: 0;
+    font-family: Satoshi, Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.artist-play-button {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #1ed760;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 18px;
+        height: 18px;
+        display: block;
+    }
+}
+
+.artist-follow-button {
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        height: 34px;
+        width: auto;
+        display: block;
+    }
+}
+
+.artist-icon-button {
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 16px;
+        height: 16px;
+        display: block;
+        object-fit: contain;
+    }
+}
+
+/* =========================
+   MENU
+========================= */
+
+.artist-menu {
+    padding: 0 24px;
+}
+
+.artist-menu-list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-width: 0;
+}
+
+.artist-menu-primary {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+/* =========================
+   ARTIST MENU HOVER EFFECT BESIDES SEARCH BUTTON
+========================= */
+
+.artist-menu-primary a {
+    position: relative;
+    padding: 18px 0 16px;
+    font-family: Satoshi, Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.70);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.25s ease;
+
+    &:hover {
+        color: #ffffff;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        width: 0;
+        height: 2px;
+        background: #1ed760;
+        border-radius: 2px;
+        transition: width 0.3s ease;
+    }
+
+    &:hover::before {
+        width: 100%;
+    }
+}
+
+.artist-menu-primary a[data-active='true'] {
+    color: #ffffff;
+}
+
+.artist-menu-primary a[data-active='true']::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 2px;
+    background: #1ed760;
+    border-radius: 2px;
+}
+
+.artist-menu-search {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 20px;
+        height: 20px;
+        display: block;
+    }
+}
+
+.artist-divider {
+    height: 1px;
+    margin: 0;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.artist-content {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    padding: 24px 14px 0;
+    box-sizing: border-box;
+}
+
+.artist-section-head {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 40px;
+    align-items: end;
+    margin-bottom: 18px;
+}
+
+.artist-section-title {
+    max-width: 220px;
+    margin: 0;
+    font-family: Satoshi, Arial, sans-serif;
+    font-size: 2.7rem;
+    font-weight: 700;
+    line-height: 1.05;
+    color: #f2f2f2;
+}
+
+.artist-pick-title {
+    margin: 0;
+    font-family: Satoshi, Arial, sans-serif;
+    font-size: 2.7rem;
+    font-weight: 700;
+    line-height: 1.05;
+    color: #f2f2f2;
+    text-align: left;
+    justify-self: start;
+}
+
+/* =========================
+  ARTIST SECTION TITLE KEYFRAME - YOUR MOST PLAYED AND ARTIST PICK
+========================= */
+
+.title-marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.title-marquee .artist-section-title,
+.title-marquee .artist-pick-title {
+    display: inline-block;
+    white-space: nowrap;
+    will-change: transform;
+    animation: titleMarquee 8s linear infinite;
+}
+
+@keyframes titleMarquee {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-120%);
+    }
+}
+
+.artist-content-layout {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 40px;
+    align-items: start;
+}
+
+.artist-main {
+    min-width: 0;
+}
+
+.artist-side {
+    width: 320px;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* =========================
+   TRACK LIST
+========================= */
+
+.artist-track-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.artist-track-item {
+    width: 100%;
+    min-height: 56px;
+    display: grid;
+    grid-template-columns: 22px 51px minmax(0, 1fr) 448px;
+    align-items: center;
+    column-gap: 14px;
+}
+
+.artist-track-number {
+    font-family: Satoshi, Arial, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.artist-track-cover {
+    width: 51px;
+    height: 51px;
+
+    img {
+        width: 51px;
+        height: 51px;
+        border-radius: 4px;
+        object-fit: cover;
+        display: block;
+    }
+}
+
+.artist-track-info {
+    min-width: 0;
+}
+
+.artist-track-title {
+    display: block;
+    margin: 0 0 4px;
+    font-family: Satoshi, Arial, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #ffffff;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.artist-track-artist {
+    margin: 0;
+    font-family: Satoshi, Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #9b9b9b;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.artist-track-meta {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 54px;
+}
+
+.artist-track-time {
+    width: 38px;
+    font-family: Satoshi, Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1;
+    color: #b3b3b3;
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* =========================
+   ARTIST TRACK ITEM HOVER EFFECT
+========================= */
+
+.artist-track-item {
+    border-radius: 8px;
+    padding: 6px 10px 6px 0;
+    transition: 0.25s ease, transform 0.25s ease;
+}
+
+.artist-track-item:hover {
+    background: rgba(255, 255, 255, 0.045);
+    transform: translateX(4px);
+}
+
+.artist-track-cover img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artist-track-item:hover .artist-track-cover img {
+    transform: scale(1.06);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.artist-track-title,
+.artist-track-artist,
+.artist-track-time,
+.artist-track-number {
+    transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.artist-track-item:hover .artist-track-title {
+    color: #1ed760;
+}
+
+.artist-track-item:hover .artist-track-artist,
+.artist-track-item:hover .artist-track-time,
+.artist-track-item:hover .artist-track-number {
+    color: #d6d6d6;
+}
+
+/* =========================
+   LIKE ICON - RED HEART
+========================= */
+
+.artist-track-like {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    input {
+        display: none;
+    }
+
+    img {
+        width: 18px;
+        height: 18px;
+        display: block;
+        transition: transform 0.2s ease, filter 0.2s ease, opacity 0.2s ease;
+        opacity: 0.9;
+    }
+
+    &:hover img {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+
+    input:checked+img {
+        filter: invert(18%) sepia(98%) saturate(7416%) hue-rotate(351deg) brightness(99%) contrast(118%);
+        transform: scale(1.18);
+        opacity: 1;
+    }
+
+    input:checked+img:hover {
+        transform: scale(1.24);
+    }
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.artist-pick-card {
+    width: 100%;
+    min-height: 137px;
+    padding: 16px;
+    border-radius: 10px;
+    background: #0a0a0a;
+    text-decoration: none;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    box-sizing: border-box;
+}
+
+.artist-pick-cover {
+    width: 72px;
+    height: 72px;
+    border-radius: 6px;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+}
+
+.artist-pick-text {
+    padding-top: 4px;
+
+    p {
+        margin: 0;
+        font-family: Satoshi, Arial, sans-serif;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.35;
+        color: #f0f0f0;
+    }
+}
+
+.artist-pick-banner {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: block;
+    text-decoration: none;
+
+    img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+    }
+}
+
+/* =========================
+   RIGHT SIDEBAR HOVER EFFECT
+========================= */
+.artist-pick-card,
+.artist-pick-banner {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, 0.3s ease;
+}
+
+.artist-pick-card:hover,
+.artist-pick-banner:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+}
+
+.artist-pick-cover,
+.artist-pick-banner img {
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.artist-pick-card:hover .artist-pick-cover,
+.artist-pick-banner:hover img {
+    transform: scale(1.04);
+    filter: brightness(1.05);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+    .artist-content {
+        max-width: 100%;
+    }
+
+    .artist-section-head,
+    .artist-content-layout {
+        grid-template-columns: minmax(0, 1fr) 280px;
+        gap: 24px;
+    }
+
+    .artist-side {
+        width: 280px;
+        min-width: 280px;
+    }
+
+    .artist-pick-banner {
+        height: 180px;
+    }
+}
+
+@media (max-width: 900px) {
+    .artist-hero-content {
+        padding: 0 18px;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .artist-title {
+        font-size: 3.2rem;
+    }
+
+    .artist-menu {
+        padding: 0 18px;
+    }
+
+    .artist-menu-primary {
+        gap: 16px;
+    }
+
+    .artist-content {
+        padding: 20px 12px 0;
+    }
+
+    .artist-section-head,
+    .artist-content-layout {
+        grid-template-columns: minmax(0, 1fr) 250px;
+        gap: 20px;
+    }
+
+    .artist-section-title,
+    .artist-pick-title {
+        font-size: 2rem;
+    }
+
+    .artist-track-item {
+        grid-template-columns: 20px 42px minmax(0, 1fr) 68px;
+        column-gap: 10px;
+    }
+
+    .artist-track-cover {
+        width: 42px;
+        height: 42px;
+
+        img {
+            width: 42px;
+            height: 42px;
+        }
+    }
+
+    .artist-track-title {
+        font-size: 1.4rem;
+    }
+
+    .artist-track-artist {
+        font-size: 1.1rem;
+    }
+
+    .artist-track-time {
+        width: 34px;
+        font-size: 1.1rem;
+    }
+
+    .artist-track-like {
+        width: 22px;
+        height: 22px;
+
+        img {
+            width: 22px;
+            height: 22px;
+        }
+    }
+
+    .artist-side {
+        width: 250px;
+        min-width: 250px;
+    }
+
+    .artist-pick-card {
+        padding: 14px;
+    }
+
+    .artist-pick-cover {
+        width: 62px;
+        height: 62px;
+    }
+
+    .artist-pick-banner {
+        height: 170px;
+    }
+}
+
+@media (max-width: 600px) {
+    .artist-menu-list {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .artist-section-head,
+    .artist-content-layout {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .artist-pick-title {
+        justify-self: start;
+    }
+
+    .artist-side {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .artist-track-item {
+        grid-template-columns: 20px 42px minmax(0, 1fr) 64px;
+        column-gap: 8px;
+    }
+
+    .artist-pick-banner {
+        height: 190px;
+    }
+}
+
+@media (max-width: 520px) {
+    .artist-page {
+        padding-bottom: 18px;
+    }
+
+    .artist-hero {
+        aspect-ratio: auto;
+        min-height: 260px;
+    }
+
+    .artist-hero-content {
+        bottom: 14px;
+        padding: 0 16px;
+        gap: 12px;
+    }
+
+    .artist-title {
+        font-size: 2.6rem;
+        margin-bottom: 8px;
+    }
+
+    .artist-monthly-listeners {
+        font-size: 1.1rem;
+    }
+
+    .artist-hero-actions {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .artist-play-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .artist-follow-button img {
+        height: 30px;
+    }
+
+    .artist-icon-button {
+        width: 30px;
+        height: 30px;
+    }
+
+    .artist-icon-button img {
+        width: 14px;
+        height: 14px;
+    }
+
+    .artist-menu {
+        padding: 0 16px;
+    }
+
+    .artist-menu-primary {
+        gap: 14px;
+    }
+
+    .artist-menu-primary a {
+        padding: 14px 0 12px;
+        font-size: 1.1rem;
+    }
+
+    .artist-content {
+        padding: 18px 10px 0;
+    }
+
+    .artist-section-title,
+    .artist-pick-title {
+        font-size: 1.8rem;
+    }
+
+    .artist-track-item {
+        grid-template-columns: 18px 38px minmax(0, 1fr) 60px;
+        column-gap: 8px;
+        min-height: 54px;
+    }
+
+    .artist-track-number {
+        font-size: 1.4rem;
+    }
+
+    .artist-track-cover {
+        width: 38px;
+        height: 38px;
+
+        img {
+            width: 38px;
+            height: 38px;
+        }
+    }
+
+    .artist-track-title {
+        font-size: 1.3rem;
+    }
+
+    .artist-track-artist {
+        font-size: 1rem;
+    }
+
+    .artist-track-time {
+        width: 32px;
+        font-size: 1rem;
+    }
+
+    .artist-track-like {
+        width: 20px;
+        height: 20px;
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .artist-side {
+        gap: 14px;
+    }
+
+    .artist-pick-card {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .artist-pick-cover {
+        width: 56px;
+        height: 56px;
+    }
+
+    .artist-pick-text p {
+        font-size: 1.2rem;
+    }
+
+    .artist-pick-banner {
+        height: 170px;
+    }
+}
