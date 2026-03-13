@@ -23,6 +23,19 @@
             padding:8px 15px;
             border-radius: 8px;
             background-color: #202020;
+            position:relative;
+            font-weight:400;
+        }
+        & a::after{
+            content: attr(data-text);
+            font-weight:800;
+            visibility:hidden;
+            height:0;
+            overflow:hidden;
+            display:block;
+        }
+        & a:hover {
+            font-weight:800;
         }
         & button{
             margin-left:auto;
@@ -72,13 +85,21 @@
         padding-top:15px;
         width: 170px;
         height: 240px;
+        position: relative;
+        transition: background 0.4s linear;
         img {
             margin:0;
             }
         }
     
         &-card:hover {
-            // box-shadow: 0 4px 8px 0 rgba(200, 200, 200, 0.2), 0 6px 20px 0 rgba(200, 200, 200, 0.19);
+            cursor: pointer;
+            //box-shadow: 4px 4px 8px 0 rgba(200, 200, 200, 0.2), 4px 4px 8px 0 rgba(200, 200, 200, 0.19);
+            //background: linear-gradient(to top, rgba(32, 32, 32, 1)  10%,  rgba(32, 32, 32, 0.5) 20%, rgba(32, 32, 32, 0.2) 30%);
+        }
+        &-card:hover .card-hover-play-btn {
+            opacity: 1; 
+            transform:translateY(-10px);
         }
         &-card:hover .cardimages-shadow::before {
             width:calc(100% - 8px);
@@ -87,6 +108,22 @@
         &-card:hover .cardimages-shadow::after {
             width:calc(100% - 16px);
             left:8px;
+        }
+}
+.card-hover-play-btn {
+    @include mixins.flex;
+    width:42px;
+    height:42px;
+    border-radius: 50%;
+    background-color: #1ED760;
+    position: absolute;
+    top: 140px;
+    right:15px;
+    z-index: 100;
+    opacity: 0;
+    transition: all 0.3s linear;
+    img {width:15px;
+        transform:translateX(1px);
         }
 }
 .cardimages-shadow{
@@ -200,14 +237,23 @@
     &-card {
         padding-top:15px;
         width: 170px;
+        position: relative;
+        transition: background-image 0.5s linear;
         img {
             margin:0;
         }
     
     }
     &-card:hover {
-        // box-shadow: 0 4px 8px 0 rgba(200, 200, 200, 0.2), 0 6px 20px 0 rgba(200, 200, 200, 0.19);
-    }
+         cursor: pointer;
+            // box-shadow: 0 4px 8px 0 rgba(200, 200, 200, 0.2), 0 6px 20px 0 rgba(200, 200, 200, 0.19);
+            //background-image: linear-gradient(to top, rgba(32, 32, 32, 1)  10%,  rgba(32, 32, 32, 0.5) 60%, rgba(32, 32, 32, 0.2) 100%);
+        }
+    &-card:hover .card-hover-play-btn {
+        opacity: 1;
+        transform:translateY(-10px);
+        }
+    
     &-card:hover .cardimages-shadow::before {
        width:calc(100% - 8px);
        left:4px;
@@ -281,11 +327,22 @@
     }
     &-card {
         width: 170px;
+        position: relative;
         img {
             margin:8px 0;
         }
     
     }
+    &-card:hover {
+         cursor: pointer;
+            //box-shadow: 4px 4px 8px 0 rgba(200, 200, 200, 0.2), 4px 4px 8px 0 rgba(200, 200, 200, 0.19);
+            //background: linear-gradient(to top, rgba(32, 32, 32, 1)  10%,  rgba(32, 32, 32, 0.5) 35%, rgba(32, 32, 32, 0.2) 60%);
+        }
+    &-card:hover .card-hover-play-btn {
+        opacity: 1;
+        transform:translateY(-10px);
+        }
+
     .card{
         &-name {
             @include mixins.flex-between;
@@ -340,6 +397,7 @@
         padding-top:15px;
         width: 142px;
         height: 210px;
+        position: relative;
     }
     .made-for-you-wrapper,
     .your-top-mixes-mob {

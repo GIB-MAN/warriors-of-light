@@ -254,6 +254,19 @@ button {
   padding: 8px 15px;
   border-radius: 8px;
   background-color: #202020;
+  position: relative;
+  font-weight: 400;
+}
+.content-header-btn a::after {
+  content: attr(data-text);
+  font-weight: 800;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  display: block;
+}
+.content-header-btn a:hover {
+  font-weight: 800;
 }
 .content-header-btn button {
   margin-left: auto;
@@ -306,9 +319,18 @@ button {
   padding-top: 15px;
   width: 170px;
   height: 240px;
+  position: relative;
+  transition: background 0.4s linear;
 }
 .made-for-you-card img {
   margin: 0;
+}
+.made-for-you-card:hover {
+  cursor: pointer;
+}
+.made-for-you-card:hover .card-hover-play-btn {
+  opacity: 1;
+  transform: translateY(-10px);
 }
 .made-for-you-card:hover .cardimages-shadow::before {
   width: calc(100% - 8px);
@@ -317,6 +339,26 @@ button {
 .made-for-you-card:hover .cardimages-shadow::after {
   width: calc(100% - 16px);
   left: 8px;
+}
+
+.card-hover-play-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #1ED760;
+  position: absolute;
+  top: 140px;
+  right: 15px;
+  z-index: 100;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+.card-hover-play-btn img {
+  width: 15px;
+  transform: translateX(1px);
 }
 
 .cardimages-shadow {
@@ -442,9 +484,18 @@ button {
 .your-top-mixes-card {
   padding-top: 15px;
   width: 170px;
+  position: relative;
+  transition: background-image 0.5s linear;
 }
 .your-top-mixes-card img {
   margin: 0;
+}
+.your-top-mixes-card:hover {
+  cursor: pointer;
+}
+.your-top-mixes-card:hover .card-hover-play-btn {
+  opacity: 1;
+  transform: translateY(-10px);
 }
 .your-top-mixes-card:hover .cardimages-shadow::before {
   width: calc(100% - 8px);
@@ -530,9 +581,17 @@ button {
 }
 .your-favorite-artists-card {
   width: 170px;
+  position: relative;
 }
 .your-favorite-artists-card img {
   margin: 8px 0;
+}
+.your-favorite-artists-card:hover {
+  cursor: pointer;
+}
+.your-favorite-artists-card:hover .card-hover-play-btn {
+  opacity: 1;
+  transform: translateY(-10px);
 }
 .your-favorite-artists .card-name {
   display: flex;
@@ -593,6 +652,7 @@ button {
   padding-top: 15px;
   width: 142px;
   height: 210px;
+  position: relative;
 }
 .content-wrapper-mob .made-for-you-wrapper,
 .content-wrapper-mob .your-top-mixes-mob {
@@ -820,7 +880,7 @@ button {
   border-radius: 10px;
   border: 1px solid #202020;
   margin: 0 7px 7px 7px;
-  padding: 0 21px;
+  padding: 0 11px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -831,6 +891,22 @@ button {
 }
 .footer-right-icons {
   width: 348px;
+}
+.footer .control-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer .control-icons button {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer .control-icons button:nth-child(1) {
+  border-radius: 50%;
+  background-color: #1ED760;
 }
 
 .play-time, .full-time {
@@ -954,6 +1030,9 @@ button {
   font-size: 1.4rem;
   font-weight: 400;
   color: #898989;
+  margin-left: 7px;
+}
+.nav-sublist img {
   margin-left: 10px;
 }
 
