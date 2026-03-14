@@ -168,8 +168,8 @@
                     </li>
                 </ul>
             </nav>
-
-        <main class="artist-page">
+    <main class="content">  <!-- ---------------------------------------------------------   ----------------------- -->
+        <div class="artist-page">
             <!-- HERO -->
             <section class="artist-hero">
                 <img class="artist-hero-image" src="./assets/images/desktop/cards/icons-and-frames-Nazi/daft-punk2.png"
@@ -183,8 +183,11 @@
                     </div>
 
                     <div class="artist-hero-actions">
-                        <button class="artist-play-button" type="button" aria-label="Play">
-                            <img src="./assets/images/desktop/cards/icons-and-frames-Nazi/play-active.png" alt="Play">
+                        <audio id="player">
+                            <source src="assets/music/song.mp3" type="audio/mpeg">
+                    </audio>
+                        <button class="artist-play-button" type="button" aria-label="Play" id="playBtn">
+                            <img src="./assets/images/desktop/cards/icons-and-frames-Nazi/play-active.png" alt="Play" id="play_Icon">
                         </button>
 
                         <a href="https://www.linkedin.com/company/10xedu/posts/?feedView=all" target="_blank"
@@ -358,9 +361,9 @@
                 </aside>
             </div>
             </section>
-        </main>
+        </div>
 
-        </main>
+    </main>
         <!-- right sidebar friends-activity start -->
 
         <section class="friends-activity"> <!-- id="friends_actv" -->
@@ -577,7 +580,7 @@
             });
         });
 </script>   
-
+<script src="assets/player/js/player.js" defer></script>
 </body>
 
 </html>

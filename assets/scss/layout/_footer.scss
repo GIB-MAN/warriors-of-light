@@ -10,8 +10,6 @@
     padding:0 11px;
     @include mixins.flex-start;
     gap:8px;
-    position: fixed;
-    bottom: 0;
     // left: clamp(180px, 18.4vw, 248px);
     left: 248px;
 
@@ -34,6 +32,7 @@
 }
 .play-time, .full-time {
     @include mixins.satoshi_custom(1.2rem,400,variables.$base-font-color);
+    width: 40px;
 }
 .play-track {
     color:white;
@@ -44,19 +43,25 @@
     align-items: flex-start;
 }
 .singer-info span:nth-child(1) {
-    @include mixins.satoshi_custom(1.4rem,400,variables.$second-font-color);
+    @include mixins.satoshi_custom(1.2rem,400,variables.$second-font-color);
 }
 .singer-info span:nth-child(2),
 .singer-info span:nth-child(3) {
-    @include mixins.satoshi_custom(1.4rem,400,variables.$base-font-color);
+    @include mixins.satoshi_custom(1.2rem,400,variables.$base-font-color);
 }
 .footer-right-icons {
     @include mixins.flex-between;
     margin-left: auto;
 }
 
+@media (max-width:1100px) {
+    .singer-info {display: none;}
+}
 @media (max-width:1024px) {
     .footer {
         left: 85px;
     }
+    .footer-right-icons {display: none;}
 }
+
+
