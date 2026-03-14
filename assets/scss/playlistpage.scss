@@ -3,18 +3,36 @@
 @use './abstract/variables';
 @use './abstract/mixins';
 
-// Playlist page - Daft Punk Mix reference
+// Playlist page - Daft Punk Mix ფლეილისტის სტილები
 
-// ========== Variables ==========
+// ========== ცვლადები ==========
+// ფონები და ფერები
 $playlist-bg: #060606;
 $playlist-content-bg: #0a0a0a;
 $playlist-text-primary: #ffffff;
 $playlist-text-secondary: #898989;
+$playlist-text-tertiary: #E0E0E0;
 $playlist-border: #202020;
+$playlist-border-underline: rgba($playlist-text-secondary, 0.15);
 $playlist-btn-green: #1db954;
+$playlist-liked: #1ED760; // liked მდგომარეობის მწვანე
 $playlist-card-bg: #1a1a1a;
+$playlist-hover-bg: rgba(255, 255, 255, 0.05);
+$playlist-icon-dark: #000;
+$playlist-icon-size: 20px;
+$playlist-icon-size-lg: 24px;
+// ინტერვალები და ზომები
+$playlist-gap-sm: 8px;
+$playlist-gap-xs: 12px;
+$playlist-gap-md: 16px;
+$playlist-gap-lg: 24px;
+$playlist-radius-sm: 4px;
+$playlist-radius-md: 8px;
+$playlist-radius-lg: 10px;
+$playlist-transition: 0.2s;
+$playlist-icon-filter-muted: brightness(0) saturate(100%) invert(54%) sepia(0%) saturate(0%) hue-rotate(0deg);
 
-// ========== Nav - Playlists active state ==========
+// ========== Nav - Playlists აქტიური მდგომარეობა ==========
 .nav-item.playlist.active {
   background-color: $playlist-border;
   border-radius: 5px;
@@ -28,7 +46,7 @@ $playlist-card-bg: #1a1a1a;
   }
 }
 
-// ========== Layout - replaces content grid area ==========
+// ========== Layout - მთავარი კონტენტის არე ==========
 .playlist-content {
   grid-area: 2 / 2 / 3 / 3;
   width: 100%;
@@ -36,7 +54,7 @@ $playlist-card-bg: #1a1a1a;
   max-width: 1491px;
   height: calc(100vh - 54px - 81px - 16px);
   min-height: 400px;
-  border-radius: 10px;
+  border-radius: $playlist-radius-lg;
   border: 1px solid $playlist-border;
   padding: 0 25px;
   margin: 4px 0 0 0;
@@ -48,24 +66,24 @@ $playlist-card-bg: #1a1a1a;
 }
 
 .playlist-content-wrapper {
-  display: flex;
-  gap: 24px;
+  @include mixins.flex-start;
+  gap: $playlist-gap-lg;
   min-height: 100%;
 }
 
-// ========== Playlist details section ==========
+// ========== ფლეილისტის დეტალების სექცია ==========
 .playlist-details-section {
   flex: 1;
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: $playlist-gap-lg;
 }
 
 .playlist-header {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: $playlist-gap-sm;
 }
 
 .playlist-title {
@@ -77,37 +95,41 @@ $playlist-card-bg: #1a1a1a;
 .playlist-meta {
   @include mixins.satoshi_custom(1.4rem, 400, $playlist-text-secondary);
   margin: 0;
+
+  &-spotify {
+    color: $playlist-text-tertiary;
+  }
 }
 
 .playlist-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 8px;
+  @include mixins.flex-start;
+  gap: $playlist-gap-md;
+  margin-top: $playlist-gap-sm;
+  width: 100%;
 }
 
 .playlist-btn-play {
-  width: 56px;
-  height: 56px;
+  width: 40.41px;
+  height: 40.41px;
   border-radius: 50%;
   background-color: $playlist-btn-green;
   border: none;
   cursor: pointer;
   @include mixins.flex;
-  // Play icon - asset will be provided
+  // Play სამკუთხედი CSS-ით
   &::before {
     content: '';
     width: 0;
     height: 0;
-    border-left: 18px solid #000;
-    border-top: 11px solid transparent;
-    border-bottom: 11px solid transparent;
-    margin-left: 4px;
+    border-left: 13px solid $playlist-icon-dark;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    margin-left: 3px;
   }
 }
 
+// ტულბარის ღილაკები: Shuffle, Add to queue, Download, Share, More, Search
 .playlist-btn-shuffle,
-.playlist-btn-like,
 .playlist-btn-add,
 .playlist-btn-download,
 .playlist-btn-share,
@@ -120,33 +142,33 @@ $playlist-card-bg: #1a1a1a;
   cursor: pointer;
   @include mixins.flex;
   padding: 0;
-  transition: opacity 0.2s;
+  transition: opacity $playlist-transition;
 
   img {
-    width: 24px;
-    height: 24px;
+    width: $playlist-icon-size-lg;
+    height: $playlist-icon-size-lg;
     opacity: 0.8;
-    transition: filter 0.2s;
+    transition: filter $playlist-transition;
   }
 
   &:hover img {
     opacity: 1;
   }
 
-  &.liked img {
-    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
-    opacity: 1;
-  }
 }
 
-.playlist-actions-separator {
-  width: 1px;
-  height: 24px;
-  background-color: $playlist-text-secondary;
-  opacity: 0.5;
+.playlist-search-bar {
+  flex: 1;
+  @include mixins.flex;
+  justify-content: flex-end;
+  margin-left: $playlist-gap-lg;
 }
 
-// ========== Song list ==========
+.playlist-btn-search {
+  flex-shrink: 0;
+}
+
+// ========== სიმღერების ცხრილი ==========
 .song-list-container {
   flex: 1;
   overflow-x: auto;
@@ -168,10 +190,13 @@ $playlist-card-bg: #1a1a1a;
   @include mixins.satoshi_custom(1.2rem, 400, $playlist-text-secondary);
   text-transform: uppercase;
   letter-spacing: 1px;
+  border-bottom: 2px solid $playlist-border-underline;
 }
 
+// ნუმერაციის სვეტი
 .col-num {
   width: 40px;
+  color: $playlist-text-secondary;
 }
 
 .col-title {
@@ -187,34 +212,39 @@ $playlist-card-bg: #1a1a1a;
   text-align: right;
 }
 
+// Like აიქონის სვეტი (სათაური + სიმღერების რიგები)
 .col-actions {
   width: 48px;
 
   &-icon {
-    width: 20px;
-    height: 20px;
-    opacity: 0.7;
+    width: $playlist-icon-size;
+    height: $playlist-icon-size;
+    filter: $playlist-icon-filter-muted;
+    transition: filter $playlist-transition;
+  }
+
+  &:hover &-icon {
+    filter: brightness(0) invert(1);
   }
 }
 
 .song-row {
-  transition: background-color 0.2s;
+  transition: background-color $playlist-transition;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: $playlist-hover-bg;
   }
 }
 
 .song-row .col-title {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  @include mixins.flex-start;
+  gap: $playlist-gap-md;
 }
 
 .song-thumb {
   width: 40px;
   height: 40px;
-  border-radius: 4px;
+  border-radius: $playlist-radius-sm;
   object-fit: cover;
   background-color: $playlist-border;
 }
@@ -241,47 +271,42 @@ $playlist-card-bg: #1a1a1a;
   @include mixins.satoshi_custom(1.4rem, 400, $playlist-text-secondary);
 }
 
+// სიმღერის Like ღილაკი: default #898989, hover white, liked #1ED760
 .song-like-btn {
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
-  opacity: 0;
-  transition: opacity 0.2s;
-
-  .song-row:hover & {
-    opacity: 1;
-  }
+  opacity: 1;
 
   img {
-    width: 20px;
-    height: 20px;
-    opacity: 0.7;
-    transition: filter 0.2s;
+    width: $playlist-icon-size;
+    height: $playlist-icon-size;
+    filter: $playlist-icon-filter-muted;
+    transition: filter $playlist-transition;
   }
 
   &:hover img {
-    opacity: 1;
+    filter: brightness(0) invert(1);
   }
 
   &.liked img {
-    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
-    opacity: 1;
+    filter: invert(61%) sepia(84%) saturate(450%) hue-rotate(87deg) brightness(95%) contrast(101%);
   }
 }
 
-// ========== Right sidebar ==========
+// ========== მარჯვენა საიდბარი ==========
 .playlist-right-sidebar {
   width: 280px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: $playlist-gap-lg;
 }
 
 .playlist-card {
   background-color: $playlist-card-bg;
-  border-radius: 10px;
+  border-radius: $playlist-radius-lg;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -294,7 +319,7 @@ $playlist-card-bg: #1a1a1a;
   max-width: 200px;
   aspect-ratio: 1;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: $playlist-radius-md;
   background-color: $playlist-border;
 }
 
@@ -308,31 +333,32 @@ $playlist-card-bg: #1a1a1a;
   opacity: 0.7;
 }
 
-// ========== Genre tags ==========
+// ========== ჟანრის ტეგები ==========
 .genre-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: $playlist-gap-sm;
 }
 
 .genre-tag {
-  padding: 8px 16px;
+  padding: $playlist-gap-sm $playlist-gap-md;
   border: 2px solid rgba($playlist-text-secondary, 0.25);
   border-radius: 20px;
   @include mixins.satoshi_custom(1.2rem, 400, $playlist-text-secondary);
-  transition: color 0.2s;
+  transition: color $playlist-transition;
 
   &:hover {
     color: $playlist-text-primary;
   }
 }
 
-// ========== Related artists ==========
+// ========== დაკავშირებული არტისტები ==========
 .related-artists {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: $playlist-gap-xs;
 }
+
 
 .related-artists-title {
   @include mixins.satoshi_custom(1.4rem, 700, $playlist-text-primary);
@@ -340,16 +366,15 @@ $playlist-card-bg: #1a1a1a;
 }
 
 .related-artist {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  @include mixins.flex-start;
+  gap: $playlist-gap-xs;
   cursor: pointer;
-  padding: 8px;
-  border-radius: 8px;
-  transition: background-color 0.2s;
+  padding: $playlist-gap-sm;
+  border-radius: $playlist-radius-md;
+  transition: background-color $playlist-transition;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: $playlist-hover-bg;
   }
 }
 
@@ -362,5 +387,5 @@ $playlist-card-bg: #1a1a1a;
 }
 
 .artist-name {
-  @include mixins.satoshi_custom(1.4rem, 400, $playlist-text-primary);
+  @include mixins.satoshi_custom(1.4rem, 400, $playlist-text-secondary);
 }

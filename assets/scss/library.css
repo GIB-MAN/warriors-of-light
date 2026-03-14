@@ -55,10 +55,15 @@
 .library-toolbar {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   gap: 12px;
-  height: 59px;
+  width: 100%;
+  height: 62px;
+  padding: 0 16px;
   margin-bottom: 24px;
+  background: rgba(6, 6, 6, 0.8);
+  backdrop-filter: blur(100px);
+  -webkit-backdrop-filter: blur(100px);
+  border-radius: 12px;
 }
 
 .library-view-toggle {
@@ -93,7 +98,7 @@
   filter: brightness(0) saturate(100%) invert(100%);
 }
 .library-view-btn-active {
-  background-color: #1DB954;
+  background-color: #202020;
 }
 .library-view-btn-active img {
   filter: brightness(0) invert(1);
@@ -145,7 +150,6 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  margin-left: auto;
   padding: 0;
   background: transparent;
   border: none;
@@ -163,6 +167,28 @@
 }
 .library-search-btn:hover img {
   filter: brightness(0) saturate(100%) invert(100%);
+}
+
+.library-add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #898989;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+.library-add-btn:hover {
+  background-color: #202020;
+  color: #fff;
 }
 
 .library-grid {
@@ -260,6 +286,30 @@
   font-weight: 400;
   color: #898989;
   flex-shrink: 0;
+}
+.library-card-liked-songs .library-card-count {
+  color: #1ED760;
+}
+.library-card-daily-mix-1 .library-card-count {
+  color: #95E6D3;
+}
+.library-card-daily-mix-2 .library-card-count {
+  color: #F4B8BD;
+}
+.library-card-daily-mix-3 .library-card-title {
+  color: #C3E7B7;
+}
+.library-card-daily-mix-3 .library-card-count {
+  color: #898989;
+}
+.library-card-rock-mix .library-card-count {
+  color: #CCF665;
+}
+.library-card-chill-mix .library-card-count {
+  color: #F9E72C;
+}
+.library-card-pop-mix .library-card-count {
+  color: #9BF0E2;
 }
 
 /*# sourceMappingURL=library.css.map */

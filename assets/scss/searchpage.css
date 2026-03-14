@@ -226,6 +226,7 @@ a {
   margin: 0 -25px;
   padding: 0 25px;
   -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
 .discover-grid-wrapper::-webkit-scrollbar {
   display: none;
@@ -233,12 +234,18 @@ a {
 .discover-grid-wrapper {
   scrollbar-width: none;
 }
+.discover-grid-wrapper.carousel-infinite {
+  display: flex;
+  gap: 24px;
+}
 
-.discover-grid {
+.discover-grid,
+.genres-grid {
   display: flex;
   gap: 24px;
   flex-wrap: nowrap;
   width: max-content;
+  flex-shrink: 0;
 }
 
 .discover-card {

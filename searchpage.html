@@ -42,7 +42,7 @@
                         <img src="assets/images/desktop/header/lock-open.png">
                     </div>
                     <div class="header-item-icon">
-                        <img src="assets/images/desktop/header/friends-1.png" onclick="toggleSidebar()">
+                        <img src="assets/images/desktop/header/friends-1.png" onclick="friendsActivity()">
                     </div>
                     <div class="header-item-icon">
                         <img src="assets/images/desktop/header/settings-1.png">
@@ -314,7 +314,7 @@
                                 <img src="assets/images/desktop/friends-activity/add-friends-1.png">
                             </div>
                              <div class="friends-item-icon">
-                                <img src="assets/images/desktop/friends-activity/close-1.png">
+                                <img src="assets/images/desktop/friends-activity/close-1.png" onclick="closeContainer()">
                             </div>
                         </div>
                     </div>
@@ -392,62 +392,62 @@
             if (event.target.closest('.nav-playlists-sublist')) return;
             el.classList.toggle('expanded');
         }
-        function toggleSidebar() {
-            document.getElementById("container").classList.toggle("collapse");
+        function friendsActivity() {
+            if (window.innerWidth > 768) {
+                document.getElementById("container").classList.toggle("view_hide");
+            }
         }
+        function closeContainer() {
+            document.getElementById("container").classList.remove("view_hide");
+        }
+        window.addEventListener("resize", function () {
+            if (window.innerWidth <= 860) {
+                document.getElementById("container").classList.remove("view_hide");
+            }
+        });
 
-        // Carousel functionality (same as Home page)
+        // Carousel - წრიული ტრიალი (მარცხნივ და მარჯვნივ ანალოგიურად)
         function initCarousel() {
-            const carouselSections = document.querySelectorAll('.search-section');
-            
-            carouselSections.forEach(section => {
-                const buttons = section.querySelectorAll('.section-nav-btn');
-                const cardsContainer = section.querySelector('.discover-grid-wrapper');
-                
-                if (buttons.length >= 2 && cardsContainer) {
-                    const prevBtn = buttons[0];
-                    const nextBtn = buttons[1];
-                    const cardWidth = 170 + 24; // card width + gap
-                    const scrollStep = cardWidth;
-                    const maxScroll = () => cardsContainer.scrollWidth - cardsContainer.clientWidth;
+            const scrollStep = 194; // 170px + 24px gap
 
-                    prevBtn.addEventListener('click', function() {
-                        if (maxScroll() > 0) {
-                            let target = cardsContainer.scrollLeft - scrollStep;
-                            if (target <= 0) {
-                                cardsContainer.scrollTo({ left: maxScroll(), behavior: 'smooth' });
-                            } else {
-                                cardsContainer.scrollTo({ left: target, behavior: 'smooth' });
-                            }
-                        } else {
-                            const grid = cardsContainer.querySelector('.discover-grid, .genres-grid');
-                            const last = grid?.lastElementChild;
-                            if (last) {
-                                grid.insertBefore(last, grid.firstElementChild);
-                            }
-                        }
-                    });
+            document.querySelectorAll('.discover-section, .search-section').forEach((section) => {
+                const wrapper = section.querySelector('.discover-grid-wrapper');
+                const grid = section.querySelector('.discover-grid, .genres-grid');
+                const prevBtn = section.querySelector('.section-nav-btn:first-of-type');
+                const nextBtn = section.querySelector('.section-nav-btn:last-of-type');
 
-                    nextBtn.addEventListener('click', function() {
-                        if (maxScroll() > 0) {
-                            let target = cardsContainer.scrollLeft + scrollStep;
-                            if (target >= maxScroll()) {
-                                cardsContainer.scrollTo({ left: 0, behavior: 'smooth' });
-                            } else {
-                                cardsContainer.scrollTo({ left: target, behavior: 'smooth' });
-                            }
-                        } else {
-                            const grid = cardsContainer.querySelector('.discover-grid, .genres-grid');
-                            const first = grid?.firstElementChild;
-                            if (first) {
-                                grid.appendChild(first);
-                            }
-                        }
-                    });
-                }
+                if (!wrapper || !grid || !prevBtn || !nextBtn) return;
+
+                // ბარათების დუბლირება ორივე მხარეს: [clone][original][clone]
+                const cloneBefore = grid.cloneNode(true);
+                const cloneAfter = grid.cloneNode(true);
+                cloneBefore.setAttribute('aria-hidden', 'true');
+                cloneAfter.setAttribute('aria-hidden', 'true');
+                grid.parentNode.classList.add('carousel-infinite');
+                grid.parentNode.insertBefore(cloneBefore, grid);
+                grid.parentNode.appendChild(cloneAfter);
+
+                const setWidth = grid.offsetWidth;
+                wrapper.scrollLeft = setWidth; // საწყისი პოზიცია - ორიგინალი
+
+                wrapper.addEventListener('scroll', function() {
+                    if (wrapper.scrollLeft >= 2 * setWidth) {
+                        wrapper.scrollLeft -= setWidth;
+                    } else if (wrapper.scrollLeft <= 0) {
+                        wrapper.scrollLeft += setWidth;
+                    }
+                });
+
+                prevBtn.addEventListener('click', function() {
+                    wrapper.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+                });
+
+                nextBtn.addEventListener('click', function() {
+                    wrapper.scrollBy({ left: scrollStep, behavior: 'smooth' });
+                });
             });
         }
-        
+
         document.addEventListener('DOMContentLoaded', initCarousel);
     </script>
 </body>

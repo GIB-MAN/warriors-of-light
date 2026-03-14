@@ -62,12 +62,19 @@
     }
 }
 
-// Toolbar - ხედის ჩართვა, დალაგება, ძებნა
+// Toolbar - ხედის ჩართვა, დალაგება, ძებნა (სურათის მიხედვით)
 .library-toolbar {
-    @include m.flex-start;
+    display: flex;
+    align-items: center;
     gap: 12px;
-    height: 59px;
+    width: 100%;
+    height: 62px;
+    padding: 0 16px;
     margin-bottom: 24px;
+    background: rgba(v.$base-bg-color, 0.8);
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(100px);
+    border-radius: 12px;
 }
 
 .library-view-toggle {
@@ -101,7 +108,7 @@
     }
 
     &-active {
-        background-color: v.$accent-green;
+        background-color: v.$base-bg-hover;
 
         img {
             filter: brightness(0) invert(1);
@@ -148,7 +155,6 @@
     @include m.flex;
     width: 40px;
     height: 40px;
-    margin-left: auto;
     padding: 0;
     background: transparent;
     border: none;
@@ -168,6 +174,27 @@
         img {
             filter: brightness(0) saturate(100%) invert(100%);
         }
+    }
+}
+
+.library-add-btn {
+    @include m.flex;
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    font-size: 2rem;
+    font-weight: 300;
+    color: v.$base-font-color;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+
+    &:hover {
+        background-color: v.$base-bg-hover;
+        color: v.$h-fonts-color;
     }
 }
 
@@ -271,4 +298,18 @@ $library-pin-size: 40.41px;
         @include m.satoshi_custom(1.2rem, 400, v.$base-font-color);
         flex-shrink: 0;
     }
+
+    // Liked Songs - count-ს მწვანე ტექსტის ფერი
+    &-liked-songs &-count {
+        color: #1ED760;
+    }
+
+    // Daily Mix 1–3, Rock, Chill, Pop Mix - count/title ფერები
+    &-daily-mix-1 &-count { color: #95E6D3; }
+    &-daily-mix-2 &-count { color: #F4B8BD; }
+    &-daily-mix-3 &-title { color: #C3E7B7; }
+    &-daily-mix-3 &-count { color: v.$base-font-color; }
+    &-rock-mix &-count { color: #CCF665; }
+    &-chill-mix &-count { color: #F9E72C; }
+    &-pop-mix &-count { color: #9BF0E2; }
 }

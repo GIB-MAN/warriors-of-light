@@ -187,18 +187,26 @@ $search-nav-btn-hover: #202020;
   margin: 0 -25px;
   padding: 0 25px;
   -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 
   &::-webkit-scrollbar {
     display: none;
   }
   scrollbar-width: none;
+
+  &.carousel-infinite {
+    display: flex;
+    gap: 24px;
+  }
 }
 
-.discover-grid {
+.discover-grid,
+.genres-grid {
   display: flex;
   gap: 24px;
   flex-wrap: nowrap;
   width: max-content;
+  flex-shrink: 0;
 }
 
 // მთავარი ბარათის კონტეინერი

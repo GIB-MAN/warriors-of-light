@@ -80,6 +80,8 @@ a {
 
 .playlist-content-wrapper {
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
   gap: 24px;
   min-height: 100%;
 }
@@ -114,17 +116,22 @@ a {
   color: #898989;
   margin: 0;
 }
+.playlist-meta-spotify {
+  color: #E0E0E0;
+}
 
 .playlist-actions {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 16px;
   margin-top: 8px;
+  width: 100%;
 }
 
 .playlist-btn-play {
-  width: 56px;
-  height: 56px;
+  width: 40.41px;
+  height: 40.41px;
   border-radius: 50%;
   background-color: #1db954;
   border: none;
@@ -137,14 +144,13 @@ a {
   content: "";
   width: 0;
   height: 0;
-  border-left: 18px solid #000;
-  border-top: 11px solid transparent;
-  border-bottom: 11px solid transparent;
-  margin-left: 4px;
+  border-left: 13px solid #000;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  margin-left: 3px;
 }
 
 .playlist-btn-shuffle,
-.playlist-btn-like,
 .playlist-btn-add,
 .playlist-btn-download,
 .playlist-btn-share,
@@ -162,7 +168,6 @@ a {
   transition: opacity 0.2s;
 }
 .playlist-btn-shuffle img,
-.playlist-btn-like img,
 .playlist-btn-add img,
 .playlist-btn-download img,
 .playlist-btn-share img,
@@ -174,7 +179,6 @@ a {
   transition: filter 0.2s;
 }
 .playlist-btn-shuffle:hover img,
-.playlist-btn-like:hover img,
 .playlist-btn-add:hover img,
 .playlist-btn-download:hover img,
 .playlist-btn-share:hover img,
@@ -182,22 +186,18 @@ a {
 .playlist-btn-search:hover img {
   opacity: 1;
 }
-.playlist-btn-shuffle.liked img,
-.playlist-btn-like.liked img,
-.playlist-btn-add.liked img,
-.playlist-btn-download.liked img,
-.playlist-btn-share.liked img,
-.playlist-btn-more.liked img,
-.playlist-btn-search.liked img {
-  filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
-  opacity: 1;
+
+.playlist-search-bar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: flex-end;
+  margin-left: 24px;
 }
 
-.playlist-actions-separator {
-  width: 1px;
-  height: 24px;
-  background-color: #898989;
-  opacity: 0.5;
+.playlist-btn-search {
+  flex-shrink: 0;
 }
 
 .song-list-container {
@@ -224,10 +224,12 @@ a {
   color: #898989;
   text-transform: uppercase;
   letter-spacing: 1px;
+  border-bottom: 2px solid rgba(137, 137, 137, 0.15);
 }
 
 .col-num {
   width: 40px;
+  color: #898989;
 }
 
 .col-title {
@@ -249,7 +251,11 @@ a {
 .col-actions-icon {
   width: 20px;
   height: 20px;
-  opacity: 0.7;
+  filter: brightness(0) saturate(100%) invert(54%) sepia(0%) saturate(0%) hue-rotate(0deg);
+  transition: filter 0.2s;
+}
+.col-actions:hover .col-actions-icon {
+  filter: brightness(0) invert(1);
 }
 
 .song-row {
@@ -262,6 +268,7 @@ a {
 .song-row .col-title {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 16px;
 }
 
@@ -312,24 +319,19 @@ a {
   border: none;
   cursor: pointer;
   padding: 0;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-.song-row:hover .song-like-btn {
   opacity: 1;
 }
 .song-like-btn img {
   width: 20px;
   height: 20px;
-  opacity: 0.7;
+  filter: brightness(0) saturate(100%) invert(54%) sepia(0%) saturate(0%) hue-rotate(0deg);
   transition: filter 0.2s;
 }
 .song-like-btn:hover img {
-  opacity: 1;
+  filter: brightness(0) invert(1);
 }
 .song-like-btn.liked img {
-  filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
-  opacity: 1;
+  filter: invert(61%) sepia(84%) saturate(450%) hue-rotate(87deg) brightness(95%) contrast(101%);
 }
 
 .playlist-right-sidebar {
@@ -412,6 +414,7 @@ a {
 .related-artist {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 12px;
   cursor: pointer;
   padding: 8px;
@@ -434,7 +437,7 @@ a {
   font-family: satoshi;
   font-size: 1.4rem;
   font-weight: 400;
-  color: #ffffff;
+  color: #898989;
 }
 
 /*# sourceMappingURL=playlistpage.css.map */

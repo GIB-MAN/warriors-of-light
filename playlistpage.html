@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Playlist - ფლეილისტის გვერდი -->
+<!-- Playlist გვერდი - Daft Punk Mix ფლეილისტის ვიზუალიზაცია -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container" id="container">
-    <!--  header section start  -->
+    <!-- Header - ნავიგაცია, ძებნა, მომხმარებლის აიქონები -->
         <header class="header">
             <div class="header-wrapper">
                 <div class="header-left-btn">
@@ -52,7 +52,7 @@
         </header>
     <!--  header section end  -->
 
-    <!--  nav section start  -->
+    <!-- Nav - მარცხენა საიდბარი: ბიბლიოთეკა, ფლეილისტები, ალბომები -->
         <nav class="nav">
             <div class="nav-wrapper">
                 <a href="library.html" class="nav-item my-library">
@@ -177,26 +177,28 @@
         </nav>
     <!--  nav section end  -->
 
-    <!--  playlist main content start  -->
+    <!-- Playlist მთავარი კონტენტი -->
         <section class="playlist-content">
             <div class="playlist-content-wrapper">
-                <!-- playlist details + song list -->
+                <!-- ფლეილისტის დეტალები + სიმღერების ცხრილი -->
                 <div class="playlist-details-section">
+                    <!-- სათაური, მეტაინფო, ტულბარი (Play, Shuffle, Search...) -->
                     <div class="playlist-header">
                         <h1 class="playlist-title">Daft Punk Mix</h1>
-                        <p class="playlist-meta">By Spotify • 50 songs • 3 hr 30 min</p>
+                        <p class="playlist-meta">By <span class="playlist-meta-spotify">Spotify</span> • 50 songs • 3 hr 30 min</p>
                         <div class="playlist-actions">
                             <button class="playlist-btn-play" aria-label="Play"></button>
                             <button class="playlist-btn-shuffle" aria-label="Shuffle"><img src="assets/images/desktop/playlist/icons/icons big (1).png" alt=""></button>
-                            <button class="playlist-btn-like" aria-label="Like" onclick="this.classList.toggle('liked')"><img src="assets/images/desktop/playlist/icons/icons big (2).png" alt=""></button>
-                            <button class="playlist-btn-add" aria-label="Add to library"><img src="assets/images/desktop/playlist/icons/icons big (3).png" alt=""></button>
+                            <button class="playlist-btn-add" aria-label="Add to queue"><img src="assets/images/desktop/playlist/icons/icons big (3).png" alt=""></button>
                             <button class="playlist-btn-download" aria-label="Download"><img src="assets/images/desktop/playlist/icons/icons big (4).png" alt=""></button>
                             <button class="playlist-btn-share" aria-label="Share"><img src="assets/images/desktop/playlist/icons/icons big (5).png" alt=""></button>
                             <button class="playlist-btn-more" aria-label="More options"><img src="assets/images/desktop/playlist/icons/icons big (6).png" alt=""></button>
-                            <span class="playlist-actions-separator"></span>
-                            <button class="playlist-btn-search" aria-label="Search in playlist"><img src="assets/images/desktop/playlist/icons/icons big (7).png" alt=""></button>
+                            <div class="playlist-search-bar">
+                                <button class="playlist-btn-search" aria-label="Search"><img src="assets/images/desktop/playlist/icons/icons big (7).png" alt=""></button>
+                            </div>
                         </div>
                     </div>
+                    <!-- სიმღერების ცხრილი: #, Title, Album, Duration, Like -->
                     <div class="song-list-container">
                         <table class="song-list-table">
                             <thead>
@@ -304,12 +306,11 @@
                         </table>
                     </div>
                 </div>
-                <!-- right sidebar -->
+                <!-- მარჯვენა საიდბარი: ქარდი, ჟანრები, დაკავშირებული არტისტები -->
                 <aside class="playlist-right-sidebar">
                     <div class="playlist-card">
                         <img src="assets/images/desktop/playlist/daft-pank-mix.png" alt="Daft Punk Mix" class="playlist-cover">
                         <h2 class="playlist-card-title">Daft Punk Mix</h2>
-                        <span class="playlist-spotify-logo">Spotify</span>
                     </div>
                     <div class="genre-tags">
                         <span class="genre-tag">Funk</span>
@@ -319,7 +320,6 @@
                         <span class="genre-tag">Progressive pop</span>
                     </div>
                     <div class="related-artists">
-                        <h3 class="related-artists-title">Related artists</h3>
                         <div class="related-artist">
                             <img src="assets/images/desktop/playlist/daft-pank1.png" alt="Daft Punk" class="artist-avatar">
                             <span class="artist-name">Daft Punk</span>
@@ -338,7 +338,7 @@
         </section>
     <!--  playlist main content end  -->
 
-    <!-- right sidebar friends-activity start -->
+    <!-- Friends Activity - მეგობრების აქტივობა (მოწვევის სია) -->
         <section class="friends-activity">
             <div class="friends-activity-wapper">
                 <div class="friends-activity-header">
@@ -396,7 +396,7 @@
         </section>
     <!-- right sidebar friends-activity end -->
 
-    <!-- footer start -->
+    <!-- Footer - ფლეერის ბარი: კონტროლები, ტრეკი, სიმღერის ინფო -->
         <footer class="footer">
             <div class="control-icons">
                 <button>
@@ -465,32 +465,36 @@
     <!-- footer end -->
     </div>
     <script>
+        // Nav: Playlists ჩამოშლადი სიის გახსნა/დახურვა
         function togglePlaylists(event, el) {
             if (event.target.closest('.nav-playlists-sublist')) return;
             el.classList.toggle('expanded');
         }
+        // Friends Activity პანელის ჩვენება/დამალვა
         function friendsActivity() {
             if (window.innerWidth > 768) {
                 document.getElementById("container").classList.toggle("view_hide");
             }
         }
+        // Friends Activity პანელის დახურვა
         function closeContainer() {
             document.getElementById("container").classList.remove("view_hide");
         }
+        // რესპონსიზე: ეკრანის ვიწროვებისას Friends Activity დახურვა
         window.addEventListener("resize", function () {
             if (window.innerWidth <= 860) {
                 document.getElementById("container").classList.remove("view_hide");
             }
         });
 
-        // Like button - toggle green on click
+        // სიმღერების Like ღილაკი: დაკლიკებაზე liked ფერის მიღება (toggle)
         document.querySelectorAll(".song-like-btn").forEach(function (btn) {
             btn.addEventListener("click", function () {
                 this.classList.toggle("liked");
             });
         });
 
-        // Carousel functionality
+        // Carousel: ბიბლიოთეკის/სახლის კარდების ჰორიზონტალური სქროლი
         function initCarousel() {
             const carouselSections = document.querySelectorAll('.made-for-you-wrapper, .your-top-mixes');
             
@@ -501,7 +505,7 @@
                 if (buttons.length >= 2 && cardsContainer) {
                     const prevBtn = buttons[0];
                     const nextBtn = buttons[1];
-                    const cardWidth = 170 + 11; // card width + gap
+                    const cardWidth = 170 + 11; // ქარდის სიგანე + gap
                     
                     prevBtn.addEventListener('click', function() {
                         cardsContainer.scrollBy({
@@ -520,6 +524,7 @@
             });
         }
         
+        // გვერდის ჩატვირთვისას carousel ინიციალიზაცია
         document.addEventListener('DOMContentLoaded', initCarousel);
     </script>
 </body>
