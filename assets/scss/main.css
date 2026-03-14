@@ -1071,8 +1071,7 @@ button {
 .about-artist-hero-image {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 .about-artist-hero-overlay {
@@ -1457,8 +1456,7 @@ button {
 .grid-albums-hero-image {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 .grid-albums-hero-overlay {
@@ -1626,8 +1624,7 @@ button {
   max-width: 100%;
   display: block;
   aspect-ratio: 1/1;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 12px;
 }
 
@@ -1802,8 +1799,7 @@ button {
 .artist-hero-image {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 .artist-hero-overlay {
@@ -1929,8 +1925,7 @@ button {
   width: 16px;
   height: 16px;
   display: block;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 /* =========================
@@ -2132,8 +2127,7 @@ button {
   display: grid;
   grid-template-columns: 22px 51px minmax(0, 1fr) 448px;
   align-items: center;
-  -moz-column-gap: 14px;
-       column-gap: 14px;
+  column-gap: 14px;
 }
 
 .artist-track-number {
@@ -2152,8 +2146,7 @@ button {
   width: 51px;
   height: 51px;
   border-radius: 4px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 
@@ -2300,8 +2293,7 @@ button {
   width: 72px;
   height: 72px;
   border-radius: 6px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
   flex-shrink: 0;
 }
@@ -2330,8 +2322,7 @@ button {
   width: 100%;
   height: 100%;
   display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 /* =========================
@@ -2408,8 +2399,7 @@ button {
   }
   .artist-track-item {
     grid-template-columns: 20px 42px minmax(0, 1fr) 68px;
-    -moz-column-gap: 10px;
-         column-gap: 10px;
+    column-gap: 10px;
   }
   .artist-track-cover {
     width: 42px;
@@ -2472,8 +2462,7 @@ button {
   }
   .artist-track-item {
     grid-template-columns: 20px 42px minmax(0, 1fr) 64px;
-    -moz-column-gap: 8px;
-         column-gap: 8px;
+    column-gap: 8px;
   }
   .artist-pick-banner {
     height: 190px;
@@ -2537,8 +2526,7 @@ button {
   }
   .artist-track-item {
     grid-template-columns: 18px 38px minmax(0, 1fr) 60px;
-    -moz-column-gap: 8px;
-         column-gap: 8px;
+    column-gap: 8px;
     min-height: 54px;
   }
   .artist-track-number {
@@ -2615,8 +2603,7 @@ button {
 .list-albums-hero-image {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 .list-albums-hero-overlay {
@@ -2834,8 +2821,7 @@ button {
 .list-albums-cover-cell img {
   width: 130px;
   height: 130px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
   border-radius: 8px;
 }
@@ -3193,4 +3179,6 @@ button {
     bottom: 0;
     z-index: 5;
   }
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
